@@ -1,0 +1,149 @@
+{
+  "users": [
+    {
+      "userName": "Santhosh",
+      "userEmail": "mangeogod0987@gmail.com",
+      "userPassword": "password123",
+      "isAdmin": true,
+      "id": 1
+    },
+    {
+      "userName": "Dhanush",
+      "userEmail": "dhanush@gmail.com",
+      "userPassword": "password123",
+      "isAdmin": true,
+      "id": 2
+    },
+    {
+      "userName": "TKR",
+      "userEmail": "tkr@gmail.com",
+      "userPassword": "password123",
+      "isAdmin": false,
+      "id": 3
+    },
+    {
+      "userName": "Prashanth",
+      "userEmail": "prashanth@gmail.com",
+      "userPassword": "password97",
+      "isAdmin": false,
+      "id": 4
+    },
+    {
+      "userName": "Arthi",
+      "userEmail": "arthi@gmail.com",
+      "userPassword": "password123",
+      "isAdmin": false,
+      "id": 5
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "bookName": "The Russian",
+      "bookType": "fiction",
+      "description": "asdfghjklasdfghjkfghjkl",
+      "Author": "Ben coes",
+      "quantity": "3",
+      "available": true
+    },
+    {
+      "id": 2,
+      "bookName": "Just as I Am",
+      "bookType": "non-fiction",
+      "description": "asdfghjsdfghjkghjkl",
+      "Author": "cisely tyson",
+      "quantity": "6",
+      "available": false
+    },
+    {
+      "id": 3,
+      "bookName": "The Vanishing Half",
+      "bookType": "fiction",
+      "description": "zxcvbnm,cvbnm,bnm,",
+      "Author": "Brit Benett",
+      "quantity": "7",
+      "available": true
+    },
+    {
+      "id": 4,
+      "bookName": "The Midnight Library",
+      "bookType": "fiction",
+      "description": "sdfghjkrtyuicvbnm,.ghjk",
+      "Author": "matt haig",
+      "quantity": "8",
+      "available": true
+    },
+    {
+      "id": 5,
+      "bookName": "Untamed",
+      "bookType": "non-fiction",
+      "description": "sdfghjksdfghjkl;gahjkdf",
+      "Author": "Glenn Doyle",
+      "quantity": "4",
+      "available": true
+    },
+    {
+      "id": 6,
+      "bookName": "Viscount Who Loved Me",
+      "bookType": "fiction",
+      "description": "dfghjkl;hjkl;",
+      "Author": "julia quinn",
+      "quantity": "5",
+      "available": true
+    },
+    {
+      "id": 7,
+      "bookName": "Who will cry when You die",
+      "bookType": "personality development",
+      "description": "sdfghjklfghjkl",
+      "Author": "Robin sharma",
+      "quantity": "4",
+      "available": true
+    },
+    {
+      "bookName": "The silent patient",
+      "bookType": "thriller",
+      "description": "sdfghjkfghjkl",
+      "Author": "Alex michaelides",
+      "quantity": "3",
+      "isAvailable": true,
+      "id": 8
+    },
+    {
+      "bookName": "The silent patient",
+      "bookType": "thriller",
+      "description": "sdfghjkfghjkl",
+      "Author": "Alex michaelides",
+      "quantity": "5",
+      "isAvailable": true,
+      "id": 9
+    },
+    {
+      "bookName": "wings of fire",
+      "bookType": "biography",
+      "description": "biography about A.P.J. abdul kalam",
+      "author": "Arun tiwari",
+      "quantity": "4",
+      "isAvailable": true,
+      "id": 10
+    },
+    {
+      "bookName": "Outlander",
+      "bookType": "Romance",
+      "description": "The Outlander series focuses on 20th-century British nurse Claire Randall, who time travels to 18th-century Scotland and finds adventure and romance with the dashing Highland warrior Jamie Fraser.",
+      "author": "Diana Gabaldon",
+      "quantity": "7",
+      "isAvailable": true,
+      "id": 11
+    },
+    {
+      "bookName": "                               ",
+      "bookType": "                              ",
+      "description": "                            ",
+      "author": "                             ",
+      "quantity": "-1",
+      "isAvailable": true,
+      "id": 12
+    }
+  ]
+}
