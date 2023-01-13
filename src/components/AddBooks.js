@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./AddBooks.css"
-import {Button} from 'bootstrap'
+import '../styles/AddBooks.css'
+import axios from "axios";
 const AddBooks = () => {
     const[bookName, setbookName] = useState('')
     const[bookType, setbookType] = useState('')
@@ -12,12 +12,13 @@ const AddBooks = () => {
 
     const addBooks = (e)=>{
         e.preventDefault()
-        const books = {bookName,bookType,description,author, quantity,"isAvailable":true}
-        fetch('http://localhost:8000/books',{
-            method:'POST',
-            headers:{'Content-Type':'application/json'},
-            body:JSON.stringify(books)
-        }).then(navigate('/home')).catch((err)=>{console.log(err)})
+        const book = {bookName,bookType,description,author, quantity,"isAvailable":true};
+        axios.post('http://localhost:8000/books',book).then((res)=>{navigate('/');}).catch((err)=>{console.log(err);})
+        // fetch('http://localhost:8000/books',{
+        //     method:'POST',
+        //     headers:{'Content-Type':'application/json'},
+        //     body:JSON.stringify(books)
+        // }).then(navigate('/home')).catch((err)=>{console.log(err)})
     }
     return ( 
         <>

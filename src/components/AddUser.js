@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Login.css"
+import "../styles/Login.css"
+import axios from "axios";
 
 const AddUser = () => {
     const [userName,setuserName]=useState('');
@@ -22,11 +23,12 @@ const AddUser = () => {
         }
         else{
             const user={userName,userEmail,userPassword,"isAdmin":false};
-            fetch('http://localhost:8000/users',{
-                method:'POST',
-                headers:{'Content-Type':'application/json'},
-                body:JSON.stringify(user)
-            }).then((res)=>{navigate('/');}).catch((err)=>{console.log(err);})
+            axios.post('http://localhost:8000/users',user).then((res)=>{navigate('/');}).catch((err)=>{console.log(err);})
+            // fetch('http://localhost:8000/users',{
+            //     method:'POST',
+            //     headers:{'Content-Type':'application/json'},
+            //     body:JSON.stringify(user)
+            // }).then((res)=>{navigate('/');}).catch((err)=>{console.log(err);})
         }
     }
     return ( 
@@ -38,7 +40,7 @@ const AddUser = () => {
             <label htmlFor="name">Name</label>
             <input type="text" required value ={userName} onChange = {(e)=>{setuserName(e.target.value)}}></input>
             <label  htmlFor="email">E-mail</label>
-            <input type="text" required value={userEmail} onChange={(e)=>setuserEmail(e.target.value)}></input>
+            <input type="text"  required value={userEmail} onChange={(e)=>setuserEmail(e.target.value)}></input>
             <label htmlFor="password">Password</label>
             <input type="password" required value={userPassword} onChange={(e)=>setuserPassword(e.target.value)}></input>
             {errMsg&& <p>{errMsg}</p>}

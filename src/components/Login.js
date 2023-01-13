@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "./Login.css"
+import "../styles/Login.css"
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = ({setisAdmin,setisLoggedIn}) => {
     const [userEmail,setuserEmail]=useState('');
@@ -8,7 +9,7 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
     const [errMsg,seterrMsg]=useState(null);
     const navigate=useNavigate();
     const validateForm=(email,password)=>{
-      if(email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)&&password.match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)){
+      if(email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)&&password.match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/)){
         return false
       }else{
         return true
@@ -21,18 +22,17 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
           setisLoggedIn(false);
         }
         else{
-          fetch("http://localhost:8000/users?userEmail="+userEmail).then(res=>{
-            return res.json();
-          }).then((data)=>{
-            if(data.length===0){
+          axios.get("http://localhost:8000/users?userEmail="+userEmail).then((res)=>{
+            if(res.data.length===0){
               seterrMsg("Invalid Login Credintials");
               setisLoggedIn(false);
             }
             else{
-              if(data[0].userPassword===userPassword){
+              if(res.data[0].userPassword===userPassword){
                 seterrMsg(null);
-                data[0].isAdmin?setisAdmin(true):setisAdmin(false);
+                res.data[0].isAdmin?setisAdmin(true):setisAdmin(false);
                 setisLoggedIn(true);
+                localStorage.setItem("id",res.data[0].id);
                 navigate('/home')
               }
               else{
@@ -40,9 +40,29 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
                 setisLoggedIn(false);
               }
             }
-          }).catch(err=>{
-            console.log(err)
-          })
+          });
+          // fetch("http://localhost:8000/users?userEmail="+userEmail).then(res=>{
+          //   return res.json();
+          // }).then((data)=>{
+          //   if(data.length===0){
+          //     seterrMsg("Invalid Login Credintials");
+          //     setisLoggedIn(false);
+          //   }
+          //   else{
+          //     if(data[0].userPassword===userPassword){
+          //       seterrMsg(null);
+          //       data[0].isAdmin?setisAdmin(true):setisAdmin(false);
+          //       setisLoggedIn(true);
+          //       navigate('/home')
+          //     }
+          //     else{
+          //       seterrMsg("Invalid Password");
+          //       setisLoggedIn(false);
+          //     }
+          //   }
+          // }).catch(err=>{
+          //   console.log(err)
+          // })
         }
       }
     return (
