@@ -34,25 +34,30 @@
       "userPassword": "password123",
       "isAdmin": false,
       "id": 5
+    },
+    {
+      "userName": "merlins",
+      "userEmail": "merlins@gmail.com",
+      "userPassword": "password123",
+      "isAdmin": false,
+      "id": 6
+    },
+    {
+      "userName": "Dhanush2",
+      "userEmail": "dhanush2@gmail.com",
+      "userPassword": "dhanush2123",
+      "isAdmin": false,
+      "id": 7
+    },
+    {
+      "userName": "ArthiMeganathan",
+      "userEmail": "arthi@gmail.com",
+      "userPassword": "arthi123",
+      "isAdmin": false,
+      "id": 8
     }
   ],
   "books": [
-    {
-      "id": 5,
-      "title": "Alex Homer, ASP.NET 2.0 Visual Web Developer 2005",
-      "author": "David Sussman",
-      "categories": "Компьютерная литература\\11 web строительство\\Web - строительство, ASP.NET\\",
-      "volume": "",
-      "year": "2006",
-      "edition": "",
-      "language": "en",
-      "pages": "314",
-      "url": "http://bookzz.org/dl/547307/7e39f2",
-      "description": "*  This Starter Kit serves as an entry-level introduction centered around prebuilt projects that developers can easily deploy and customize for their own sites    * Explains how to build good basic Web sites, including design and architecture, for users who plan to build more complex sites in the future    * Details the key site features that beginners like to implement, including catalogs, shopping carts, images, and secure site sections    * The authors use very little code, but where coding is needed, they feature the simple Visual Basic language    * The CD-ROM includes Visual Web Developer 2005 Express Edition",
-      "cover": "http://libgen.org/covers/119000/f317bc40ec89d98e867b2099c4341a68.jpg",
-      "quantity": 7,
-      "available": true
-    },
     {
       "title": "PHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax: A practical guide to combining the power, performance, scalability, ... time, and high performance of PHP",
       "author": "Yuli Vasiliev",
@@ -60,7 +65,7 @@
       "year": "2007",
       "edition": "1st Ed.",
       "language": "en",
-      "pages": "372",
+      "pages": "375",
       "description": "Based on the title, the book has so many things to discuss but it actually has less than 400 pages that even include the glossary of terms. The reader might have a second thought about the book since it might not promise to discuss the things written in the chapter.\r\rBut if you go through the chapters, you will be surprised how each topic could be discussed thoroughly in this book. Using the traditional structures in most web and application development books, it slowly introduces each concept before they are brought together in the final chapters. \r\rPHP and Oracle are discussed separately at first with sample codes and situations to ensure that the reader understands each concept. It then goes to discuss who they could be efficiently integrated. The final chapter which is about Ajax is very impressive as it gives the developers a chance to develop an Ajax based application using popular practices in web development. The robustness of Oracle and efficiency of PHP is actually shown in an Ajax based application.\r\rPHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax is a good starting book for any web development professionals and enthusiasts. It covers the basics of web development using PHP and database management of Oracle including an installation guide for Oracle and PHP. If you are looking for a book to start with PHP and Oracle, this book offers a good start. \r\rFor developers who are experienced in this discipline, the book could be a good reference point for developing an application. The sample codes that helps the reader understands the underlying concept of the application with actual scenarios, this PHP and Oracle book is almost too good to pass on.",
       "available": true,
       "quantity": 8,
@@ -95,7 +100,7 @@
       "url": "http://bookzz.org/dl/643521/621c7c",
       "description": "Like someone else said, you can learn MODx by finding resources on the internet. I started reading this book to get introduced to the system, and it was OK for that, but I found I didn't really use it or need it when I actually started making my MODx site. It's a good overview/introduction that may help you understand what MODx is and how it functions, but not totally needed if you just want to jump right in and make a site with MODx. Also, since the release of MODx 1.0/1.0.1, the terminology used in this book is no longer correct, so it may actually confuse you (Resources are now Elements, Documents are now Resources, etc.) And I found some of the writing to be awkward.",
       "cover": "http://libgen.org/covers/215000/dfb074a1d600635e8b92c4bd948f0c3a-d.jpg",
-      "quantity": 8,
+      "quantity": 6,
       "available": true
     },
     {
@@ -127,7 +132,7 @@
       "url": "http://bookzz.org/dl/682507/a9cd0c",
       "description": "Probably the most complete and updated book that you may find about Javascript.The author made a great job writting about some of the most important topics on javascript development and highlighting the difference among browsers.Most of the topics are already covered in other javascript books I have read before, but not in the way Nicholas does, he usually goes deeper on every topic.If you have some knowledge on javascript and want to reach another level, this is the book for you. If you consider yourself a guru, you may enjoy it as well, but definitely, not for newbies.",
       "cover": "http://libgen.org/covers/254000/b07adfcaf9641b17fe76115bf174f44c-d.jpg",
-      "quantity": 8,
+      "quantity": 7,
       "available": true
     },
     {
@@ -147,22 +152,6 @@
       "available": true
     },
     {
-      "id": 12,
-      "title": "Agile.Web.Development.with.Rails.4th.Edition",
-      "author": "the pragmatic programmers",
-      "categories": "web programming",
-      "volume": "",
-      "year": "0",
-      "edition": null,
-      "language": "",
-      "pages": "0",
-      "url": "http://bookzz.org/dl/826704/0477c2",
-      "description": "Agile.Web.Development.with.Rails.4th.Edition, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
-      "cover": null,
-      "quantity": 8,
-      "available": true
-    },
-    {
       "id": 13,
       "title": "Beginning CSS Web Development: From Novice to Professional",
       "author": "Simon Collison",
@@ -173,7 +162,7 @@
       "language": "en",
       "pages": "448",
       "url": "http://bookzz.org/dl/879439/c82b5c",
-      "description": "Beginning CSS Web Development: From Novice to Professional, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
+      "description": "Beginning CSS Web Development: From Novice to Professional, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well.",
       "cover": "http://libgen.org/covers/454000/ee845efa4da1004f1177ae9b498eca22-d.jpg",
       "quantity": 8,
       "available": true
@@ -207,7 +196,7 @@
       "url": "http://bookzz.org/dl/2054864/8e934e",
       "description": "Web development solutions : Ajax, APIs, libraries, and hosted services made easy, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
       "cover": "http://libgen.org/covers/900000/b544a6be89e10bc5dfe00e48d9fdd429-d.jpg",
-      "quantity": 8,
+      "quantity": 7,
       "available": true
     },
     {
@@ -243,38 +232,6 @@
       "available": true
     },
     {
-      "id": 18,
-      "title": "Full Stack Web Development with Backbone.js",
-      "author": "Patrick Mulder",
-      "categories": "Development",
-      "volume": "",
-      "year": "0",
-      "edition": null,
-      "language": "",
-      "pages": "0",
-      "url": "http://bookzz.org/dl/2379675/2cc912",
-      "description": "Full Stack Web Development with Backbone.js, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
-      "cover": null,
-      "quantity": 8,
-      "available": true
-    },
-    {
-      "id": 19,
-      "title": "The Microsoft Expression Web Developer's Guide to ASP.NET 3.5: Learn to create ASP.NET applications using Visual Web Developer 2008",
-      "author": "Jim Cheshire",
-      "categories": "Computer science",
-      "volume": "",
-      "year": "2007",
-      "edition": "1",
-      "language": "en",
-      "pages": "504",
-      "url": "http://bookzz.org/dl/632635/3efe5c",
-      "description": "<P style=\"MARGIN: 0px\">“This book is a great reference for web designers new to ASP.NET who are looking to jump start their development with </P>  <P style=\"MARGIN: 0px\">Visual Web Developer 2008.”</P>  <P style=\"MARGIN: 0px\">Mikhail Arkhipov</P>  <P style=\"MARGIN: 0px\">Principal Development Manager – Web Development Tools</P>  <P style=\"MARGIN: 0px\">Microsoft Corporation</P>  <P style=\"MARGIN: 0px\"> </P>  <P style=\"MARGIN: 0px\">Expression Web introduced ASP.NET to a new group of web developers. This book is designed to help you start using ASP.NET right away to add powerful new features to your website. Don’t worry, you won’t have to learn a lot of programming; instead, you’ll create an ASP.NET application from start to finish using Visual Web Developer 2008, while writing only a very small amount of actual programming code. </P>  <P style=\"MARGIN: 0px\"> </P>  <P style=\"MARGIN: 0px\">DETAILED INFORMATION ON HOW TO…</P>  <P style=\"MARGIN: 0px\">     •    Create and work with websites in Visual Web Developer 2008</P>  <P style=\"MARGIN: 0px\">     •    Use the different compilation and code models in ASP.NET</P>  <P style=\"MARGIN: 0px\">     •    Configure ASP.NET security and other settings</P>  <P style=\"MARGIN: 0px\">     •    Use ASP.NET master pages and user controls</P>  <P style=\"MARGIN: 0px\">     •    Take advantage of ASP.NET membership features for a password-protected website</P>  <P style=\"MARGIN: 0px\">     •    Use form validation in ASP.NET</P>  <P style=\"MARGIN: 0px\">     •    Use CSS, skins, and themes</P>  <P style=\"MARGIN: 0px\">     •    Access, edit, and add data to a database using ASP.NET</P>  <P style=\"MARGIN: 0px\">     •    Send email using ASP.NET</P>  <P style=\"MARGIN: 0px\">     •    Use Ajax and ASP.NET Web services</P>  <P style=\"MARGIN: 0px\">     •    Debug and troubleshoot ASP.NET</P>  <P style=\"MARGIN: 0px\">          . . . and much more!</P>  <P style=\"MARGIN: 0px\"> </P>",
-      "cover": "http://libgen.org/covers/204000/053202c3311e1754ddddd1f5d55f3414-d.jpg",
-      "quantity": 8,
-      "available": true
-    },
-    {
       "id": 20,
       "title": "Tapestry 5: Building Web Applications: A step-by-step guide to Java Web development with the developer-friendly Apache Tapestry framework",
       "author": "Alexander Kolesnikov",
@@ -287,22 +244,6 @@
       "url": "http://bookzz.org/dl/682322/4df753",
       "description": "The author Alexander Kolesnikov has significant experience in programming, dating back to 1979 and Fortran. This is his second book that follows the one published in 2007.\rThe book contains elegant introduction to Tapestry 5 with additional focus on building high performing  scalable web apps. The first chapter is introductory, serves as a advert of Tapestry and a taste of things to come. The second helps reader to configure IDE, because practical exercises are encouraged through out the book.\rFrom the next chapter starts the description of the framework. The third illustrates basic Tapestry mechanics that revolve around \"Page classes\". Author shows how to link them with corresponding views that are enriched html files. Moreover passing data between pages, events and using components is presented. The following chapters provide info on using other parts of the framework like localization, validation etc. and act as a tutorial for building your own components.\rThe book was very easy to read. I can't recall anything that would be difficult to comprehend. Boring parts were rare. Global focus on scalability made it fun to read, because it is not a common part of web app tutorials to remind you how session management influences performance.\rOverall the composition of the book is very neat. The most important stuff is put first although you can skip the parts you are familiar with like I did with IDE configuration.\rHoward Levis-Ship the author of Tapestry says that in a good framework \"the right thing to do is the easiest one\". You can find that idea in every aspect of the framework that is well represented in the book. The focus on scalability is a nice addition to thorough Tapestry 5 description.\rI am not an expert on web apps, so I value the parts that revolve around basics too. Reading the book was fun. Since I did not made any effort into practically using Tapestry during the course of reading it, I was unable tell whether it is better that say JSF with Facelets. However  it provided much insight into web app development with Tapestry. Definitely Tapestry is easier to use, but the real difficulties lie in merging pages with code which I am unable to compare. As usual one needs to try it out in at least medium sized application to find out. Anyway I can recommend this book to anyone who wishes to find out what Tapestry 5 has to offer and anyone who does not feel like an expert in web app development ant would like to go through an introduction on scalable web app development.",
       "cover": "http://libgen.org/covers/254000/77a9a95c504dedca6a5d7ec418491432-d.jpg",
-      "quantity": 8,
-      "available": true
-    },
-    {
-      "id": 21,
-      "title": "Tapestry 5: Building Web Applications: A step-by-step guide to Java Web development with the developer-friendly Apache Tapestry framework",
-      "author": "Alexander Kolesnikov",
-      "categories": "",
-      "volume": "",
-      "year": "2008",
-      "edition": "",
-      "language": "en",
-      "pages": "280",
-      "url": "http://bookzz.org/dl/739099/886fc0",
-      "description": "The author Alexander Kolesnikov has significant experience in programming, dating back to 1979 and Fortran. This is his second book that follows the one published in 2007.\rThe book contains elegant introduction to Tapestry 5 with additional focus on building high performing  scalable web apps. The first chapter is introductory, serves as a advert of Tapestry and a taste of things to come. The second helps reader to configure IDE, because practical exercises are encouraged through out the book.\rFrom the next chapter starts the description of the framework. The third illustrates basic Tapestry mechanics that revolve around \"Page classes\". Author shows how to link them with corresponding views that are enriched html files. Moreover passing data between pages, events and using components is presented. The following chapters provide info on using other parts of the framework like localization, validation etc. and act as a tutorial for building your own components.\rThe book was very easy to read. I can't recall anything that would be difficult to comprehend. Boring parts were rare. Global focus on scalability made it fun to read, because it is not a common part of web app tutorials to remind you how session management influences performance.\rOverall the composition of the book is very neat. The most important stuff is put first although you can skip the parts you are familiar with like I did with IDE configuration.\rHoward Levis-Ship the author of Tapestry says that in a good framework \"the right thing to do is the easiest one\". You can find that idea in every aspect of the framework that is well represented in the book. The focus on scalability is a nice addition to thorough Tapestry 5 description.\rI am not an expert on web apps, so I value the parts that revolve around basics too. Reading the book was fun. Since I did not made any effort into practically using Tapestry during the course of reading it, I was unable tell whether it is better that say JSF with Facelets. However  it provided much insight into web app development with Tapestry. Definitely Tapestry is easier to use, but the real difficulties lie in merging pages with code which I am unable to compare. As usual one needs to try it out in at least medium sized application to find out. Anyway I can recommend this book to anyone who wishes to find out what Tapestry 5 has to offer and anyone who does not feel like an expert in web app development ant would like to go through an introduction on scalable web app development.",
-      "cover": "http://libgen.org/covers/313000/c8947aa69d6e824cb5deaa23feb615f4-d.jpg",
       "quantity": 8,
       "available": true
     },
@@ -415,7 +356,7 @@
       "url": "http://bookzz.org/dl/2171074/8e4b6b",
       "description": ".NET Mobile Web Developers Guide. Web Developer's Guide, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
       "cover": "http://ars.els-cdn.com/content/image/3-s2.0-B9781928994565X50002-cov150h.gif",
-      "quantity": 8,
+      "quantity": 7,
       "available": true
     },
     {
@@ -575,7 +516,7 @@
       "url": "http://bookzz.org/dl/547317/d5cafb",
       "description": "A complete guide to successful learning using Moodle   - Straight-forward coverage of installing and using the Moodle system   - Working with Moodle features in all learning environments   - A unique course-based approach focuses your attention on designing well structured, interactive, and successful courses<P>    <P>A complete guide to successful learning using Moodle, focused on course development and delivery and using the best educational practices. Moodle is relatively easy to install and use, but the real challenge is to develop a learning process that leverages its power and maps effectively onto the content established learning situation. This book guides you through meeting that challenge.<P>    <P>This unique book gives you more than just a guide to the  Moodle software; it uses Moodle as a route to better teaching, more motivated students, and more successful courses. Moodle is the leading Open Source learning management system. Using Moodle, teachers can easily construct richly textured web based courses.  A course can consist of a number of lessons, with each lesson including reading materials; activities such as quizzes, tests, surveys, and projects; and social elements that encourage interaction and group work between students.Moodle E-Learning Course Development shows you how to use Moodle as a tool to enhance your teaching. It will help you analyse your students' requirements, and come to an understanding of what Moodle can do for them. After that you'll see how to use every feature of Moodle to meet your course goals.<P>    <P>The social constructionist learning philosophy is at the heart of Moodle: we all \"construct\" knowledge through interation with one another and with learning materials in a social way. Moodle E-Learning Course Develelopment will show you how to add static learning material, interactive activities, and social features to your courses so that students reach their learning potential. Whether you want to support traditional class teaching or lecturing, or provide complete online and distance learning courses, this book will prove a powerful resource throughout your use of Moodle.<P>    <P>- Understand what Moodle can do, how it compares to other e-learning packages, and how it can support your teaching strategies   - Install the Moodle software on your own computer or a server, and understand your way around it   - Know how to create different kinds of courses. Moodle can support courses where the group works through the classes with a shared schedule, or where individual students work through at their own pace, or courses where students are free to explore the different topics in their own time. This book will show you how.   - Understand all of Moodle's learning features. Moodle provides features for managing course content, interactive resources, and social activities such as forums and wikis. This book explains what each of these features are, how they work, and most importantly how and when to use them effectively.   - Manage students – so that you can ensure that the right students are going to the right classes; allow students to enrol themselves, or invite students to join a course. You can even set up commercial courses where students pay to sign <P>    <P>William Rice is an experienced trainer and expert on learning and teaching practices. This experience and expertise forms the foundation of his approach: What do we want to teach? How would this best translate into a course? How best can Moodle support these course objectives?Of course, the book contains everything you'd expect from an introduction to Moodle: clear step-by-step instructions, plenty of screenshots, explanations and guides through the many features and options that you have to choose from. Throughout the book, William develops an example course. He uses this example to explore the sort of decisions, design considerations, and thought that goes into developing a successful course.<P>    <P>This book is written for everyone who wants to get the most from Moodle. Beginners to the software will get a thorough guide to how the software works, and some great ideas for getting to a good start with their first course. More experienced Moodlers will find powerful insights into developing more successful and educational courses.<P>",
       "cover": "http://libgen.org/covers/119000/369ae7b65ca28ef278da86af859924ff-d.jpg",
-      "quantity": 8,
+      "quantity": 7,
       "available": true
     },
     {
@@ -751,53 +692,94 @@
       "url": "http://bookzz.org/dl/853858/fc50d6",
       "description": "Successful web design teams depend on clear communication between developers and their clients—and among members of the development team. Wireframes, site maps, flow charts, and other design diagrams establish a common language so designers and project teams can capture ideas, track progress, and keep their stakeholders informed.    In this all new edition of Communicating Design, author and information architect Dan Brown defines and describes each deliverable, then offers practical advice for creating the documents and using them in the context of teamwork and presentations, independent of methodology. Whatever processes, tools, or approaches you use, this book will help you improve the creation and presentation of your wireframes, site maps, flow charts, and other deliverables.   The book now features:  An improved structure comprising two main sections: Design Diagrams and Design Deliverables. The first focuses on the nuts and bolts of design documentation and the second explains how to pull it all together.  New deliverable: design briefs, as well as updated advice on wireframes, flow charts, and concept models.  More illustrations, to help designers understand the subtle variations and approaches to creating design diagrams. Reader exercises, for those lonely nights when all you really want to do is practice creating wireframes, or for use in workshops and classes. Contributions from industry leaders: Tamara Adlin, Stephen Anderson, Dana Chisnell, Nathan Curtis, Chris Fahey, James Melzer, Steve Mulder, Donna Spencer, and Russ Unger.     “As an educator, I have looked to Communicating Design both as a formal textbook and an informal guide for its design systems that ultimately make our ideas possible and the complex clear.”  —Liz Danzico, from the Foreword  ",
       "cover": "http://libgen.org/covers/428000/6488ceaac907b23528d5a39f98372648-d.jpg",
-      "quantity": 8,
+      "quantity": 7,
       "available": true
     },
     {
-      "id": 50,
-      "title": "Weaving a Library Web: A Guide to Developing Children's Websites",
-      "author": "Helene Blowers",
-      "categories": "Компьютеры//Web-дизайн",
-      "volume": "",
-      "year": "2009",
-      "edition": "",
-      "language": "en",
-      "pages": "216",
-      "url": "http://bookzz.org/dl/871871/5156b1",
-      "description": "Weaving a Library Web: A Guide to Developing Children's Websites, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
-      "cover": "http://libgen.org/covers/447000/f72ea8af5afe380fa9466d03010296f9-d.jpg",
-      "quantity": 8,
-      "available": true
-    },
-    {
-      "bookName": "Rich dad poor dad",
-      "bookType": "economic",
-      "description": "about how to use money",
-      "author": "robin sharma",
-      "quantity": "3",
+      "bookName": "jalabula jangu",
+      "bookType": "",
+      "description": "",
+      "author": "Sk",
+      "quantity": 0,
       "isAvailable": true,
       "id": 51
+    },
+    {
+      "bookName": "jalabula jangu",
+      "bookType": "",
+      "description": "",
+      "author": "",
+      "quantity": 0,
+      "isAvailable": true,
+      "id": 52
     }
   ],
   "rented-books": [
     {
-      "bookTitle": "Alex Homer, ASP.NET 2.0 Visual Web Developer 2005",
-      "bookId": 5,
-      "rentDays": "5",
-      "rentDate": "2023-01-10T18:33:16.076Z",
-      "returnDate": "2023-04-24T18:33:16.076Z",
+      "bookTitle": "Moodle. E-Learning Course Development",
+      "bookId": 38,
+      "rentDays": "1",
+      "rentDate": "2023-01-12T18:28:23.939Z",
+      "returnDate": "2023-05-01T18:28:23.939Z",
       "userId": "3",
-      "id": 1
+      "rentExpired": false,
+      "userName": "TKR",
+      "id": 7
+    },
+    {
+      "bookTitle": "MODx Web Development",
+      "bookId": 8,
+      "rentDays": "1",
+      "rentDate": "2023-01-12T18:40:05.643Z",
+      "returnDate": "2023-01-13T18:40:05.643Z",
+      "userId": "3",
+      "rentExpired": false,
+      "userName": "TKR",
+      "id": 8
+    },
+    {
+      "bookTitle": ".NET Mobile Web Developers Guide. Web Developer's Guide",
+      "bookId": 28,
+      "rentDays": "2",
+      "rentDate": "2023-01-12T18:41:22.745Z",
+      "returnDate": "2023-01-14T18:41:22.745Z",
+      "userId": "3",
+      "rentExpired": false,
+      "userName": "TKR",
+      "id": 9
     },
     {
       "bookTitle": "PHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax: A practical guide to combining the power, performance, scalability, ... time, and high performance of PHP",
       "bookId": 6,
-      "rentDays": "3",
-      "rentDate": "2023-01-11T04:38:11.595Z",
-      "returnDate": "2023-04-23T04:38:11.595Z",
-      "userId": "3",
-      "id": 2
+      "rentDays": "5",
+      "rentDate": "2023-01-13T04:46:28.220Z",
+      "returnDate": "2023-01-18T04:46:28.220Z",
+      "userId": "6",
+      "rentExpired": false,
+      "userName": "merlins",
+      "id": 10
+    },
+    {
+      "bookTitle": "Professional JavaScript for Web Developers",
+      "bookId": 10,
+      "rentDays": "4",
+      "rentDate": "2023-01-13T06:57:49.451Z",
+      "returnDate": "2023-01-17T06:57:49.451Z",
+      "userId": "6",
+      "rentExpired": false,
+      "userName": "merlins",
+      "id": 11
+    },
+    {
+      "bookTitle": "Communicating Design: Developing Web Site Documentation for Design and Planning (2nd Edition) (Voices That Matter)",
+      "bookId": 49,
+      "rentDays": "6",
+      "rentDate": "2023-01-13T07:00:22.756Z",
+      "returnDate": "2023-01-19T07:00:22.756Z",
+      "userId": "5",
+      "rentExpired": false,
+      "userName": "Arthi",
+      "id": 12
     }
   ]
 }

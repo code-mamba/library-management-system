@@ -1,7 +1,8 @@
 import axios from 'axios'
 import{useNavigate} from 'react-router-dom'
 import '../styles/BookList.css'
-import ReactPaginate from 'react-pa'
+import Image from '../Assets/library.jpg'
+
 const BookList = ({books,isAdmin,setBooks}) => {
 const navigate = useNavigate()
     
@@ -33,8 +34,30 @@ const rent =(id)=>{
                 books.map((book)=>{
                     return( 
                         <>
-                        <section className='container'>
+                        <nav className='container mt-5'>
                             <div className='card'>
+                                    <div className='row'>
+                                        <div className='col-md-4'>
+                                            <img title="the value" src = {Image} className='img-fluid'></img>
+                                        </div>
+                                        <div className='col-md-8 mb-3 ' >
+                                            <h5 className='card-title mt-3'>Title:{book.title}</h5>
+                                            <p>Categories: {book.categories}</p>
+                                            <p>Author: {book.author}</p>
+                                            <p>Description: {book.description}</p>
+                                            <p>Year:{book.year}</p>
+                                            <p>Availability: {book.available}</p>
+                                            {isAdmin&&<button className='btn btn-primary' onClick={()=>{edit(book.id)}}>Edit</button>}
+                                            {isAdmin&&<button className='btn btn-danger' onClick={()=>{deleteBook(book.id)}}>Delete</button>}
+                                            {!isAdmin&&<button className='btn btn-success' onClick={()=>{rent(book.id)}}>Rent Book</button>}
+
+                                        </div>
+                                    </div>
+                            </div>
+
+                        </nav>
+                        {/* {book.quantity&&<section className='container' >
+                            <div className='card'key={book.id}>
                                 <div className='card-image'>
                                 
                                 </div>   
@@ -44,11 +67,15 @@ const rent =(id)=>{
                                     <p>{book.description}</p>
                                     <p>Author: {book.author}</p>
                                     <p>Quantity:{book.quantity}</p>
-                                    <p>Availabilty: {book.Availabilty}</p>
-                                    <a href=''>Readmore</a>
+                                    <p>Year:{book.year}</p>
+                                    <p>Availabilty: {book.available}</p>
+                                    {isAdmin&&<button onClick={()=>{edit(book.id)}}>Edit</button>}
+                         {isAdmin &&<button onClick={()=>{deleteBook(book.id)}}>Delete</button>}
+                         {!isAdmin &&<button onClick={()=>rent(book.id)}>Rent</button>}
+
                                     
                             </div>
-                        </section>
+                        </section>} */}
                         </>
                     //    <>
                     //     <div className="card" key={book.id}>

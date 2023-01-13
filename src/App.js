@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route,Routes,useNavigate } from 'react-router-dom';
 import Home from './components/Home';
 import AddBooks from './components/AddBooks';
@@ -10,6 +10,8 @@ import Navbar from './components/Navbar';
 import AddUser from './components/AddUser';
 import EditBook from './components/EditBook';
 import RentBook from './components/RentBooks';
+import RentList from './components/RentList';
+
 
 
 function App() {
@@ -19,8 +21,13 @@ function App() {
   const logOut=()=>{
     setisLoggedIn(false);
     setisAdmin(false);
+    sessionStorage.removeItem("id");
+    sessionStorage.removeItem("userName");
     navigate('/');
   }
+  useEffect(()=>{
+    setisLoggedIn(!!sessionStorage.getItem("id"));
+  },[])
   return (
     <div className="App">
       <Navbar isAdmin={isAdmin} isloggedIn={isLoggedIn} logOut={logOut}/>
@@ -32,6 +39,8 @@ function App() {
               {isLoggedIn&&<Route path="/home"element={<Home isAdmin={isAdmin}/>}></Route>}
               {isLoggedIn&&<Route path = '/edit-books/:id' element={<EditBook/>}></Route>}
               {isLoggedIn && <Route path='/rent-books/:id' element={<RentBook/>}></Route>}
+              {isLoggedIn &&<Route path='/rent-list' element={<RentList/>}></Route>}
+              
               <Route path='*' element={<PageNotFound/>}></Route>
         </Routes>
     </div>

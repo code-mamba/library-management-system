@@ -32,25 +32,57 @@ const AddUser = () => {
         }
     }
     return ( 
+      <div className="container">
+      <div className="row">
+        <div className="col-md-6 offset-md-3">
+          <h2 className="text-center text-dark mt-5">Register Form</h2>
+          <div className="text-center mb-5 text-dark">LMS</div>
+          <div className="card my-5">
+  
+            <form className="card-body cardbody-color p-lg-5" onSubmit={addUser}>
+  
+  
+              <div className="mb-3">
+                <input type="text" className="form-control" id="Username"
+                  placeholder="Enter Your User Name" value={userName} onChange={e=>{setuserName(e.target.value)}}/>
+              </div>
+              <div className="mb-3">
+                  <input type="text" className = 'form-control' id ="Usermail" placeholder="Enter Your Mail"
+                  value={userEmail} onChange={(e)=>{setuserEmail(e.target.value)}} ></input>
+              </div>
+              <div className="mb-3">
+                <input type="password" className="form-control" id="password" placeholder="Enter Your password"value={userPassword}
+                onChange={(e)=>{setuserPassword(e.target.value)}}/>
+              </div>
+              {errMsg&& <p style={{color:"red"}}>{errMsg}</p>}
+              <div className="text-center"><button type="submit" className="btn btn-color px-5 mb-5 w-100">Register</button></div>
+              
+            </form>
+          </div>
+  
+        </div>
+      </div>
+    </div>
 
-        <div className="Signin">
-        <form className="sign-in-container" onSubmit={addUser}>
 
-          <div className="input-container">
-            <label htmlFor="name">Name</label>
-            <input type="text" required value ={userName} onChange = {(e)=>{setuserName(e.target.value)}}></input>
-            <label  htmlFor="email">E-mail</label>
-            <input type="text"  required value={userEmail} onChange={(e)=>setuserEmail(e.target.value)}></input>
-            <label htmlFor="password">Password</label>
-            <input type="password" required value={userPassword} onChange={(e)=>setuserPassword(e.target.value)}></input>
-            {errMsg&& <p>{errMsg}</p>}
-            </div>
-            <button className="AddBookBut">Sign Up</button>
+      //   <div className="Signin">
+      //   <form className="sign-in-container" onSubmit={addUser}>
+
+      //     <div className="input-container">
+      //       <label htmlFor="name">Name</label>
+      //       <input type="text" required value ={userName} onChange = {(e)=>{setuserName(e.target.value)}}></input>
+      //       <label  htmlFor="email">E-mail</label>
+      //       <input type="text"  required value={userEmail} onChange={(e)=>setuserEmail(e.target.value)}></input>
+      //       <label htmlFor="password">Password</label>
+      //       <input type="password" required value={userPassword} onChange={(e)=>setuserPassword(e.target.value)}></input>
+      //       {errMsg&& <p>{errMsg}</p>}
+      //       </div>
+      //       <button className="AddBookBut">Sign Up</button>
 
           
 
-        </form>
-      </div>
+      //   </form>
+      //  </div>
 
         // <div className="add-user">
         //     <form onSubmit={addUser}>
