@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import BookList from "./BookList";
+import BookList from "../BookList/BookList";
 import axios from "axios";
+import './Home.css'
 const Home = ({isAdmin}) => {
         const[books,setBooks]=useState(null);
         useEffect(()=>{
@@ -15,7 +16,7 @@ const Home = ({isAdmin}) => {
             // }).catch((err)=>{console.log(err)})
         },[]);
     return ( 
-        <div className="home">
+        <div className="home" style={{backgroundColor:'#c8dcff'}}>
            {books&&<BookList books={books} isAdmin={isAdmin} setBooks={setBooks}/>}
         </div> 
     );

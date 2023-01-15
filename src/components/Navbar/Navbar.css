@@ -1,0 +1,13 @@
+
+.navbar-brand{
+    font-size: 50px;
+    font-style: italic;
+    
+    
+    
+}
+
+.nav-link:hover{
+    background-color: #c8dcff;
+    color:black
+}

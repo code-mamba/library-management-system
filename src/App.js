@@ -1,16 +1,16 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Route,Routes,useNavigate } from 'react-router-dom';
-import Home from './components/Home';
-import AddBooks from './components/AddBooks';
-import MyBooks from './components/MyBooks';
-import Login from './components/Login'
-import PageNotFound from './components/404';
-import Navbar from './components/Navbar';
-import AddUser from './components/AddUser';
-import EditBook from './components/EditBook';
-import RentBook from './components/RentBooks';
-import RentList from './components/RentList';
+import Home from './components/Home/Home';
+import AddBooks from './components/AddBooks/AddBooks';
+import MyBooks from './components/MyBooks/MyBooks';
+import Login from './components/Login/Login'
+import PageNotFound from './components/404/404';
+import Navbar from './components/Navbar/Navbar';
+import AddUser from './components/AddUser/AddUser';
+import EditBook from './components/EditBook/EditBook';
+import RentBook from './components/RentBooks/RentBooks';
+import RentList from './components/RentList/RentList';
 
 
 

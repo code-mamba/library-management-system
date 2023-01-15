@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import axios from "axios";
+import './EditBook.css'
 const EditBook = ()=>{
     const[title, setTitle] = useState()
     const[author, setAuthor]= useState()

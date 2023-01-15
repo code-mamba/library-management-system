@@ -1,9 +1,10 @@
-/* @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
 *{
   margin: 0;
-  color: #333;
+  color: #0e1c36;
+  
 }
-.navbar{
+/* .navbar{
   padding: 20px;
  display: flex; 
  align-items: center;

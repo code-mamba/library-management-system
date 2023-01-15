@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import '../styles/RentBooks.css'
+import './RentBooks.css'
 
 const RentBook =()=>{
     const {id}=useParams();
@@ -30,24 +30,7 @@ const RentBook =()=>{
     }
 
     return(
-//         <div className="card mb-3" style="max-width: 540px;">
-//   <div className="row no-gutters">
-   
-//     <div className="col-md-8">
-//       <div className="card-body">
-//       {book&&<h3>Book Title:{book.title}</h3>}
-//              {book&&<h3>Book Author:{book.author}</h3>}
-//              {book&&<h3>Book Category:{book.categories}</h3>}
-//              {book&&<h3>Book Year:{book.year}</h3>}
-//              {book&&<h3>Book Description:{book.description}</h3>}
-//              {book&&<h3>Book Edition:{book.edition}</h3>}
-//              {book&&<h3>Book Language:{book.language}</h3>}
-//              {book&&<h3>Book pages:{book.pages}</h3>}
-//              {book&&<h3>No.of Available Books:{book.quantity}</h3>}
-//       </div>
-//     </div>
-//   </div>
-// </div>
+
         <div className="card">
             <div className="container">
                 
@@ -63,24 +46,13 @@ const RentBook =()=>{
              <form onSubmit={rentBook}>
                 <label>Number Of Days of Rent:</label>
                 <input type="number" value={rentDays} onChange={(e)=>{setRentDays(e.target.value)}} />
-                <button type="submit">Rent</button>
+                <button className="btn" type="submit">Rent</button>
              </form>
             </div>
 
 
-        // </div>
-        // <div className="">
-        //     {book&&<h3>Book Title:{book.title}</h3>}
-        //     {book&&<h3>Book Author:{book.author}</h3>}
-        //     {book&&<h3>Book Category:{book.categories}</h3>}
-        //     {book&&<h3>Book Year:{book.year}</h3>}
-        //     {book&&<h3>Book Description:{book.description}</h3>}
-        //     {book&&<h3>Book Edition:{book.edition}</h3>}
-        //     {book&&<h3>Book Language:{book.language}</h3>}
-        //     {book&&<h3>Book pages:{book.pages}</h3>}
-        //     {book&&<h3>No.of Available Books:{book.quantity}</h3>}
-        //     
-        // </div>
+         </div>
+        
     )
 }
 export default RentBook

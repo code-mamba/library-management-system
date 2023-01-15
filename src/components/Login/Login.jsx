@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/Login.css"
+import "./Login.css"
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -37,7 +37,7 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
                 navigate('/home')
               }
               else{
-                seterrMsg("Invalid Password");
+                seterrMsg("Invalid Password or email");
                 setisLoggedIn(false);
               }
             }
