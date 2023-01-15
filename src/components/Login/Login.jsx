@@ -23,23 +23,17 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
         }
         else{
           axios.get("http://localhost:8000/users?userEmail="+userEmail).then((res)=>{
-            if(res.data.length===0){
-              seterrMsg("Invalid Login Credintials");
-              setisLoggedIn(false);
-            }
-            else{
-              if(res.data[0].userPassword===userPassword){
+            if(res.data[0].userPassword===userPassword){
                 seterrMsg(null);
                 res.data[0].isAdmin?setisAdmin(true):setisAdmin(false);
                 setisLoggedIn(true);
                 sessionStorage.setItem("id",res.data[0].id);
                 sessionStorage.setItem("userName",res.data[0].userName);
                 navigate('/home')
-              }
-              else{
+            }
+            else{
                 seterrMsg("Invalid Password or email");
                 setisLoggedIn(false);
-              }
             }
           });
           // fetch("http://localhost:8000/users?userEmail="+userEmail).then(res=>{

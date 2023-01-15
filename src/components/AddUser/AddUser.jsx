@@ -63,39 +63,6 @@ const AddUser = () => {
         </div>
       </div>
     </div>
-
-
-      //   <div className="Signin">
-      //   <form className="sign-in-container" onSubmit={addUser}>
-
-      //     <div className="input-container">
-      //       <label htmlFor="name">Name</label>
-      //       <input type="text" required value ={userName} onChange = {(e)=>{setuserName(e.target.value)}}></input>
-      //       <label  htmlFor="email">E-mail</label>
-      //       <input type="text"  required value={userEmail} onChange={(e)=>setuserEmail(e.target.value)}></input>
-      //       <label htmlFor="password">Password</label>
-      //       <input type="password" required value={userPassword} onChange={(e)=>setuserPassword(e.target.value)}></input>
-      //       {errMsg&& <p>{errMsg}</p>}
-      //       </div>
-      //       <button className="AddBookBut">Sign Up</button>
-
-          
-
-      //   </form>
-      //  </div>
-
-        // <div className="add-user">
-        //     <form onSubmit={addUser}>
-        //         <label htmlFor="Name">Name</label>
-        //         <input type="text" name="" id=""required value={userName} onChange={(e)=>{ setuserName(e.target.value)}}/>
-        //         <label htmlFor="email">E-mail</label>
-        //         <input type="email" name="" id=""required value={userEmail} onChange={(e)=>{ setuserEmail(e.target.value)}}/>
-        //         <label htmlFor="password">Password</label>
-        //         <input type="password" name="" id=""required value={userPassword} onChange={(e)=>{ setuserPassword(e.target.value)}}/>
-        //         {errMsg&& <p>{errMsg}</p>}
-        //         <button type="submit">AddUser</button>
-        //     </form>
-        // </div>
      );
 }
  

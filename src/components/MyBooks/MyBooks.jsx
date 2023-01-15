@@ -8,7 +8,7 @@ const MyBooks = () => {
     const userId = sessionStorage.getItem("id");
     const [rentedBooks, setRentedBooks] = useState();
     const today=new Date();
-
+   
     const returnBook =(id, bookId)=>{
             axios.delete('http://localhost:8000/rented-books/'+id).then(()=>{axios.get('http://localhost:8000/books/'+bookId).then((res)=>{res.data.quantity=res.data.quantity+1;axios.put('http://localhost:8000/books/'+bookId,res.data).then((res)=>{navigate('/home')})})});
     }
@@ -18,12 +18,15 @@ const MyBooks = () => {
             var returnDay=new Date(book.returnDate);
             if(returnDay<today){
                 book.rentExpired=true;
+                const oneDay = 24 * 60 * 60 * 1000;
+                var differenceInDays=Math.round(Math.abs((today-returnDay)/oneDay));
+                book.penalty=differenceInDays*50;
             }
             });
             setRentedBooks(res.data);
         })
         .catch(err=>console.log(err));
-    },[])
+    })
     return ( 
         <div className="mybooks">
            {rentedBooks&&
@@ -35,6 +38,7 @@ const MyBooks = () => {
                             <h4>Booktitle:{book.bookTitle}</h4>
                             <p>Return Date: {book.returnDate.slice(0,10)}</p>
                             {book.rentExpired&&<p className="text-danger">Rent Expired</p>}
+                            {book.rentExpired&&<p className="text-danger">Penalty amount is ₹{book.penalty}.</p> }
                             <button onClick={()=>{returnBook(book.id,book.bookId)}}>Return Book</button>
                             </div>
                     </section>
