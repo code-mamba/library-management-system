@@ -34,19 +34,19 @@ const RentBook =()=>{
         <div className="card">
             <div className="container">
                 
-             {book&&<h3>Book Title:{book.title}</h3>}
-             {book&&<h3>Book Author:{book.author}</h3>}
-             {book&&<h3>Book Category:{book.categories}</h3>}
-             {book&&<h3>Book Year:{book.year}</h3>}
-             {book&&<h3>Book Description:{book.description}</h3>}
-             {book&&<h3>Book Edition:{book.edition}</h3>}
-             {book&&<h3>Book Language:{book.language}</h3>}
-             {book&&<h3>Book pages:{book.pages}</h3>}
-             {book&&<h3>No.of Available Books:{book.quantity}</h3>}
+             {book&&<h5>Book Title:{book.title}</h5>}
+             {book&&<h5>Book Author:{book.author}</h5>}
+             {book&&<h5>Book Category:{book.categories}</h5>}
+             {book&&<h5>Book Year:{book.year}</h5>}
+             {book&&<p><strong>Book Description: </strong>{book.description}</p>}
+             {book&&<h5>Book Edition:{book.edition}</h5>}
+             {book&&<h5>Book Language:{book.language}</h5>}
+             {book&&<h5>Book pages:{book.pages}</h5>}
+             {book&&<h5>No.of Available Books:{book.quantity}</h5>}
              <form onSubmit={rentBook}>
                 <label>Number Of Days of Rent:</label>
-                <input type="number" value={rentDays} onChange={(e)=>{setRentDays(e.target.value)}} />
-                <button className="btn" type="submit">Rent</button>
+                <input type="number" value={rentDays} min='1' max='10' onChange={(e)=>{setRentDays(e.target.value)}} />
+                <button className="rent-btn" type="submit" >Rent</button>
              </form>
             </div>
 

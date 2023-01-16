@@ -14,6 +14,8 @@ import RentList from './components/RentList/RentList';
 
 
 
+
+
 function App() {
   const [isLoggedIn,setisLoggedIn]=useState(false);
   const [isAdmin,setisAdmin]=useState(null);
@@ -39,7 +41,10 @@ function App() {
               {isLoggedIn&&<Route path="/home"element={<Home isAdmin={isAdmin}/>}></Route>}
               {isLoggedIn&&<Route path = '/edit-books/:id' element={<EditBook/>}></Route>}
               {isLoggedIn && <Route path='/rent-books/:id' element={<RentBook/>}></Route>}
+              
               {isLoggedIn &&<Route path='/rent-list' element={<RentList/>}></Route>}
+              
+
               
               <Route path='*' element={<PageNotFound/>}></Route>
         </Routes>

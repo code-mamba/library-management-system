@@ -18,7 +18,7 @@ const RentList = ()=>{
            rentList.map((book)=>{
             return(
             
-            <div class="card1" >
+            <div className="card1" >
             <div className="card-body1">
               <h4 className="card-title">{book.bookTitle}</h4>
               <h6 className="card-subtitle mb-2 text-muted">UserName: {book.userName}</h6>
@@ -34,10 +34,3 @@ const RentList = ()=>{
     )
 }
 export default RentList
- // <section className="container">
-                //     <h4>BookTitle: {book.bookTitle}</h4>
-                //     <h3>UserName: {book.userName}</h3>
-                //     <p>RentDate: {book.rentDate.slice(0,10)}</p>
-                //     <p>ReturnDate: {book.returnDate.slice(0,10)}</p>
-
-                // </section>

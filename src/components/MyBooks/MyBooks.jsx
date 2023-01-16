@@ -33,13 +33,13 @@ const MyBooks = () => {
             rentedBooks.map((book)=>{
                 return( 
                     <section className='container'>
-                        <div className='card'>
+                        <div className='myBooks-card'>
                              
                             <h4>Booktitle:{book.bookTitle}</h4>
                             <p>Return Date: {book.returnDate.slice(0,10)}</p>
                             {book.rentExpired&&<p className="text-danger">Rent Expired</p>}
                             {book.rentExpired&&<p className="text-danger">Penalty amount is ₹{book.penalty}.</p> }
-                            <button onClick={()=>{returnBook(book.id,book.bookId)}}>Return Book</button>
+                            <button className="button" onClick={()=>{returnBook(book.id,book.bookId)}}>Return Book</button>
                             </div>
                     </section>
                 )

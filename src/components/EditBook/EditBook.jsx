@@ -12,7 +12,8 @@ const EditBook = ()=>{
     const[pages,setPages] = useState()
     const[description,setDesc] = useState();
     const[quantity,setQuantity]=useState();
-    const[available,setAvailable]=useState()
+    const[available,setAvailable]=useState();
+    const[volume, setVolume] = useState()
     const navigate =useNavigate();
     const {id} =useParams();
     useEffect(()=>{
@@ -26,6 +27,7 @@ const EditBook = ()=>{
             setLanguage(res.data.language);
             setPages(res.data.pages);
             setQuantity(res.data.quantity);
+            setVolume(res.data.volume);
             setAvailable(res.data.available)
         }).catch((err)=>{console.log(err)});
         // fetch('http://localhost:8000/books/'+id).then((res)=>{
@@ -97,6 +99,11 @@ const EditBook = ()=>{
                 <label>Edit Book Language</label>
                 <input type="text" className="form-control" id="editEdition" placeholder="Edit Book Language"value={language}
                 onChange={(e)=>{setLanguage(e.target.value)}}/>
+              </div>
+              <div className="mb-3">
+                <label>Edit Book Volume</label>
+                <input type="text" className="form-control" id="editVolume" placeholder="Edit Book Volume"value={volume}
+                onChange={(e)=>{setVolume(e.target.value)}}/>
               </div>
               <div className="mb-3">
                 <label>Edit Book Pages</label>

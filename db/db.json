@@ -56,6 +56,20 @@
       "userPassword": "arthi123",
       "isAdmin": false,
       "id": 8
+    },
+    {
+      "userName": "Hamza",
+      "userEmail": "hamza2000@gmail.com",
+      "userPassword": "hamza2000",
+      "isAdmin": false,
+      "id": 9
+    },
+    {
+      "userName": "test user",
+      "userEmail": "testuser@gmail.com",
+      "userPassword": "testtest123",
+      "isAdmin": false,
+      "id": 10
     }
   ],
   "books": [
@@ -65,11 +79,11 @@
       "categories": "Computer Science/Web/Server Side Scripting/PHP",
       "year": "2007",
       "edition": "1st Ed.",
-      "language": "en",
+      "language": "english",
       "pages": "375",
       "description": "Based on the title, the book has so many things to discuss but it actually has less than 400 pages that even include the glossary of terms. The reader might have a second thought about the book since it might not promise to discuss the things written in the chapter.\r\rBut if you go through the chapters, you will be surprised how each topic could be discussed thoroughly in this book. Using the traditional structures in most web and application development books, it slowly introduces each concept before they are brought together in the final chapters. \r\rPHP and Oracle are discussed separately at first with sample codes and situations to ensure that the reader understands each concept. It then goes to discuss who they could be efficiently integrated. The final chapter which is about Ajax is very impressive as it gives the developers a chance to develop an Ajax based application using popular practices in web development. The robustness of Oracle and efficiency of PHP is actually shown in an Ajax based application.\r\rPHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax is a good starting book for any web development professionals and enthusiasts. It covers the basics of web development using PHP and database management of Oracle including an installation guide for Oracle and PHP. If you are looking for a book to start with PHP and Oracle, this book offers a good start. \r\rFor developers who are experienced in this discipline, the book could be a good reference point for developing an application. The sample codes that helps the reader understands the underlying concept of the application with actual scenarios, this PHP and Oracle book is almost too good to pass on.",
       "available": true,
-      "quantity": 9,
+      "quantity": 8,
       "id": 6
     },
     {
@@ -82,7 +96,7 @@
       "pages": "276",
       "description": "Like someone else said, you can learn MODx by finding resources on the internet. I started reading this book to get introduced to the system, and it was OK for that, but I found I didn't really use it or need it when I actually started making my MODx site. It's a good overview/introduction that may help you understand what MODx is and how it functions, but not totally needed if you just want to jump right in and make a site with MODx. Also, since the release of MODx 1.0/1.0.1, the terminology used in this book is no longer correct, so it may actually confuse you (Resources are now Elements, Documents are now Resources, etc.) And I found some of the writing to be awkward.",
       "available": true,
-      "quantity": 6,
+      "quantity": 5,
       "id": 8
     },
     {
@@ -98,7 +112,7 @@
       "url": "http://bookzz.org/dl/682507/a9cd0c",
       "description": "Probably the most complete and updated book that you may find about Javascript.The author made a great job writting about some of the most important topics on javascript development and highlighting the difference among browsers.Most of the topics are already covered in other javascript books I have read before, but not in the way Nicholas does, he usually goes deeper on every topic.If you have some knowledge on javascript and want to reach another level, this is the book for you. If you consider yourself a guru, you may enjoy it as well, but definitely, not for newbies.",
       "cover": "http://libgen.org/covers/254000/b07adfcaf9641b17fe76115bf174f44c-d.jpg",
-      "quantity": 7,
+      "quantity": 4,
       "available": true
     },
     {
@@ -118,20 +132,17 @@
       "available": true
     },
     {
-      "id": 13,
       "title": "Beginning CSS Web Development: From Novice to Professional",
       "author": "Simon Collison",
       "categories": "Компьютеры//Web-дизайн",
-      "volume": "",
       "year": "2006",
-      "edition": "",
-      "language": "en",
+      "edition": "paperback",
+      "language": "english",
       "pages": "448",
-      "url": "http://bookzz.org/dl/879439/c82b5c",
       "description": "Beginning CSS Web Development: From Novice to Professional, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well.",
-      "cover": "http://libgen.org/covers/454000/ee845efa4da1004f1177ae9b498eca22-d.jpg",
-      "quantity": 8,
-      "available": true
+      "available": true,
+      "quantity": 7,
+      "id": 13
     },
     {
       "id": 14,
@@ -591,7 +602,7 @@
       "language": "English",
       "pages": "259",
       "description": "When in love, you tend to take each other for granted, and sometimes, that can cost you a lifetime of togetherness . . .Ronnie knew that his first crush was way out of his league, and yet he pursued and wooed Adira. Shyly and from a distance in the beginning, and more persuasively later. He couldn't believe it when the beautiful Adira actually began to reciprocate, falling in love with him for his simplicity and honesty. Slowly, as they get close and comfortable with each other, life takes on another hue. From truly magical it becomes routine. There are fights and then making-up sessions-a clash of egos and doubts.Things begin to change for the worst.It is too late.Ronnie and Adira will probably never find their forever after . . ",
-      "quantity": "12",
+      "quantity": 11,
       "isAvailable": true,
       "id": 51
     }
@@ -642,26 +653,114 @@
       "id": 12
     },
     {
-      "bookTitle": "Art of Java Web Development: Struts, Tapestry, Commons, Velocity, JUnit, Axis, Cocoon, InternetBeans, WebWork",
-      "bookId": 11,
-      "rentDays": "5",
-      "rentDate": "2023-01-14T17:20:20.605Z",
-      "returnDate": "2023-01-19T17:20:20.605Z",
+      "bookTitle": "Beginning CSS Web Development: From Novice to Professional",
+      "bookId": 13,
+      "rentDays": "4",
+      "rentDate": "2023-01-16T04:06:21.143Z",
+      "returnDate": "2023-01-20T04:06:21.143Z",
+      "userId": "5",
+      "rentExpired": false,
+      "userName": "Arthi",
+      "id": 15
+    },
+    {
+      "bookTitle": "Professional JavaScript for Web Developers",
+      "bookId": 10,
+      "rentDays": "6",
+      "rentDate": "2023-01-16T04:11:34.495Z",
+      "returnDate": "2023-01-22T04:11:34.495Z",
       "userId": "3",
       "rentExpired": false,
       "userName": "TKR",
-      "id": 13
+      "id": 16
+    },
+    {
+      "bookTitle": "Professional JavaScript for Web Developers",
+      "bookId": 10,
+      "rentDays": "1",
+      "rentDate": "2023-01-16T04:55:09.917Z",
+      "returnDate": "2023-01-17T04:55:09.917Z",
+      "userId": "5",
+      "rentExpired": false,
+      "userName": "Arthi",
+      "id": 17
+    },
+    {
+      "bookTitle": "Professional JavaScript for Web Developers",
+      "bookId": 10,
+      "rentDays": "2",
+      "rentDate": "2023-01-16T04:58:21.632Z",
+      "returnDate": "2023-01-18T04:58:21.632Z",
+      "userId": "5",
+      "rentExpired": false,
+      "userName": "Arthi",
+      "id": 18
     },
     {
       "bookTitle": "Art of Java Web Development: Struts, Tapestry, Commons, Velocity, JUnit, Axis, Cocoon, InternetBeans, WebWork",
       "bookId": 11,
+      "rentDays": "1",
+      "rentDate": "2023-01-16T05:05:35.071Z",
+      "returnDate": "2023-01-17T05:05:35.071Z",
+      "userId": "5",
+      "rentExpired": false,
+      "userName": "Arthi",
+      "id": 19
+    },
+    {
+      "bookTitle": "Art of Java Web Development: Struts, Tapestry, Commons, Velocity, JUnit, Axis, Cocoon, InternetBeans, WebWork",
+      "bookId": 11,
+      "rentDays": "1",
+      "rentDate": "2023-01-16T05:05:36.787Z",
+      "returnDate": "2023-01-17T05:05:36.787Z",
+      "userId": "5",
+      "rentExpired": false,
+      "userName": "Arthi",
+      "id": 20
+    },
+    {
+      "bookTitle": "MODx Web Development",
+      "bookId": 8,
+      "rentDays": "1",
+      "rentDate": "2023-01-16T09:34:00.786Z",
+      "returnDate": "2023-01-17T09:34:00.786Z",
+      "userId": "9",
+      "rentExpired": false,
+      "userName": "Hamza",
+      "id": 21
+    },
+    {
+      "bookTitle": "MODx Web Development",
+      "bookId": 8,
+      "rentDays": "1",
+      "rentDate": "2023-01-16T09:34:17.814Z",
+      "returnDate": "2023-01-17T09:34:17.814Z",
+      "userId": "9",
+      "rentExpired": false,
+      "userName": "Hamza",
+      "id": 23
+    },
+    {
+      "bookTitle": "PHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax: A practical guide to combining the power, performance, scalability, ... time, and high performance of PHP",
+      "bookId": 6,
+      "rentDays": "2",
+      "rentDate": "2023-01-16T12:31:33.588Z",
+      "returnDate": "2023-01-18T12:31:33.588Z",
+      "userId": "2",
+      "rentExpired": false,
+      "userName": "Dhanush",
+      "id": 26
+    },
+    {
+      "bookTitle": "Something I Never Told You",
+      "bookId": 51,
       "rentDays": "5",
-      "rentDate": "2023-01-14T17:20:25.462Z",
-      "returnDate": "2023-01-19T17:20:25.462Z",
+      "rentDate": "2023-01-16T13:22:04.371Z",
+      "returnDate": "2023-01-21T13:22:04.371Z",
       "userId": "3",
       "rentExpired": false,
       "userName": "TKR",
-      "id": 14
+      "id": 28
     }
   ]
 }

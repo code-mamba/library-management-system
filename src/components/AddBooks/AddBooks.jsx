@@ -27,7 +27,7 @@ const AddBooks = () => {
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <h2 className="text-center text-dark mt-5">Add Books</h2>
-          <div className="text-center mb-5 text-dark">LMS</div>
+          <div className="Logo">LMS</div>
           <div className="card my-5">
   
             <form className="card-body cardbody-color p-lg-5" onSubmit={addBooks}>
@@ -86,7 +86,7 @@ const AddBooks = () => {
                 onChange={(e)=>{setQuantity(e.target.value)}}required/>
               </div>
            
-              <div className="text-center"><button type="submit" className="btn btn-color px-5 mb-5 w-100">Add Book</button></div>
+              <div className="text-center"><button type="submit" className="btn btn-color px-5 mb-5 w-50">Add Book</button></div>
               
             </form>
           </div>

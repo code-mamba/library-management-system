@@ -1,6 +1,20 @@
 .container{
   background-color: #c8dcff;
 }
-.btn{
-   color:#c8dcff
+.rent-btn{
+
+ background-color: orange;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+}
+.rent-btn:hover{
+  background-color: rgb(198, 152, 66);
 }
