@@ -9,7 +9,7 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
     const [errMsg,seterrMsg]=useState(null);
     const navigate=useNavigate();
     const validateForm=(email,password)=>{
-      if(email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)&&password.match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/)){
+      if(email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)&&password.match(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/)){
         return false
       }else{
         return true
@@ -63,10 +63,13 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
               <div className="mb-3">
                 <label>Enter password</label>
                 <input type="password" className="form-control" id="password" placeholder="password"required value={userPassword} onChange={(e)=>setuserPassword(e.target.value)}/>
+                <i class="fa fa-eye fa-fw" aria-hidden="true"></i>
+                
+                
               </div>
-              {errMsg&& <p>{errMsg}</p>}
+              {errMsg&& <p style={{color: 'red'}}>{errMsg}</p>}
               <div className="text-center"><button type="submit" className="btn btn-color px-5 mb-5 w-100">Login</button></div>
-           
+              <ul><li>Minimum eight characters, at least one letter, one number and one special character:</li></ul>
             </form>
           </div>
   

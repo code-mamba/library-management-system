@@ -9,9 +9,11 @@ const RentBook =()=>{
     const [rentDays,setRentDays]=useState();
     const navigate=useNavigate();
 
+
+
     useEffect(()=>{
         axios.get('http://localhost:8000/books/'+id).then((res)=>{
-            setBook(res.data);
+            setBook(res.data)
         }).catch((err)=>{console.log(err)});
     },[]);
    
@@ -29,6 +31,7 @@ const RentBook =()=>{
         }).catch(err=>console.log(err));
     }
 
+    
     return(
 
         <div className="card">
@@ -46,6 +49,7 @@ const RentBook =()=>{
              <form onSubmit={rentBook}>
                 <label>Number Of Days of Rent:</label>
                 <input type="number" value={rentDays} min='1' max='10' onChange={(e)=>{setRentDays(e.target.value)}} />
+                <h5 style={{color:'red'}}>You can get rent maximum 10 days</h5>
                 <button className="rent-btn" type="submit" >Rent</button>
              </form>
             </div>
