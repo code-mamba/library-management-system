@@ -26,7 +26,7 @@ const MyBooks = () => {
             setRentedBooks(res.data);
         })
         .catch(err=>console.log(err));
-    })
+    },[])
     return ( 
         <div className="mybooks">
            {rentedBooks&&
@@ -36,7 +36,9 @@ const MyBooks = () => {
                         <div className='myBooks-card'>
                              
                             <h4>Booktitle:{book.bookTitle}</h4>
+                            <p>Rented Date:{book.rentDate.slice(0,10)}</p>
                             <p>Return Date: {book.returnDate.slice(0,10)}</p>
+                            <p>Borrowed Books: {book.borrowedQuantity}</p>
                             {book.rentExpired&&<p className="text-danger">Rent Expired</p>}
                             {book.rentExpired&&<p className="text-danger">Penalty amount is ₹{book.penalty}.</p> }
                             <button className="button" onClick={()=>{returnBook(book.id,book.bookId)}}>Return Book</button>

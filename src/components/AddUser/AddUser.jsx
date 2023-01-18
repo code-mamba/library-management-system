@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
 import "../Login/Login.css"
 import axios from "axios";
 
+
+
+
 const AddUser = () => {
+   
     const [userName,setuserName]=useState('');
     const [userEmail,setuserEmail]=useState('');
     const [userPassword,setuserPassword]=useState('');
@@ -23,6 +28,7 @@ const AddUser = () => {
         }
         else{
             const user={userName,userEmail,userPassword,"isAdmin":false};
+              alert("Succesfully Signedin")
             axios.post('http://localhost:8000/users',user).then((res)=>{navigate('/');}).catch((err)=>{console.log(err);})
             // fetch('http://localhost:8000/users',{
             //     method:'POST',
@@ -68,6 +74,7 @@ const AddUser = () => {
       </div>
     </div>
      );
+     
 }
  
 export default AddUser;

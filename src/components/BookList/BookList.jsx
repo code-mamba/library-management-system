@@ -2,7 +2,6 @@ import axios from 'axios'
 import { useState } from 'react'
 import{useNavigate} from 'react-router-dom'
 import './BookList.css'
-import Image from '../../Assets/library.jpg'
 const BookList = ({books,isAdmin,setBooks}) => {
 const navigate = useNavigate()
 
@@ -22,7 +21,7 @@ const nextPageHandler = ()=>{
     if(currentPage!=numOfTotalPages)setCurrentPage(currentPage+1)
 }
 
-console.log(pages)
+
  
 const edit = (id) =>{
     navigate('/edit-books/'+id)
@@ -50,7 +49,7 @@ const rent =(id)=>{
                             <div className='card'  style={{backgroundColor:'#e6e6e6'}}>
                                     <div className='row'>
                                         <div className='col-md-4'>
-                                            <img title="the value" src = {Image} className='img-fluid'></img>
+                                            <img title="the value" src = {book.image} height = "1200px" width="1100px" className='img-fluid'></img>
                                         </div>
                                         <div className='col-md-8 mb-3 ' id={book.id}>
                                             <h5  className='card-title mt-3'>Title:{book.title}</h5>
@@ -70,14 +69,9 @@ const rent =(id)=>{
                                     </div>
                             </div>
                             
-
                         </nav>
                         
-                        
-                
-
-
-                   )
+                         )
                 })
             }
             <span onClick={prevPageHandler}>Prev</span>

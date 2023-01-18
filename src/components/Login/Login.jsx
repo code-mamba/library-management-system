@@ -18,7 +18,7 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
     const login=(e)=>{
         e.preventDefault();
         if(validateForm(userEmail,userPassword)){
-          seterrMsg("Invalid Login Credintials");
+          seterrMsg("Invalid User Name or Password");
           setisLoggedIn(false);
         }
         else{
@@ -63,7 +63,7 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
               <div className="mb-3">
                 <label>Enter password</label>
                 <input type="password" className="form-control" id="password" placeholder="password"required value={userPassword} onChange={(e)=>setuserPassword(e.target.value)}/>
-                <i class="fa fa-eye fa-fw" aria-hidden="true"></i>
+                <i className="fa fa-eye fa-fw" aria-hidden="true"></i>
                 
                 
               </div>

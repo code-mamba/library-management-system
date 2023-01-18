@@ -24,6 +24,7 @@ const RentList = ()=>{
               <h6 className="card-subtitle mb-2 text-muted">UserName: {book.userName}</h6>
               <p className="card-text">RentDate: {book.rentDate.slice(0,10)}</p>
               <p className="card-text">ReturnDate: {book.returnDate.slice(0,10)}</p>
+              <p className="card-text">Borrowed Quantity:{book.borrowedQuantity}</p>
               
             </div>
           </div>

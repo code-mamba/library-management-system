@@ -13,11 +13,12 @@ const AddBooks = () => {
     const[quantity, setQuantity] = useState(0)
     const[pages, setbookPages] = useState('')
     const[volume, setbookVolume] = useState('')
+    const[image,setImage] = useState('')
     const navigate = useNavigate()
 
     const addBooks = (e)=>{
         e.preventDefault()
-        const book = {title,author,categories,volume,year,edition,language,pages,description,quantity,"isAvailable":true};
+        const book = {title,author,categories,volume,year,edition,language,pages,description,quantity,"isAvailable":true, "image":image};
         axios.post('http://localhost:8000/books',book).then(res=>{navigate('/home');}).catch((err)=>{console.log(err);})
 
     }
@@ -84,6 +85,10 @@ const AddBooks = () => {
                 <label>Add Quantity</label>
                 <input className="form-control" id="addQuantity" type="number" placeholder="Add Book Quantity"value={quantity}
                 onChange={(e)=>{setQuantity(e.target.value)}}required/>
+              </div>
+              <div>
+                <label>Image Url</label>
+                <input className="form-control" id="imageUrl" type='text' palceholder = 'url' value={image} onChange={(e)=>{setImage(e.target.value)}} required ></input>
               </div>
            
               <div className="text-center"><button type="submit" className="btn btn-color px-5 mb-5 w-50">Add Book</button></div>
