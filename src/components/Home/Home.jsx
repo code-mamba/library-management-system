@@ -6,24 +6,24 @@ import './Home.css'
 
 const Home = ({isAdmin}) => {
         const[books,setBooks]=useState(null); 
-        const[searchTerm,setSearchTerm] = useState('')
         
         
         
+const categoryChange = (e) =>{
+  
+  axios.get('http://localhost:8000/books').then((res)=>{
+    var FilteredBooks = res.data.filter((book)=>{return book.categories == e.target.value})
+    setBooks(FilteredBooks)
+    
+  })
+ 
+  
+}        
 
         useEffect(()=>{
             axios.get('http://localhost:8000/books').then((res)=>{
                 setBooks(res.data);
-                {books&&books.filter((book)=>{
-                    if(searchTerm == ""){
-                      return book
-                    }
-                    else if(book.title.toLowerCase().includes(searchTerm.toLowerCase())){
-                      return book;
-                    }
-                  }).map((book,key)=>{
-                    return <div>{book.title} </div>
-                  })}
+                
              
                 
             }).catch((err)=>{console.log(err)});
@@ -36,7 +36,14 @@ const Home = ({isAdmin}) => {
         },[]);
     return ( 
         <div className="home" style={{backgroundColor:'#c8dcff'}}>
-            <input type="text" placeholder="Search..." value={searchTerm} onChange={e=>{setSearchTerm(e.target.value)}} ></input>
+          <select className="Custom-Select" onChange={categoryChange}>
+            <option value="technologies">Technologies</option>
+            <option value="self-help">Self help</option>
+            <option value = "adventure">Adventure</option>
+            <option value="Romance">Romance</option>
+          </select>
+          
+
            {books&&<BookList books={books} isAdmin={isAdmin} setBooks={setBooks}/>}
          
            

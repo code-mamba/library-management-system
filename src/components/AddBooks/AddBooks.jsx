@@ -43,7 +43,7 @@ const AddBooks = () => {
               </div>
               <div className="mb-3">
                 <label>Add Book Volume</label>
-                  <input type="text" className = 'form-control' id ="addAuthor" placeholder="Add Author"
+                  <input type="text" className = 'form-control' id ="addVolume" placeholder="Book Volume"
                   value={volume} onChange={(e)=>{setbookVolume(e.target.value)}} required></input>
               </div>
               <div className="mb-3">

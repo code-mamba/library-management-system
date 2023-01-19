@@ -64,6 +64,7 @@ const rent =(id)=>{
                                             {isAdmin&&<button className='btn btn-primary' onClick={()=>{edit(book.id)}}>Edit</button>}
                                             {isAdmin&&<button className='btn btn-danger' onClick={()=>{deleteBook(book.id)}}>Delete</button>}
                                             {!isAdmin&&<button className='btn btn-success' onClick={()=>{rent(book.id)}}>Rent Book</button>}
+                                            
 
                                         </div>
                                     </div>
