@@ -1,10 +1,25 @@
-.Custom-select{
-    position: relative;
+#Search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 50px;
+    height: 40px;
+    padding-left: 10px;
+    
+
 }
-.Custom-select select{
-    display: none;
-}
-.select-selected{
 
 
+.Select-Button{
+    margin-top: -10%;
+    margin-left: 45%;
+    top:50%;
+    background-color: lightblue;
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
 }

@@ -4,7 +4,7 @@ import{useNavigate} from 'react-router-dom'
 import './BookList.css'
 const BookList = ({books,isAdmin,setBooks}) => {
 const navigate = useNavigate()
-
+const[SearchTerm, setSearchTerm] = useState('')
 const[booksPerPage,setBooksPerPage] = useState(5)
 const numOfTotalPages = Math.ceil(books.length/booksPerPage)
 const[currentPage, setCurrentPage] = useState(1)
@@ -20,9 +20,6 @@ const prevPageHandler = ()=>{
 const nextPageHandler = ()=>{
     if(currentPage!=numOfTotalPages)setCurrentPage(currentPage+1)
 }
-
-
- 
 const edit = (id) =>{
     navigate('/edit-books/'+id)
 }
@@ -38,6 +35,7 @@ const rent =(id)=>{
     navigate('/rent-books/'+id)
     
 }
+
     return ( 
         <div className="book-list" style={{backgroundColor:'#c8dcff'}}>
             {
@@ -46,6 +44,7 @@ const rent =(id)=>{
                     return( 
                     
                         <nav className='container mt-5'>
+                             
                             <div className='card'  style={{backgroundColor:'#e6e6e6'}}>
                                     <div className='row'>
                                         <div className='col-md-4'>
@@ -55,7 +54,7 @@ const rent =(id)=>{
                                             <h5  className='card-title mt-3'>Title:{book.title}</h5>
                                             <p>Categories: {book.categories}</p>
                                             <p>Author: {book.author}</p>
-                                            <p>Description: {book.description}</p>
+                                            {/* <p>Description: {book.description}</p> */}
                                             <p> Year:{book.year}</p>
                                             <p>Language: {book.language}</p>
                                             <p>Volume:{book.volume}</p>

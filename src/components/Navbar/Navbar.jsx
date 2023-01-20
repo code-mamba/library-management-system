@@ -18,7 +18,7 @@ const Navbar = ({isAdmin,isloggedIn,logOut}) => {
                         <div className="navbar-nav">
                             {!isloggedIn&&<Link to="/" className="nav-link" style={{color:'white'}}>Login</Link>}
                             {!isloggedIn&&<Link to="/add-user"  className="nav-link" style={{color:'white'}}>Register</Link>}
-                            {isloggedIn&&<Link to="/home"  className="nav-link"  style={{color:'white'}}>Home</Link>}
+                            {isloggedIn&& <Link to="/home"  className="nav-link"  style={{color:'white'}}>Home</Link>}
                             {isloggedIn && !isAdmin&&<Link to="/my-books"  className="nav-link" style={{color:'white'}} >My Books</Link>}
                             {isloggedIn && isAdmin&&<Link to="/add-books"  className="nav-link" style={{color:'white'}} >Add Book</Link>}
                             

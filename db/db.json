@@ -139,7 +139,7 @@
       "description": "Like someone else said, you can learn MODx by finding resources on the internet. I started reading this book to get introduced to the system, and it was OK for that, but I found I didn't really use it or need it when I actually started making my MODx site. It's a good overview/introduction that may help you understand what MODx is and how it functions, but not totally needed if you just want to jump right in and make a site with MODx. Also, since the release of MODx 1.0/1.0.1, the terminology used in this book is no longer correct, so it may actually confuse you (Resources are now Elements, Documents are now Resources, etc.) And I found some of the writing to be awkward.",
       "available": true,
       "image": "https://static.packt-cdn.com/products/9781847194909/cover/smaller",
-      "quantity": 3,
+      "quantity": 4,
       "id": 8
     },
     {
@@ -177,20 +177,6 @@
       "image": "https://www.finlandiakirja.fi/media/catalog/product/cache/d736c1dee3794630c3835723ca38a3d2/7/z/7zz2vs_1052390_0.jpg"
     },
     {
-      "title": "Beginning CSS Web Development: From Novice to Professional",
-      "author": "Simon Collison",
-      "categories": "technologies",
-      "year": "2006",
-      "edition": "paperback",
-      "language": "english",
-      "pages": "448",
-      "description": "Beginning CSS Web Development: From Novice to Professional, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well.",
-      "available": true,
-      "quantity": 4,
-      "image": "https://m.media-amazon.com/images/I/71j6aLBlXbL.jpg",
-      "id": 13
-    },
-    {
       "title": "Flask Web Development: Developing Web Applications with Python",
       "author": "Miguel Grinberg",
       "categories": "Computer",
@@ -219,9 +205,8 @@
       "cover": "http://libgen.org/covers/1319000/216cf240cc02944b2f77ba17b6a44d49-d.jpg",
       "quantity": 8,
       "available": true,
-      "image":"https://learning.oreilly.com/library/cover/9781491915585/250w/"
+      "image": "https://learning.oreilly.com/library/cover/9781491915585/250w/"
     },
-
     {
       "id": 35,
       "title": "Web Design for Developers: A Programmer's Guide to Design Tools and Techniques (The Pragmatic Programmers)",
@@ -254,7 +239,7 @@
       "cover": "http://libgen.org/covers/1115000/47dcc653aa3f73886699e93be3415d20-d.jpg",
       "quantity": 8,
       "available": true,
-      "image":"https://m.media-amazon.com/images/I/41fe6dzDYiL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
+      "image": "https://m.media-amazon.com/images/I/41fe6dzDYiL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
     },
     {
       "id": 37,
@@ -271,7 +256,7 @@
       "cover": "http://libgen.org/covers/69000/97d33d4600942592a9593dbda717f582-d.jpg",
       "quantity": 8,
       "available": true,
-      "image":"https://m.media-amazon.com/images/I/51pU1LR7zrL._SX415_BO1,204,203,200_.jpg"
+      "image": "https://m.media-amazon.com/images/I/51pU1LR7zrL._SX415_BO1,204,203,200_.jpg"
     },
     {
       "id": 39,
@@ -288,7 +273,7 @@
       "cover": "http://libgen.org/covers/180000/afbf1346c4b006c9397e140431e6d7f6-d.jpg",
       "quantity": 8,
       "available": true,
-      "image":"https://static.packt-cdn.com/products/9781847195425/cover/smaller"
+      "image": "https://static.packt-cdn.com/products/9781847195425/cover/smaller"
     },
     {
       "id": 40,
@@ -496,21 +481,6 @@
       "id": 55
     },
     {
-      "title": "Things We Never Got Over",
-      "author": "Lucy Score",
-      "categories": "Romance",
-      "volume": "1",
-      "year": "2022",
-      "edition": "PaperBack",
-      "language": "French",
-      "pages": "572",
-      "description": "Bearded, bad-boy barber Knox prefers to live his life the way he takes his coffee: Alone. Unless you count his basset hound, Waylon.\nKnox doesn’t tolerate drama, even when it comes in the form of a stranded runaway bride.\n\nNaomi wasn’t just running away from her wedding. She was riding to the rescue of her estranged twin to Knockemout, Virginia, a rough-around-the-edges town where disputes are settled the old-fashioned way…with fists and beer. Usually in that order.\n\nToo bad for Naomi her evil twin hasn’t changed at all. After helping herself to Naomi’s car and cash, Tina leaves her with something unexpected. The niece Naomi didn’t know she had. Now she’s stuck in town with no car, no job, no plan, and no home with an 11-year-old going on thirty to take care of.\n\nThere’s a reason Knox doesn’t do complications or high-maintenance women, especially not the romantic ones. But since Naomi’s life imploded right in front of him, the least he can do is help her out of her jam. And just as soon as she stops getting into new trouble he can leave her alone and get back to his peaceful, solitary life.\n\nAt least, that’s the plan until the trouble turns to real danger.\n",
-      "quantity": "9",
-      "isAvailable": true,
-      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1641629293i/60060431.jpg",
-      "id": 56
-    },
-    {
       "title": "King Solomon's Mine",
       "author": "H. Rider Haggard",
       "categories": "adventure",
@@ -535,24 +505,13 @@
       "language": "English",
       "pages": "233",
       "description": "The Mysterious Island follows the adventures of a group of castaways who use their survivalist savvy to build a functional community on an uncharted island. A hot-air balloon carrying five passengers and a dog escapes from Richmond, Va., during the American Civil War.\n",
-      "quantity": "1",
+      "quantity": 0,
       "isAvailable": true,
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Ile_Mysterieuse_02.jpg/440px-Ile_Mysterieuse_02.jpg",
       "id": 58
     }
   ],
   "rented-books": [
-    {
-      "bookTitle": "MODx Web Development",
-      "bookId": 8,
-      "rentDays": "1",
-      "rentDate": "2023-01-12T18:40:05.643Z",
-      "returnDate": "2023-01-13T18:40:05.643Z",
-      "userId": "3",
-      "rentExpired": false,
-      "userName": "TKR",
-      "id": 8
-    },
     {
       "bookTitle": "Professional JavaScript for Web Developers",
       "bookId": 10,
@@ -574,17 +533,6 @@
       "rentExpired": false,
       "userName": "Arthi",
       "id": 12
-    },
-    {
-      "bookTitle": "Beginning CSS Web Development: From Novice to Professional",
-      "bookId": 13,
-      "rentDays": "4",
-      "rentDate": "2023-01-16T04:06:21.143Z",
-      "returnDate": "2023-01-20T04:06:21.143Z",
-      "userId": "5",
-      "rentExpired": false,
-      "userName": "Arthi",
-      "id": 15
     },
     {
       "bookTitle": "Professional JavaScript for Web Developers",
@@ -665,15 +613,15 @@
       "id": 29
     },
     {
-      "bookTitle": "Beginning CSS Web Development: From Novice to Professional",
-      "bookId": 13,
-      "rentDays": "5",
-      "rentDate": "2023-01-18T11:41:25.920Z",
-      "returnDate": "2023-01-23T11:41:25.920Z",
+      "bookTitle": "The Mysterious Island",
+      "bookId": 58,
+      "rentDays": "9",
+      "rentDate": "2023-01-20T12:11:10.261Z",
+      "returnDate": "2023-01-29T12:11:10.261Z",
       "userId": "3",
       "rentExpired": false,
       "userName": "TKR",
-      "borrowedQuantity": "3",
+      "borrowedQuantity": "1",
       "id": 30
     }
   ]

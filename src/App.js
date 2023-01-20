@@ -11,24 +11,26 @@ import AddUser from './components/AddUser/AddUser';
 import EditBook from './components/EditBook/EditBook';
 import RentBook from './components/RentBooks/RentBooks';
 import RentList from './components/RentList/RentList';
-
-
-
-
+import Routing from './Routes';
 
 function App() {
   const [isLoggedIn,setisLoggedIn]=useState(false);
   const [isAdmin,setisAdmin]=useState(null);
   const navigate=useNavigate();
   const logOut=()=>{
-    setisLoggedIn(false);
-    setisAdmin(false);
     sessionStorage.removeItem("id");
     sessionStorage.removeItem("userName");
+    sessionStorage.removeItem("isAdmin")
+    setisAdmin(false);
+    setisLoggedIn(false);
     navigate('/');
   }
   useEffect(()=>{
     setisLoggedIn(!!sessionStorage.getItem("id"));
+    setisAdmin(sessionStorage.getItem('isAdmin'))
+    console.log("isAdmin",isAdmin)
+    console.log("isLoggedin",isLoggedIn)
+    
   },[])
   return (
     <div className="App">
@@ -47,6 +49,7 @@ function App() {
 
               
               <Route path='*' element={<PageNotFound/>}></Route>
+              
         </Routes>
     </div>
   );

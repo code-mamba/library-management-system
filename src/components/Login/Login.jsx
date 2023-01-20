@@ -29,6 +29,7 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
                 setisLoggedIn(true);
                 sessionStorage.setItem("id",res.data[0].id);
                 sessionStorage.setItem("userName",res.data[0].userName);
+                sessionStorage.setItem("isAdmin", res.data[0].isAdmin)
                 navigate('/home')
             }
             else{
@@ -39,6 +40,7 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
           
         }
       }
+    const [show,setShow]=useState(false);
     return (
  
       
@@ -62,8 +64,8 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
               </div>
               <div className="mb-3">
                 <label>Enter password</label>
-                <input type="password" className="form-control" id="password" placeholder="password"required value={userPassword} onChange={(e)=>setuserPassword(e.target.value)}/>
-                <i className="fa fa-eye fa-fw" aria-hidden="true"></i>
+                <input type={show?"text":"password"} className="form-control" id="password" placeholder="password"required value={userPassword} onChange={(e)=>setuserPassword(e.target.value)}/>
+           <p onClick={()=>setShow(prestate => !prestate)} >  <i  className="fa fa-eye fa-fw" id="togglePassword" aria-hidden="true"></i> </p> 
                 
                 
               </div>
@@ -71,10 +73,12 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
               <div className="text-center"><button type="submit" className="btn btn-color px-5 mb-5 w-100">Login</button></div>
               <ul><li>Minimum eight characters, at least one letter, one number and one special character:</li></ul>
             </form>
+           
           </div>
   
         </div>
       </div>
+    
     </div>
       
       
