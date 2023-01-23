@@ -115,7 +115,7 @@ const EditBook = ()=>{
                 <textarea className="form-control" id="editDescription" placeholder="Edit Book Description"value={description}
                 onChange={(e)=>{setDesc(e.target.value)}}/>
               </div>
-              <div className="text-center"><button type="submit" className="btn btn-color px-5 mb-5 w-100">Edit Changes</button></div>
+              <div className="text-center"><button type="submit" className="btn btn-color px-5 mb-5 w-100">Save Changes</button></div>
               
             </form>
           </div>

@@ -111,6 +111,13 @@
       "userPassword": "kural2001@lms",
       "isAdmin": false,
       "id": 16
+    },
+    {
+      "userName": "MadhanKumar",
+      "userEmail": "madhan2001@gmail.com",
+      "userPassword": "madee@2001",
+      "isAdmin": false,
+      "id": 17
     }
   ],
   "books": [
@@ -121,7 +128,7 @@
       "year": "2007",
       "edition": "1st Ed.",
       "language": "english",
-      "pages": "375",
+      "pages": "374",
       "description": "Based on the title, the book has so many things to discuss but it actually has less than 400 pages that even include the glossary of terms. The reader might have a second thought about the book since it might not promise to discuss the things written in the chapter.\r\rBut if you go through the chapters, you will be surprised how each topic could be discussed thoroughly in this book. Using the traditional structures in most web and application development books, it slowly introduces each concept before they are brought together in the final chapters. \r\rPHP and Oracle are discussed separately at first with sample codes and situations to ensure that the reader understands each concept. It then goes to discuss who they could be efficiently integrated. The final chapter which is about Ajax is very impressive as it gives the developers a chance to develop an Ajax based application using popular practices in web development. The robustness of Oracle and efficiency of PHP is actually shown in an Ajax based application.\r\rPHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax is a good starting book for any web development professionals and enthusiasts. It covers the basics of web development using PHP and database management of Oracle including an installation guide for Oracle and PHP. If you are looking for a book to start with PHP and Oracle, this book offers a good start. \r\rFor developers who are experienced in this discipline, the book could be a good reference point for developing an application. The sample codes that helps the reader understands the underlying concept of the application with actual scenarios, this PHP and Oracle book is almost too good to pass on.",
       "available": true,
       "image": "https://m.media-amazon.com/images/I/51XLVIAvV5L._SX404_BO1,204,203,200_.jpg",
@@ -289,39 +296,8 @@
       "description": "Книга Catalyst - Accelerating Perl Web Application Development Catalyst - Accelerating Perl Web Application Development Книги WEB дизайн/разработка Автор: Jonathan Rockway Год издания: 2007 Формат: pdf Издат.:Packt Publishing Страниц: 200 Размер: 3 ISBN: 1847190952 Язык: Русский0 (голосов: 0) Оценка:Книгао хорошем веб-фреймворке написанном на Perl.",
       "cover": "http://libgen.org/covers/186000/38156a4cfb71d8a3eb551b8b0716da4e-d.jpg",
       "quantity": 8,
-      "available": true
-    },
-    {
-      "id": 41,
-      "title": "Spring Web Flow 2 Web Development",
-      "author": "Sven Lüppken, Markus Stäuble",
-      "categories": "technologies",
-      "volume": "",
-      "year": "2009",
-      "edition": "",
-      "language": "en",
-      "pages": "272",
-      "url": "http://bookzz.org/dl/633089/862dd2",
-      "description": "<P>Master Spring's well-designed web frameworks to develop powerful web applications  <ul><li>Design, develop, and test your web applications using the Spring Web Flow 2 framework</li>  <li>Enhance your web applications with progressive AJAX, Spring security integration, and Spring Faces</li>  <li>Stay up-to-date with the latest version of Spring Web Flow</li>  <li>Walk through the creation of a bug tracker web application with clear explanations</li></ul></p>      <P><b>In Detail </p>  <P>Many web applications need to take the user through a defined series of steps such as e-commerce checkouts or user registrations. Spring Web Flow works well for rich and flexible user interaction, additionally it helps you to describe the flow of websites in complex processes. Spring Web Flow 2 provides the perfect way to build these kinds of features, keeping them secure, reliable, and easy to maintain.</p>  <P>This book provides a platform on which you can build your own applications and services. It gives detailed information on Spring basics and covers core topics involving testing, security, and so on. We develop a complete, robust web application using the latest version of Spring, where page navigation is done on-the-fly.</p>  <P>This book teaches you how to work with Spring Web Flow. It covers both basic and advanced aspects and provides a detailed reference of the features Spring Web Flow. The book helps readers to extend the framework.</p>  <P>The integration of Spring and Java Server Pages is clearly explained in the book. The book also explains the essential modules of the complete Spring framework stack and teaches how to manage the control flow of a Spring web application.</p>  <P>The Spring Faces module will provide integration between Spring Web Flow and Java Server Faces (JSF). Testing, an important aspect of the software development process is covered towards the end; the question of how to test a Spring Web Flow application is answered.</p>        <P><b>What you will learn from this book? </p>  <ul><li>Explore the features of Spring Web Flow 2 to develop powerful applications</li><li>Extend the framework to take it beyond its out-of-the-box feature set</li><li>Get started with Spring Faces, Spring JavaScript, and Spring Binding and improve the handling of the web flow</li><li>Test your Spring application and rest assured of its quality before going live</li><li>Secure your web applications using Spring Security and Spring Web Flow</li><li>Integrate JavaServer Faces (JSF) with Spring Web Flow to organize and manage the storage of data inside your web application</li></ul>     <P><b>Approach </p>    <P>This book is a tutorial, with plenty of step-by-step instructions beginning with \"getting started\" material, followed by advanced coverage of this technology. The book has a practical approach towards the Spring MVC framework and is packed with practical examples and code. </p>       <P><b>Who this book is written for? </p>  <P>This book is targeted at Java web application developers who want to work on Spring Web Flow. This book is a must-read for those who desire to bridge the gap between the popular web framework and the popular application framework. It requires prior knowledge of the Spring framework, but no prior knowledge of Spring Web Flow. </p>",
-      "cover": "http://libgen.org/covers/205000/864e925f1ae5e758ad9a1dc6ff7d9a1a-d.jpg",
-      "quantity": 8,
-      "available": true
-    },
-    {
-      "id": 42,
-      "title": "GIS for Web Developers: Adding 'Where' to Your Web Applications",
-      "author": "Scott Davis",
-      "categories": "technologies",
-      "volume": "",
-      "year": "2007",
-      "edition": "1",
-      "language": "en",
-      "pages": "258",
-      "url": "http://bookzz.org/dl/656152/65ace4",
-      "description": "Easy to read.  Comprehensive.  Easily one of the best IT books that I own.  I am in Australia, but the US emphasis did not detract from my learning experience.",
-      "cover": "http://libgen.org/covers/228000/25843874a016719643cf94d47a2e6ba9-d.jpg",
-      "quantity": 8,
-      "available": true
+      "available": true,
+      "image": "https://m.media-amazon.com/images/I/41A43k+h8WL._AC_SY1000_.jpg"
     },
     {
       "id": 43,
@@ -337,23 +313,8 @@
       "description": "Steve Souders has been a leader in documenting and evangelizing techniques for improving web site performance, and his previous book High Performance Web Sites: Essential Knowledge for Front-End Engineers (or the web posting from which it evolved) is essential reading. Even Faster Web Sites is not an updating of that book, but a collection of additional advice from Souders and eight contributors. So the first thing to note is that you should probably only tackle this book if you've already mastered the techniques outlined in High Performance Web Sites.\r\rThe one exception to the advice above may be if you're a web developer who makes heavy use of Javascript, since over half of this book is devoted to AJAX. The remainder of the book addresses a variety of topics of interest to web development professionals in general--optimizing images, writing efficient CSS, advanced techniques for implementing gzipping, and more.\r\rAs with Souders previous book, there is little that will be new to professionals who've kept up with best practices via blogs and the like, but it's still nice to have all the information in one handy book. For those who are just starting to investigate web performance optimization, High Performance Web Sites plus Even Faster Web Sites will get you up to speed quickly.",
       "cover": "http://libgen.org/covers/254000/2209885316f24f95f082dc38fe7f8154-d.jpg",
       "quantity": 8,
-      "available": true
-    },
-    {
-      "id": 44,
-      "title": "Spring Web Flow 2 Web Development",
-      "author": "Sven Lüppken, Markus Stäuble",
-      "categories": "technologies",
-      "volume": "",
-      "year": "2009",
-      "edition": "",
-      "language": "en",
-      "pages": "272",
-      "url": "http://bookzz.org/dl/682381/0f8f9d",
-      "description": "This book was largely a rehash of Spring Web Flow XSD's and Configuration files. The author started by introducing a fairly simple login application with a basic Web Flow. The author skimmed over explaining this basic application. I fully expected the author to continue to build on this example and further explain how to setup and configure a flow and use the power of Spring WebFlow to build a modern JSF based web application. Instead I was presented with page after page of XSD samples and configuration file snippets. The author did a very poor job explaining Web Flow concepts and how all this works together. I will have trouble even using this book as an adequate reference book to augment the online Spring documentation. I definitely would not recommend this book.",
-      "cover": "http://libgen.org/covers/254000/c4e2e386c7ccb3decc1fe645f01af770-d.jpg",
-      "quantity": 8,
-      "available": true
+      "available": true,
+      "image": "https://m.media-amazon.com/images/I/51wi+9nXW-L.jpg"
     },
     {
       "id": 45,
@@ -369,71 +330,8 @@
       "description": "The book essentially covers how to code up a large application without a framework. In reality if you are working with a large application (or not) you should use an existing framework to manage PHP, HTML templates, and JavaScript. For example CodeIgniter, (I haven't found a PHP HTML templating system I like yet), and Dojo. \r\rtl;dr - has some stuff you should know, but better to let a framework(s) do it for you.",
       "cover": "http://libgen.org/covers/254000/95819b5f3eb0e4bfeecd369e7400a9b2-d.jpg",
       "quantity": 8,
-      "available": true
-    },
-    {
-      "id": 46,
-      "title": "Even Faster Web Sites: Performance Best Practices for Web Developers",
-      "author": "Steve Souders",
-      "categories": "technologies",
-      "volume": "",
-      "year": "2009",
-      "edition": "1",
-      "language": "en",
-      "pages": "256",
-      "url": "http://bookzz.org/dl/739050/d5623a",
-      "description": "Steve Souders has been a leader in documenting and evangelizing techniques for improving web site performance, and his previous book High Performance Web Sites: Essential Knowledge for Front-End Engineers (or the web posting from which it evolved) is essential reading. Even Faster Web Sites is not an updating of that book, but a collection of additional advice from Souders and eight contributors. So the first thing to note is that you should probably only tackle this book if you've already mastered the techniques outlined in High Performance Web Sites.\r\rThe one exception to the advice above may be if you're a web developer who makes heavy use of Javascript, since over half of this book is devoted to AJAX. The remainder of the book addresses a variety of topics of interest to web development professionals in general--optimizing images, writing efficient CSS, advanced techniques for implementing gzipping, and more.\r\rAs with Souders previous book, there is little that will be new to professionals who've kept up with best practices via blogs and the like, but it's still nice to have all the information in one handy book. For those who are just starting to investigate web performance optimization, High Performance Web Sites plus Even Faster Web Sites will get you up to speed quickly.",
-      "cover": "http://libgen.org/covers/312000/b649272bed7a50044e66dd0ec236156e-d.jpg",
-      "quantity": 8,
-      "available": true
-    },
-    {
-      "id": 47,
-      "title": "Even Faster Web Sites: Performance Best Practices for Web Developers",
-      "author": "Steve Souders",
-      "categories": "technologies",
-      "volume": "",
-      "year": "2009",
-      "edition": "1",
-      "language": "en",
-      "pages": "256",
-      "url": "http://bookzz.org/dl/739106/226385",
-      "description": "Steve Souders has been a leader in documenting and evangelizing techniques for improving web site performance, and his previous book High Performance Web Sites: Essential Knowledge for Front-End Engineers (or the web posting from which it evolved) is essential reading. Even Faster Web Sites is not an updating of that book, but a collection of additional advice from Souders and eight contributors. So the first thing to note is that you should probably only tackle this book if you've already mastered the techniques outlined in High Performance Web Sites.\r\rThe one exception to the advice above may be if you're a web developer who makes heavy use of Javascript, since over half of this book is devoted to AJAX. The remainder of the book addresses a variety of topics of interest to web development professionals in general--optimizing images, writing efficient CSS, advanced techniques for implementing gzipping, and more.\r\rAs with Souders previous book, there is little that will be new to professionals who've kept up with best practices via blogs and the like, but it's still nice to have all the information in one handy book. For those who are just starting to investigate web performance optimization, High Performance Web Sites plus Even Faster Web Sites will get you up to speed quickly.",
-      "cover": "http://libgen.org/covers/313000/e917ededf6c573dd6b4fd11b17834657-d.jpg",
-      "quantity": 8,
-      "available": true
-    },
-    {
-      "id": 48,
-      "title": "Spring Web Flow 2 Web Development",
-      "author": "Sven Luppken, Markus Stauble",
-      "categories": "technologies",
-      "volume": "",
-      "year": "2009",
-      "edition": "",
-      "language": "en",
-      "pages": "272",
-      "url": "http://bookzz.org/dl/843714/941e48",
-      "description": "This book is a tutorial, with plenty of step-by-step instructions beginning with \"getting started\" material, followed by advanced coverage of this technology. The book has a practical approach towards the Spring MVC framework and is packed with practical examples and code. This book is targeted at Java web application developers who want to work on Spring Web Flow. This book is a must-read for those who desire to bridge the gap between the popular web framework and the popular application framework. It requires prior knowledge of the Spring framework, but no prior knowledge of Spring Web Flow.",
-      "cover": "http://libgen.org/covers/418000/70deaa673153eb8a2235614725cd8546-d.jpg",
-      "quantity": 8,
-      "available": true
-    },
-    {
-      "id": 49,
-      "title": "Communicating Design: Developing Web Site Documentation for Design and Planning (2nd Edition) (Voices That Matter)",
-      "author": "Dan M. Brown",
-      "categories": "technologies",
-      "volume": "",
-      "year": "2009",
-      "edition": "2",
-      "language": "en",
-      "pages": "312",
-      "url": "http://bookzz.org/dl/853858/fc50d6",
-      "description": "Successful web design teams depend on clear communication between developers and their clients—and among members of the development team. Wireframes, site maps, flow charts, and other design diagrams establish a common language so designers and project teams can capture ideas, track progress, and keep their stakeholders informed.    In this all new edition of Communicating Design, author and information architect Dan Brown defines and describes each deliverable, then offers practical advice for creating the documents and using them in the context of teamwork and presentations, independent of methodology. Whatever processes, tools, or approaches you use, this book will help you improve the creation and presentation of your wireframes, site maps, flow charts, and other deliverables.   The book now features:  An improved structure comprising two main sections: Design Diagrams and Design Deliverables. The first focuses on the nuts and bolts of design documentation and the second explains how to pull it all together.  New deliverable: design briefs, as well as updated advice on wireframes, flow charts, and concept models.  More illustrations, to help designers understand the subtle variations and approaches to creating design diagrams. Reader exercises, for those lonely nights when all you really want to do is practice creating wireframes, or for use in workshops and classes. Contributions from industry leaders: Tamara Adlin, Stephen Anderson, Dana Chisnell, Nathan Curtis, Chris Fahey, James Melzer, Steve Mulder, Donna Spencer, and Russ Unger.     “As an educator, I have looked to Communicating Design both as a formal textbook and an informal guide for its design systems that ultimately make our ideas possible and the complex clear.”  —Liz Danzico, from the Foreword  ",
-      "cover": "http://libgen.org/covers/428000/6488ceaac907b23528d5a39f98372648-d.jpg",
-      "quantity": 7,
-      "available": true
+      "available": true,
+      "image": "https://m.media-amazon.com/images/I/51V8FyNi5KL.jpg"
     },
     {
       "title": "Something I Never Told You",
@@ -522,17 +420,6 @@
       "rentExpired": false,
       "userName": "merlins",
       "id": 11
-    },
-    {
-      "bookTitle": "Communicating Design: Developing Web Site Documentation for Design and Planning (2nd Edition) (Voices That Matter)",
-      "bookId": 49,
-      "rentDays": "6",
-      "rentDate": "2023-01-13T07:00:22.756Z",
-      "returnDate": "2023-01-19T07:00:22.756Z",
-      "userId": "5",
-      "rentExpired": false,
-      "userName": "Arthi",
-      "id": 12
     },
     {
       "bookTitle": "Professional JavaScript for Web Developers",
@@ -624,5 +511,23 @@
       "borrowedQuantity": "1",
       "id": 30
     }
+  ],
+  "Addedcategories": [
+    [
+      {
+        "id": 0,
+        "categoryName": "dhanush"
+      }
+    ],
+    [
+      {
+        "id": 0,
+        "categoryName": "dhanush"
+      },
+      {
+        "id": 1,
+        "categoryName": "madhan"
+      }
+    ]
   ]
 }

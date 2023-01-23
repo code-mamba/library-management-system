@@ -4,7 +4,6 @@ import{useNavigate} from 'react-router-dom'
 import './BookList.css'
 const BookList = ({books,isAdmin,setBooks}) => {
 const navigate = useNavigate()
-const[SearchTerm, setSearchTerm] = useState('')
 const[booksPerPage,setBooksPerPage] = useState(5)
 const numOfTotalPages = Math.ceil(books.length/booksPerPage)
 const[currentPage, setCurrentPage] = useState(1)
@@ -54,7 +53,6 @@ const rent =(id)=>{
                                             <h5  className='card-title mt-3'>Title:{book.title}</h5>
                                             <p>Categories: {book.categories}</p>
                                             <p>Author: {book.author}</p>
-                                            {/* <p>Description: {book.description}</p> */}
                                             <p> Year:{book.year}</p>
                                             <p>Language: {book.language}</p>
                                             <p>Volume:{book.volume}</p>

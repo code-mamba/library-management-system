@@ -7,18 +7,30 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
     const [userEmail,setuserEmail]=useState('');
     const [userPassword,setuserPassword]=useState('');
     const [errMsg,seterrMsg]=useState(null);
+    const[credErr, setCredErr] = useState(null)
     const navigate=useNavigate();
     const validateForm=(email,password)=>{
+      if((email === ''|email === null)||  (password === ''|password === null)){
+        
+        seterrMsg("Please fill all the field")
+        console.log(errMsg)
+        
+      
+      }
+
       if(email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)&&password.match(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/)){
         return false
       }else{
+        // setCredErr("Invalid User Name or Password")
         return true
       };
     }
     const login=(e)=>{
         e.preventDefault();
+     
         if(validateForm(userEmail,userPassword)){
-          seterrMsg("Invalid User Name or Password");
+          
+          setCredErr("Invalid User Name or Password");
           setisLoggedIn(false);
         }
         else{
@@ -60,16 +72,17 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
               <div className="mb-3">
                 <label>Enter Your mail</label>
                 <input type="text" className="form-control" id="Username" aria-describedby="emailHelp"
-                  placeholder="User Email"required value={userEmail} onChange={(e)=>setuserEmail(e.target.value)}/>
+                  placeholder="User Email" value={userEmail} onChange={(e)=>setuserEmail(e.target.value)} onClick={(e)=>{e.focus(setCredErr(null),seterrMsg(null))}}/>
               </div>
               <div className="mb-3">
                 <label>Enter password</label>
-                <input type={show?"text":"password"} className="form-control" id="password" placeholder="password"required value={userPassword} onChange={(e)=>setuserPassword(e.target.value)}/>
-           <p onClick={()=>setShow(prestate => !prestate)} >  <i  className="fa fa-eye fa-fw" id="togglePassword" aria-hidden="true"></i> </p> 
+                <input type={show?"text":"password"} className="form-control" id="password" placeholder="password"   value={userPassword} onClick={(e)=>{e.focus(setCredErr(null),seterrMsg(null))}} onChange={(e)=>setuserPassword(e.target.value)}/>
+           <p onClick={()=>setShow(prestate => !prestate)} >  <i className="fa fa-eye fa-fw" id="togglePassword" aria-hidden="true"></i> </p> 
                 
                 
               </div>
               {errMsg&& <p style={{color: 'red'}}>{errMsg}</p>}
+              {credErr&&<p style={{color:'red'}}>{credErr}</p>}
               <div className="text-center"><button type="submit" className="btn btn-color px-5 mb-5 w-100">Login</button></div>
               <ul><li>Minimum eight characters, at least one letter, one number and one special character:</li></ul>
             </form>

@@ -4,11 +4,26 @@ import axios from "axios";
 import './Home.css'
 
 
+
 const Home = ({isAdmin}) => {
         const[books,setBooks]=useState(null); 
+        const[query,setQuery] = useState("")
+        const[categories,setCategory] = useState([])
         
         
-        
+ const Searching = (e) =>{
+      setQuery(e.target.value)
+      console.log(query)
+      var SearchBooks = books.filter((book)=>{
+        if(query == ""){
+          return books
+        }
+        else if(book.title.toLowerCase().includes(query.toLowerCase())){
+          return book
+        }
+      })
+      setBooks(SearchBooks)
+ }       
         
 const categoryChange = (e) =>{
   
@@ -25,6 +40,9 @@ const categoryChange = (e) =>{
             axios.get('http://localhost:8000/books').then((res)=>{
                 setBooks(res.data);
                 console.log(isAdmin)
+            // axios.get('http://localhost:8000/Addedcategories').then((res)=>{
+            //   setCategory(res.data)
+            // })
              
                 
             }).catch((err)=>{console.log(err)});
@@ -34,10 +52,26 @@ const categoryChange = (e) =>{
             //     setBooks(data);
                 
             // }).catch((err)=>{console.log(err)})
-        },[]);
+        },[query==""]);
     return ( 
         <div className="home"  style={{backgroundColor:'#c8dcff'}}>
-         
+          <div className="boxContainer">
+            <div className="elementsContainer">
+          <input type= 'text' className = "search" placeholder = "Search Books..." onChange={e=>Searching(e)}  ></input>
+          <svg className="searchIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 18 16">
+         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+          </div>
+          </div>
+          
+            {/* <select className="Select-Button" onChange={categoryChange}>
+              {categories.map((category)=>{
+                 <option value={category.categoryName} ><p>{category.categoryName}</p></option>
+              })}
+             
+            </select> */}
+          
+            
           <select className="Select-Button" onChange={categoryChange}>
             <option value="technologies">Technologies</option>
             <option value="self-help">Self help</option>

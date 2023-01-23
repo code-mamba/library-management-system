@@ -12,6 +12,7 @@ import EditBook from './components/EditBook/EditBook';
 import RentBook from './components/RentBooks/RentBooks';
 import RentList from './components/RentList/RentList';
 import Routing from './Routes';
+import CategoryList from './components/CategoryChange/AddCategoryList';
 
 function App() {
   const [isLoggedIn,setisLoggedIn]=useState(false);
@@ -43,6 +44,7 @@ function App() {
               {isLoggedIn&&<Route path="/home"element={<Home isAdmin={isAdmin}/>}></Route>}
               {isLoggedIn&&<Route path = '/edit-books/:id' element={<EditBook/>}></Route>}
               {isLoggedIn && <Route path='/rent-books/:id' element={<RentBook/>}></Route>}
+              {isLoggedIn &&<Route path='/add-categoryList' element={<CategoryList/>}></Route>}
               
               {isLoggedIn &&<Route path='/rent-list' element={<RentList/>}></Route>}
               
