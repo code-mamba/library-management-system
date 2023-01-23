@@ -34,7 +34,6 @@ const rent =(id)=>{
     navigate('/rent-books/'+id)
     
 }
-
     return ( 
         <div className="book-list" style={{backgroundColor:'#c8dcff'}}>
             {
