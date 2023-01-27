@@ -118,6 +118,20 @@
       "userPassword": "madee@2001",
       "isAdmin": false,
       "id": 17
+    },
+    {
+      "userName": "Srinivasan",
+      "userEmail": "srivasan2002@gmail.com",
+      "userPassword": "Srinivasan2002@Lms",
+      "isAdmin": false,
+      "id": 18
+    },
+    {
+      "userName": "Sharmila",
+      "userEmail": "sharmi2001@gmail.com",
+      "userPassword": "Sharmi2001@Lms",
+      "isAdmin": false,
+      "id": 19
     }
   ],
   "books": [
@@ -128,11 +142,11 @@
       "year": "2007",
       "edition": "1st Ed.",
       "language": "english",
-      "pages": "374",
+      "pages": "372",
       "description": "Based on the title, the book has so many things to discuss but it actually has less than 400 pages that even include the glossary of terms. The reader might have a second thought about the book since it might not promise to discuss the things written in the chapter.\r\rBut if you go through the chapters, you will be surprised how each topic could be discussed thoroughly in this book. Using the traditional structures in most web and application development books, it slowly introduces each concept before they are brought together in the final chapters. \r\rPHP and Oracle are discussed separately at first with sample codes and situations to ensure that the reader understands each concept. It then goes to discuss who they could be efficiently integrated. The final chapter which is about Ajax is very impressive as it gives the developers a chance to develop an Ajax based application using popular practices in web development. The robustness of Oracle and efficiency of PHP is actually shown in an Ajax based application.\r\rPHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax is a good starting book for any web development professionals and enthusiasts. It covers the basics of web development using PHP and database management of Oracle including an installation guide for Oracle and PHP. If you are looking for a book to start with PHP and Oracle, this book offers a good start. \r\rFor developers who are experienced in this discipline, the book could be a good reference point for developing an application. The sample codes that helps the reader understands the underlying concept of the application with actual scenarios, this PHP and Oracle book is almost too good to pass on.",
       "available": true,
-      "image": "https://m.media-amazon.com/images/I/51XLVIAvV5L._SX404_BO1,204,203,200_.jpg",
-      "quantity": 3,
+      "image": "https://rukminim1.flixcart.com/image/416/416/jpu324w0/book/6/3/6/php-oracle-web-development-data-processing-security-caching-xml-original-imafbzmjs8hxf9vw.jpeg?q=70",
+      "quantity": null,
       "id": 6
     },
     {
@@ -146,7 +160,7 @@
       "description": "Like someone else said, you can learn MODx by finding resources on the internet. I started reading this book to get introduced to the system, and it was OK for that, but I found I didn't really use it or need it when I actually started making my MODx site. It's a good overview/introduction that may help you understand what MODx is and how it functions, but not totally needed if you just want to jump right in and make a site with MODx. Also, since the release of MODx 1.0/1.0.1, the terminology used in this book is no longer correct, so it may actually confuse you (Resources are now Elements, Documents are now Resources, etc.) And I found some of the writing to be awkward.",
       "available": true,
       "image": "https://static.packt-cdn.com/products/9781847194909/cover/smaller",
-      "quantity": 4,
+      "quantity": 2,
       "id": 8
     },
     {
@@ -162,7 +176,7 @@
       "url": "http://bookzz.org/dl/682507/a9cd0c",
       "description": "Probably the most complete and updated book that you may find about Javascript.The author made a great job writting about some of the most important topics on javascript development and highlighting the difference among browsers.Most of the topics are already covered in other javascript books I have read before, but not in the way Nicholas does, he usually goes deeper on every topic.If you have some knowledge on javascript and want to reach another level, this is the book for you. If you consider yourself a guru, you may enjoy it as well, but definitely, not for newbies.",
       "cover": "http://libgen.org/covers/254000/b07adfcaf9641b17fe76115bf174f44c-d.jpg",
-      "quantity": 6,
+      "quantity": -1,
       "available": true,
       "image": "https://m.media-amazon.com/images/I/71AEYAnrQML.jpg"
     },
@@ -179,7 +193,7 @@
       "url": "http://bookzz.org/dl/740977/339164",
       "description": "A guide to the topics required for state of the art Web development, this book covers wide-ranging topics, including a variety of web development frameworks and best practices. Beginning with coverage of the history of the architecture of Web applications, highlighting the uses of the standard web API to create applications with increasingly sophisticated architectures, developers are led through a discussion on the development of industry accepted best practices for architecture. Described is the history and evolution towards this architecture and the reasons that it is superior to previous efforts. Also provided is an overview of the most popular Web application frameworks, covering their architecture and use. Numerous frameworks exist, but trying to evaluate them is difficult because their documentation stresses their advantages but hides their deficiencies. Here, the same application is built in six different frameworks, providing a way to perform an informed comparison. Also provided is an evaluation of the pros and cons of each framework to assist in making a decision or evaluating a framework on your own. Finally, best practices are covered, including sophisticated user interface techniques, intelligent caching and resource management, performance tuning, debugging, testing, and Web services.",
       "cover": "http://libgen.org/covers/314000/2d822f49188d9edaa78f2085f8e2737f-d.jpg",
-      "quantity": 7,
+      "quantity": null,
       "available": true,
       "image": "https://www.finlandiakirja.fi/media/catalog/product/cache/d736c1dee3794630c3835723ca38a3d2/7/z/7zz2vs_1052390_0.jpg"
     },
@@ -194,7 +208,7 @@
       "description": "Flask Web Development: Developing Web Applications with Python, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
       "available": true,
       "image": "https://learning.oreilly.com/library/cover/9781491991725/250w/",
-      "quantity": 8,
+      "quantity": 6,
       "id": 31
     },
     {
@@ -403,10 +417,25 @@
       "language": "English",
       "pages": "233",
       "description": "The Mysterious Island follows the adventures of a group of castaways who use their survivalist savvy to build a functional community on an uncharted island. A hot-air balloon carrying five passengers and a dog escapes from Richmond, Va., during the American Civil War.\n",
-      "quantity": 0,
+      "quantity": 1,
       "isAvailable": true,
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Ile_Mysterieuse_02.jpg/440px-Ile_Mysterieuse_02.jpg",
       "id": 58
+    },
+    {
+      "title": "who will cry when You die",
+      "author": "Robin sharma",
+      "categories": "self help",
+      "volume": "1",
+      "year": "2000",
+      "edition": "paperback",
+      "language": "english",
+      "pages": "265",
+      "description": "Who Will Cry When You Die is a book written by the Canadian Indian writer Robin Sharma. The book was first published in 1999. This was the third book written by the author in the series The Monk Who Sold His Ferrari.",
+      "quantity": 3,
+      "isAvailable": true,
+      "image": "https://m.media-amazon.com/images/I/41wKll7ITyL.jpg",
+      "id": 59
     }
   ],
   "rented-books": [
@@ -498,18 +527,6 @@
       "userName": "Dhanush",
       "borrowedQuantity": "5",
       "id": 29
-    },
-    {
-      "bookTitle": "The Mysterious Island",
-      "bookId": 58,
-      "rentDays": "9",
-      "rentDate": "2023-01-20T12:11:10.261Z",
-      "returnDate": "2023-01-29T12:11:10.261Z",
-      "userId": "3",
-      "rentExpired": false,
-      "userName": "TKR",
-      "borrowedQuantity": "1",
-      "id": 30
     }
   ],
   "Addedcategories": [

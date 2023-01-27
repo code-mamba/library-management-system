@@ -1,7 +1,8 @@
-import axios from 'axios'
 import { useState } from 'react'
 import{useNavigate} from 'react-router-dom'
 import './BookList.css'
+import lmsUrl from '../../AxiosURL'
+
 const BookList = ({books,isAdmin,setBooks}) => {
 const navigate = useNavigate()
 const[booksPerPage,setBooksPerPage] = useState(5)
@@ -24,7 +25,7 @@ const edit = (id) =>{
 }
 
 const deleteBook = (id)=>{
-    axios.delete("http://localhost:8000/books/"+id).then(()=>{
+    lmsUrl.delete('books/'+id) .then(()=>{
         var newBooks=books.filter(book=>{return book.id!==id});
         setBooks(newBooks)
     }).catch(err=>console.log(err))

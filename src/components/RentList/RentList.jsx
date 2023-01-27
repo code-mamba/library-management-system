@@ -1,11 +1,11 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import lmsUrl from "../../AxiosURL";
 import './RentList.css'
 
 const RentList = ()=>{
     const[rentList, setRentList] = useState([])
     useEffect(()=>{
-        axios.get('http://localhost:8000/rented-books')
+        lmsUrl.get('rented-books')
         .then((res)=>{
             setRentList(res.data)
         }).catch((err)=>{console.log(err)})

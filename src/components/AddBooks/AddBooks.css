@@ -1,5 +1,13 @@
-.Logo{
+.Logo {
     text-align: center;
     font-size: 40px;
     color: brown;
+}
+
+.btn {
+    color: 'white';
+}
+
+.btn :hover {
+    color: 'white';
 }

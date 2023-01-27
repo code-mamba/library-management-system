@@ -11,10 +11,8 @@ import AddUser from './components/AddUser/AddUser';
 import EditBook from './components/EditBook/EditBook';
 import RentBook from './components/RentBooks/RentBooks';
 import RentList from './components/RentList/RentList';
-import Routing from './Routes';
-
 import UserProfile from './components/userProfile/userProfile';
-import EditProfile from './components/editProfile/editProfile'
+
 
 function App() {
   const [isLoggedIn,setisLoggedIn]=useState(false);
@@ -30,9 +28,7 @@ function App() {
   }
   useEffect(()=>{
     setisLoggedIn(!!sessionStorage.getItem("id"));
-    setisAdmin(sessionStorage.getItem('isAdmin'))
-    console.log("isAdmin",isAdmin)
-    console.log("isLoggedin",isLoggedIn)
+    setisAdmin(sessionStorage.getItem('isAdmin'));
     
   },[])
   return (
@@ -46,12 +42,8 @@ function App() {
               {isLoggedIn&&<Route path="/home"element={<Home isAdmin={isAdmin}/>}></Route>}
               {isLoggedIn&&<Route path = '/edit-books/:id' element={<EditBook/>}></Route>}
               {isLoggedIn && <Route path='/rent-books/:id' element={<RentBook/>}></Route>}
-             
               {isLoggedIn &&<Route path='/rent-list' element={<RentList/>}></Route>}
               {isLoggedIn &&<Route path='/user-profile'element={<UserProfile/>} ></Route>}
-              {isLoggedIn &&<Route path='/edit-profile' element={<EditProfile/>} ></Route>}
-
-              
               <Route path='*' element={<PageNotFound/>}></Route>
               
         </Routes>

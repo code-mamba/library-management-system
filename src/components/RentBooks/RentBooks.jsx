@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import './RentBooks.css'
+import lmsUrl from "../../AxiosURL";
 
 const RentBook =()=>{
     const {id}=useParams();
@@ -11,7 +11,7 @@ const RentBook =()=>{
     const navigate=useNavigate();
     
     useEffect(()=>{
-        axios.get('http://localhost:8000/books/'+id).then((res)=>{
+        lmsUrl.get('books/'+id) .then((res)=>{
             setBook(res.data)
         
         }).catch((err)=>{console.log(err)});
@@ -27,11 +27,10 @@ const RentBook =()=>{
         book.quantity=book.quantity-booksCount;
         var myRent={"bookTitle":book.title,"bookId":book.id,"rentDays":rentDays,"rentDate":today.toISOString(),"returnDate":returnDate.toISOString(),"userId":sessionStorage.getItem("id"),"rentExpired":false,"userName":sessionStorage.getItem("userName"),"borrowedQuantity":booksCount};
         
-        setTimeout(()=>{axios.post("http://localhost:8000/rented-books",myRent)
-        .then((res)=>{}).catch(err=>console.log(err));},1000)
+        setTimeout(()=>{lmsUrl.post('rented-books',myRent).then((res)=>{}).catch(err=>{console.log(err)})},1000)
         
 
-        axios.put("http://localhost:8000/books/"+id,book).then((res)=>{
+         lmsUrl.put('books/'+id,book) .then((res)=>{
             navigate('/home')
         }).catch(err=>console.log(err));
     }

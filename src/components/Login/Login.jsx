@@ -1,27 +1,24 @@
 import { useState } from "react";
 import "./Login.css"
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import lmsUrl from "../../AxiosURL";
 
 const Login = ({setisAdmin,setisLoggedIn}) => {
     const [userEmail,setuserEmail]=useState('');
     const [userPassword,setuserPassword]=useState('');
     const [errMsg,seterrMsg]=useState(null);
     const[credErr, setCredErr] = useState(null)
+    const [show,setShow]=useState(false);
     const navigate=useNavigate();
     const validateForm=(email,password)=>{
       if((email === ''|email === null)||  (password === ''|password === null)){
         
         seterrMsg("Please fill all the field")
-        console.log(errMsg)
-        
-      
-      }
+        }
 
       if(email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)&&password.match(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/)){
         return false
       }else{
-        // setCredErr("Invalid User Name or Password")
         return true
       };
     }
@@ -34,7 +31,7 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
           setisLoggedIn(false);
         }
         else{
-          axios.get("http://localhost:8000/users?userEmail="+userEmail).then((res)=>{
+          lmsUrl.get("users?userEmail="+userEmail).then((res)=>{
             if(res.data[0].userPassword===userPassword){
                 seterrMsg(null);
                 res.data[0].isAdmin?setisAdmin(true):setisAdmin(false);
@@ -52,7 +49,7 @@ const Login = ({setisAdmin,setisLoggedIn}) => {
           
         }
       }
-    const [show,setShow]=useState(false);
+    
     return (
  
       
