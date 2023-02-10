@@ -1,26 +1,30 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "react-toastify/dist/ReactToastify.css";
 import "../Login/Login.css";
-import axios from "axios";
 import lmsUrl from "../../AxiosURL";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { SuccessfullySignedin } from "../../Toastify";
 
 const AddUser = () => {
   const [userName, setuserName] = useState("");
+  const [nameErr,setNameErr] = useState("")
   const [userEmail, setuserEmail] = useState("");
+  const [emailErr,setEmailErr] = useState("");
   const [userPassword, setuserPassword] = useState("");
-  const [errMsg, seterrMsg] = useState(null);
+  const [passwordErr,setPasswordErr] = useState("");
   const [credErr, setCredErr] = useState(null);
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const validateForm = (email, password, name) => {
-    if (
-      (email == null) | (email == "") ||
-      (password == null) | (password == "") ||
-      name == "" ||
-      name == null
-    ) {
-      seterrMsg("please fill all fields");
+    if(name == null| name==''){
+      setNameErr('Please fill the name field')
+    }
+    if(userEmail==null|userEmail==''){
+      setEmailErr('Please fill Email field')
+    }
+    if(password==null|password==''){
+      setPasswordErr('Please fill Password field')
     }
 
     if (
@@ -38,19 +42,21 @@ const AddUser = () => {
     e.preventDefault();
     if (validateForm(userEmail, userPassword, userName)) {
       setCredErr("Enter valid credentials");
-    } else {
+    } else {  
       const user = { userName, userEmail, userPassword, isAdmin: false };
-      alert("Succesfully Signedin");
-      lmsUrl
-        .post("users", user)
-        .then((res) => {
-          setInterval(() => {
-            navigate("/");
-          });
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+        // SuccessfullySignedin()
+      lmsUrl.post('users',user).then(()=>{SuccessfullySignedin()}).then(setTimeout(()=>{navigate('/')},1000)).catch((err)=>{toast.error(err,{position:toast.POSITION.TOP_RIGHT})})
+
+      // lmsUrl
+      //   .post("users", user)
+      //   .then((res) => {
+      //     setInterval(() => {
+      //       navigate("/");
+      //     });
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
     }
   };
   return (
@@ -76,9 +82,10 @@ const AddUser = () => {
                     setuserName(e.target.value);
                   }}
                   onClick={(e) => {
-                    e.focus(setCredErr(null), seterrMsg(null));
+                    e.target.focus(setCredErr(null), setNameErr(null));
                   }}
                 />
+                {nameErr&&<p style={{"color":"red"}} >{nameErr}</p>}
               </div>
               <div className="mb-3">
                 <label htmlFor="Usermail">User Mail:</label>
@@ -89,12 +96,14 @@ const AddUser = () => {
                   placeholder="Enter Your Mail"
                   value={userEmail}
                   onClick={(e) => {
-                    e.focus(setCredErr(null), seterrMsg(null));
+                    e.target.focus(setCredErr(null), setEmailErr(null));
                   }}
                   onChange={(e) => {
                     setuserEmail(e.target.value);
                   }}
+          
                 ></input>
+                {emailErr&&<p style={{"color":"red"}} >{emailErr}</p>}
               </div>
               <div className="mb-3">
                 <label htmlFor="password">Create password:</label>
@@ -108,7 +117,7 @@ const AddUser = () => {
                     setuserPassword(e.target.value);
                   }}
                   onClick={(e) => {
-                    e.focus(setCredErr(null), seterrMsg(null));
+                    e.target.focus(setCredErr(null), setPasswordErr(null));
                   }}
                 />
                 <p onClick={() => setShow((prestate) => !prestate)}>
@@ -119,8 +128,8 @@ const AddUser = () => {
                     aria-hidden="true"
                   ></i>{" "}
                 </p>
+                {passwordErr&&<p style={{"color":"red"}} >{passwordErr}</p>}
               </div>
-              {errMsg && <p style={{ color: "red" }}>{errMsg}</p>}
               {credErr && <p style={{ color: "red" }}>{credErr}</p>}
               <div className="text-center">
                 <button type="submit" className="btn btn-color px-5 mb-5 w-100">

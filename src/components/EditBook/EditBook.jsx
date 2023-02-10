@@ -2,6 +2,9 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import './EditBook.css'
 import lmsUrl from "../../AxiosURL";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { SuccessfullyEdited, UnableToEdit } from "../../Toastify"; 
 
 const EditBook = ()=>{
     const[title, setTitle] = useState()
@@ -38,9 +41,10 @@ const EditBook = ()=>{
     const editBook=(e)=>{
         const book = {title,author,categories,year,edition,language,pages,description,available,image,quantity}
         e.preventDefault();
-        lmsUrl.put('books/'+id,book) .then(navigate('/home')).catch((err)=>{console.log(err)})
+        lmsUrl.put('books/'+id,book).then(()=>{SuccessfullyEdited()}).catch((err)=>{UnableToEdit()})
 
     }
+
 
     return(
         <div className="container">
@@ -58,7 +62,7 @@ const EditBook = ()=>{
                 <label>Edit Book Name</label>
                 <input type="text" className="form-control" id="bookName"
     
-            placeholder="Edit Book Name" value={title} onChange={e=>{setTitle(e.target.value)}}/>
+            placeholder="Edit Book Name" value={title} onChange={(e)=>{setTitle(e.target.value)}}/>
               </div>
               <div className="mb-3">
                 <label>Edit Author Name</label>
@@ -100,6 +104,10 @@ const EditBook = ()=>{
                 <textarea className="form-control" id="editDescription" placeholder="Edit Book Description"value={description}
                 onChange={(e)=>{setDesc(e.target.value)}}/>
               </div>
+              <div className="mb-3" >
+                <label>Book Quantity</label>
+                <input type='number' className ="form-control" placeholder = "Book Quantity" value = {quantity} onChange={e=>{setQuantity(e.target.value)}} ></input>
+              </div>
               <div className="mb-3">
                 <label>Edit Image</label>
                 <input type="text" className="form-control" id="editEdition" placeholder="Edit Book Language"value={image}
@@ -112,6 +120,7 @@ const EditBook = ()=>{
 
         </div>
       </div>
+      <ToastContainer/>
     </div>
     )
 }

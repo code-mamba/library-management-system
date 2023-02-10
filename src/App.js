@@ -12,6 +12,8 @@ import EditBook from './components/EditBook/EditBook';
 import RentBook from './components/RentBooks/RentBooks';
 import RentList from './components/RentList/RentList';
 import UserProfile from './components/userProfile/userProfile';
+import EditProfile from './components/EditProfile/EditProfile';
+import UnableToFetch from './components/UnableToFetchData/unableToFetch';
 
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
     setisAdmin(false);
     setisLoggedIn(false);
     navigate('/');
+    
   }
   useEffect(()=>{
     setisLoggedIn(!!sessionStorage.getItem("id"));
@@ -41,9 +44,11 @@ function App() {
               {isLoggedIn&&<Route path="/my-books"element={<MyBooks/>}></Route>}
               {isLoggedIn&&<Route path="/home"element={<Home isAdmin={isAdmin}/>}></Route>}
               {isLoggedIn&&<Route path = '/edit-books/:id' element={<EditBook/>}></Route>}
-              {isLoggedIn && <Route path='/rent-books/:id' element={<RentBook/>}></Route>}
-              {isLoggedIn &&<Route path='/rent-list' element={<RentList/>}></Route>}
-              {isLoggedIn &&<Route path='/user-profile'element={<UserProfile/>} ></Route>}
+              {isLoggedIn&&<Route path='/rent-books/:id' element={<RentBook/>}></Route>}
+              {isLoggedIn&&<Route path='/rent-list' element={<RentList/>}></Route>}
+              {isLoggedIn&&<Route path='/user-profile'element={<UserProfile/>} ></Route>}
+              {isLoggedIn&&<Route path='/edit-profile/:userId' element={<EditProfile title ={'Edit Profile'}></EditProfile>}></Route>}
+              {isLoggedIn &&<Route path='/fetch-err' element={<UnableToFetch></UnableToFetch>}></Route>}
               <Route path='*' element={<PageNotFound/>}></Route>
               
         </Routes>

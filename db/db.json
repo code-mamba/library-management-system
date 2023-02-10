@@ -8,7 +8,7 @@
       "id": 1
     },
     {
-      "userName": "Dhanush",
+      "userName": "Dhanush B",
       "userEmail": "dhanush@gmail.com",
       "userPassword": "Password@123",
       "isAdmin": true,
@@ -71,7 +71,7 @@
       "id": 10
     },
     {
-      "userName": "DhanushBaskaran",
+      "userName": "Dhanush Baskaran",
       "userEmail": "dhanushbaskaran2001@gmail.com",
       "userPassword": "Dhanush2000@Lms",
       "isAdmin": false,
@@ -132,6 +132,62 @@
       "userPassword": "Sharmi2001@Lms",
       "isAdmin": false,
       "id": 19
+    },
+    {
+      "userName": "Peter Griffin",
+      "userEmail": "petergriffin2000@gmail.com",
+      "userPassword": "PeterGriffin2000@Lms",
+      "isAdmin": false,
+      "id": 20
+    },
+    {
+      "userName": "BruceWayne",
+      "userEmail": "brucewayne2000@gmail.com",
+      "userPassword": "Batman@123",
+      "isAdmin": false,
+      "id": 21
+    },
+    {
+      "userName": "RathnavelPandiyan",
+      "userEmail": "rathnavelpandian2000@gmail.com",
+      "userPassword": "RathnaVelPandiyan@2000",
+      "isAdmin": false,
+      "id": 22
+    },
+    {
+      "userName": "Santhosh Manohar",
+      "userEmail": "santhoshmanohar2000@gmail.com",
+      "userPassword": "SanthoshManohar@2000",
+      "isAdmin": false,
+      "id": 23
+    },
+    {
+      "userName": "Santhosh manohar",
+      "userEmail": "santhoshmanohar2000@gmail.com",
+      "userPassword": "Santhosh@2000",
+      "isAdmin": false,
+      "id": 24
+    },
+    {
+      "userName": "Johncena",
+      "userEmail": "johncena97@gmail.com",
+      "userPassword": "JohnCena@97",
+      "isAdmin": false,
+      "id": 25
+    },
+    {
+      "userName": "Undertaker",
+      "userEmail": "undertaker78@gmail.com",
+      "userPassword": "UnderTaker@78",
+      "isAdmin": false,
+      "id": 26
+    },
+    {
+      "userName": "Kane",
+      "userEmail": "kane99@gmail.com",
+      "userPassword": "WweKane@99",
+      "isAdmin": false,
+      "id": 27
     }
   ],
   "books": [
@@ -139,46 +195,15 @@
       "title": "PHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax: A practical guide to combining the power, performance, scalability, ... time, and high performance of PHP",
       "author": "Yuli Vasiliev",
       "categories": "technologies",
-      "year": "2007",
-      "edition": "1st Ed.",
+      "year": "2006",
+      "edition": "2nd Ed.",
       "language": "english",
-      "pages": "372",
+      "pages": "374",
       "description": "Based on the title, the book has so many things to discuss but it actually has less than 400 pages that even include the glossary of terms. The reader might have a second thought about the book since it might not promise to discuss the things written in the chapter.\r\rBut if you go through the chapters, you will be surprised how each topic could be discussed thoroughly in this book. Using the traditional structures in most web and application development books, it slowly introduces each concept before they are brought together in the final chapters. \r\rPHP and Oracle are discussed separately at first with sample codes and situations to ensure that the reader understands each concept. It then goes to discuss who they could be efficiently integrated. The final chapter which is about Ajax is very impressive as it gives the developers a chance to develop an Ajax based application using popular practices in web development. The robustness of Oracle and efficiency of PHP is actually shown in an Ajax based application.\r\rPHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax is a good starting book for any web development professionals and enthusiasts. It covers the basics of web development using PHP and database management of Oracle including an installation guide for Oracle and PHP. If you are looking for a book to start with PHP and Oracle, this book offers a good start. \r\rFor developers who are experienced in this discipline, the book could be a good reference point for developing an application. The sample codes that helps the reader understands the underlying concept of the application with actual scenarios, this PHP and Oracle book is almost too good to pass on.",
       "available": true,
       "image": "https://rukminim1.flixcart.com/image/416/416/jpu324w0/book/6/3/6/php-oracle-web-development-data-processing-security-caching-xml-original-imafbzmjs8hxf9vw.jpeg?q=70",
-      "quantity": null,
+      "quantity": 10,
       "id": 6
-    },
-    {
-      "title": "MODx Web Development",
-      "author": "Antano Solar John, Antano Solar John",
-      "categories": "technologies",
-      "year": "2009",
-      "edition": "",
-      "language": "en",
-      "pages": "276",
-      "description": "Like someone else said, you can learn MODx by finding resources on the internet. I started reading this book to get introduced to the system, and it was OK for that, but I found I didn't really use it or need it when I actually started making my MODx site. It's a good overview/introduction that may help you understand what MODx is and how it functions, but not totally needed if you just want to jump right in and make a site with MODx. Also, since the release of MODx 1.0/1.0.1, the terminology used in this book is no longer correct, so it may actually confuse you (Resources are now Elements, Documents are now Resources, etc.) And I found some of the writing to be awkward.",
-      "available": true,
-      "image": "https://static.packt-cdn.com/products/9781847194909/cover/smaller",
-      "quantity": 2,
-      "id": 8
-    },
-    {
-      "id": 10,
-      "title": "Professional JavaScript for Web Developers",
-      "author": "Nicholas C. Zakas",
-      "categories": "technologies",
-      "volume": "",
-      "year": "2009",
-      "edition": "2",
-      "language": "en",
-      "pages": "841",
-      "url": "http://bookzz.org/dl/682507/a9cd0c",
-      "description": "Probably the most complete and updated book that you may find about Javascript.The author made a great job writting about some of the most important topics on javascript development and highlighting the difference among browsers.Most of the topics are already covered in other javascript books I have read before, but not in the way Nicholas does, he usually goes deeper on every topic.If you have some knowledge on javascript and want to reach another level, this is the book for you. If you consider yourself a guru, you may enjoy it as well, but definitely, not for newbies.",
-      "cover": "http://libgen.org/covers/254000/b07adfcaf9641b17fe76115bf174f44c-d.jpg",
-      "quantity": -1,
-      "available": true,
-      "image": "https://m.media-amazon.com/images/I/71AEYAnrQML.jpg"
     },
     {
       "id": 11,
@@ -193,7 +218,7 @@
       "url": "http://bookzz.org/dl/740977/339164",
       "description": "A guide to the topics required for state of the art Web development, this book covers wide-ranging topics, including a variety of web development frameworks and best practices. Beginning with coverage of the history of the architecture of Web applications, highlighting the uses of the standard web API to create applications with increasingly sophisticated architectures, developers are led through a discussion on the development of industry accepted best practices for architecture. Described is the history and evolution towards this architecture and the reasons that it is superior to previous efforts. Also provided is an overview of the most popular Web application frameworks, covering their architecture and use. Numerous frameworks exist, but trying to evaluate them is difficult because their documentation stresses their advantages but hides their deficiencies. Here, the same application is built in six different frameworks, providing a way to perform an informed comparison. Also provided is an evaluation of the pros and cons of each framework to assist in making a decision or evaluating a framework on your own. Finally, best practices are covered, including sophisticated user interface techniques, intelligent caching and resource management, performance tuning, debugging, testing, and Web services.",
       "cover": "http://libgen.org/covers/314000/2d822f49188d9edaa78f2085f8e2737f-d.jpg",
-      "quantity": null,
+      "quantity": "11",
       "available": true,
       "image": "https://www.finlandiakirja.fi/media/catalog/product/cache/d736c1dee3794630c3835723ca38a3d2/7/z/7zz2vs_1052390_0.jpg"
     },
@@ -208,25 +233,8 @@
       "description": "Flask Web Development: Developing Web Applications with Python, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
       "available": true,
       "image": "https://learning.oreilly.com/library/cover/9781491991725/250w/",
-      "quantity": 6,
+      "quantity": 7,
       "id": 31
-    },
-    {
-      "id": 33,
-      "title": "Developing Web Apps with Haskell and Yesod: Safety-Driven Web Development",
-      "author": "Michael Snoyman",
-      "categories": "technologies",
-      "volume": "",
-      "year": "2015",
-      "edition": "2",
-      "language": "en",
-      "pages": "396",
-      "url": "http://bookzz.org/dl/2492858/ec8ee3",
-      "description": "Developing Web Apps with Haskell and Yesod: Safety-Driven Web Development, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
-      "cover": "http://libgen.org/covers/1319000/216cf240cc02944b2f77ba17b6a44d49-d.jpg",
-      "quantity": 8,
-      "available": true,
-      "image": "https://learning.oreilly.com/library/cover/9781491915585/250w/"
     },
     {
       "id": 35,
@@ -258,7 +266,7 @@
       "url": "http://bookzz.org/dl/2284255/db588a",
       "description": "PHPEclipse: A User Guide: Take advantage of the leading open source integrated development environment to develop, organize, and debug your PHP web development projects., open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
       "cover": "http://libgen.org/covers/1115000/47dcc653aa3f73886699e93be3415d20-d.jpg",
-      "quantity": 8,
+      "quantity": 6,
       "available": true,
       "image": "https://m.media-amazon.com/images/I/41fe6dzDYiL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
     },
@@ -275,7 +283,7 @@
       "url": "http://bookzz.org/dl/501342/294ba1",
       "description": "With this book readers can become real geographic programmers using the Java programming language. They will find working code examples in Java using some of the many GIS-oriented applications and APIs, and be able to display GIS data on the Web, manipulate GIS data, and programmatically store and retrieve it in geographically enabled databases.",
       "cover": "http://libgen.org/covers/69000/97d33d4600942592a9593dbda717f582-d.jpg",
-      "quantity": 8,
+      "quantity": "8",
       "available": true,
       "image": "https://m.media-amazon.com/images/I/51pU1LR7zrL._SX415_BO1,204,203,200_.jpg"
     },
@@ -292,7 +300,7 @@
       "url": "http://bookzz.org/dl/608485/939377",
       "description": "Spring Web Flow 2 Web Development, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
       "cover": "http://libgen.org/covers/180000/afbf1346c4b006c9397e140431e6d7f6-d.jpg",
-      "quantity": 8,
+      "quantity": "8",
       "available": true,
       "image": "https://static.packt-cdn.com/products/9781847195425/cover/smaller"
     },
@@ -387,7 +395,7 @@
       "language": "french",
       "pages": "400",
       "description": "Treasure Island (originally titled The Sea Cook: A Story for Boys[1]) is an adventure novel by Scottish author Robert Louis Stevenson, telling a story of \"buccaneers and buried gold\". It is considered a coming-of-age story and is noted for its atmosphere, characters, and action.\n\nThe novel was originally serialised from 1881 to 1882 in the children's magazine Young Folks, under the title Treasure Island or the Mutiny of the Hispaniola, credited to the pseudonym \"Captain George North\". It was first published as a book on 14 November 1883 by Cassell & Co. It has since become one of the most often dramatized and adapted of all novels, in numerous media.",
-      "quantity": "5",
+      "quantity": "12",
       "isAvailable": true,
       "image": "https://m.media-amazon.com/images/I/51W7H0q4HPL._SX328_BO1,204,203,200_.jpg",
       "id": 55
@@ -417,7 +425,7 @@
       "language": "English",
       "pages": "233",
       "description": "The Mysterious Island follows the adventures of a group of castaways who use their survivalist savvy to build a functional community on an uncharted island. A hot-air balloon carrying five passengers and a dog escapes from Richmond, Va., during the American Civil War.\n",
-      "quantity": 1,
+      "quantity": "11",
       "isAvailable": true,
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Ile_Mysterieuse_02.jpg/440px-Ile_Mysterieuse_02.jpg",
       "id": 58
@@ -432,46 +440,58 @@
       "language": "english",
       "pages": "265",
       "description": "Who Will Cry When You Die is a book written by the Canadian Indian writer Robin Sharma. The book was first published in 1999. This was the third book written by the author in the series The Monk Who Sold His Ferrari.",
-      "quantity": 3,
+      "quantity": "13",
       "isAvailable": true,
       "image": "https://m.media-amazon.com/images/I/41wKll7ITyL.jpg",
       "id": 59
+    },
+    {
+      "title": "The Call of the wild",
+      "author": "Jack london",
+      "categories": "adventure",
+      "volume": "1",
+      "year": "1903",
+      "edition": "PaperBack",
+      "language": "English",
+      "pages": "234",
+      "description": "The Call of the Wild is a short adventure novel by Jack London, published in 1903 and set in Yukon, Canada, during the 1890s Klondike Gold Rush, when strong sled dogs were in high demand. The central character of the novel is a dog named Buck.",
+      "quantity": "12",
+      "isAvailable": true,
+      "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRKrFfE3XjUHEZ9Yu2eZhYlCYq1zOrsGPoSOunZFyUYuhf-6dUA",
+      "id": 60
+    },
+    {
+      "title": "Around the World in Eighty Days",
+      "author": "Jules Verne",
+      "categories": "adventure",
+      "volume": "1",
+      "year": "1872",
+      "edition": "HardCover",
+      "language": "french",
+      "pages": "232",
+      "description": "Around the World in Eighty Days is an adventure novel by the French writer Jules Verne, first published in French in 1872. In the story, Phileas Fogg of London and his newly employed French valet Passepartout attempt to circumnavigate the world in 80 days on a wager of £20,000 set by his friends at the Reform Club.",
+      "quantity": "10",
+      "isAvailable": true,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxfai7SQjBuJIr7IdA17XncfUrFfINBF_bnWAasHhbdgS-0lYa",
+      "id": 61
+    },
+    {
+      "title": "It Ends with Us",
+      "author": "Colleen Hoover",
+      "categories": "Romance",
+      "volume": "1",
+      "year": "1972",
+      "edition": "paperback",
+      "language": "English",
+      "pages": "235",
+      "description": "Lily hasn’t always had it easy, but that’s never stopped her from working hard for the life she wants. She’s come a long way from the small town in Maine where she grew up — she graduated from college, moved to Boston, and started her own business. So when she feels a spark with a gorgeous neurosurgeon named Ryle Kincaid, everything in Lily’s life suddenly seems almost too good to be true.\n\nRyle is assertive, stubborn, maybe even a little arrogant. He’s also sensitive, brilliant, and has a total soft spot for Lily. And the way he looks in scrubs certainly doesn’t hurt. Lily can’t get him out of her head. But Ryle’s complete aversion to relationships is disturbing. Even as Lily finds herself becoming the exception to his “no dating” rule, she can’t help but wonder what made him that way in the first place.\n\nAs questions about her new relationship overwhelm her, so do thoughts of Atlas Corrigan — her first love and a link to the past she left behind. He was her kindred spirit, her protector. When Atlas suddenly reappears, everything Lily has built with Ryle is threatened.",
+      "quantity": "12",
+      "isAvailable": true,
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1470427482i/27362503.jpg",
+      "id": 62
     }
   ],
   "rented-books": [
-    {
-      "bookTitle": "Professional JavaScript for Web Developers",
-      "bookId": 10,
-      "rentDays": "4",
-      "rentDate": "2023-01-13T06:57:49.451Z",
-      "returnDate": "2023-01-17T06:57:49.451Z",
-      "userId": "6",
-      "rentExpired": false,
-      "userName": "merlins",
-      "id": 11
-    },
-    {
-      "bookTitle": "Professional JavaScript for Web Developers",
-      "bookId": 10,
-      "rentDays": "1",
-      "rentDate": "2023-01-16T04:55:09.917Z",
-      "returnDate": "2023-01-17T04:55:09.917Z",
-      "userId": "5",
-      "rentExpired": false,
-      "userName": "Arthi",
-      "id": 17
-    },
-    {
-      "bookTitle": "Professional JavaScript for Web Developers",
-      "bookId": 10,
-      "rentDays": "2",
-      "rentDate": "2023-01-16T04:58:21.632Z",
-      "returnDate": "2023-01-18T04:58:21.632Z",
-      "userId": "5",
-      "rentExpired": false,
-      "userName": "Arthi",
-      "id": 18
-    },
     {
       "bookTitle": "Art of Java Web Development: Struts, Tapestry, Commons, Velocity, JUnit, Axis, Cocoon, InternetBeans, WebWork",
       "bookId": 11,
@@ -495,28 +515,6 @@
       "id": 20
     },
     {
-      "bookTitle": "MODx Web Development",
-      "bookId": 8,
-      "rentDays": "1",
-      "rentDate": "2023-01-16T09:34:00.786Z",
-      "returnDate": "2023-01-17T09:34:00.786Z",
-      "userId": "9",
-      "rentExpired": false,
-      "userName": "Hamza",
-      "id": 21
-    },
-    {
-      "bookTitle": "MODx Web Development",
-      "bookId": 8,
-      "rentDays": "1",
-      "rentDate": "2023-01-16T09:34:17.814Z",
-      "returnDate": "2023-01-17T09:34:17.814Z",
-      "userId": "9",
-      "rentExpired": false,
-      "userName": "Hamza",
-      "id": 23
-    },
-    {
       "bookTitle": "PHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax: A practical guide to combining the power, performance, scalability, ... time, and high performance of PHP",
       "bookId": 6,
       "rentDays": "10",
@@ -527,24 +525,54 @@
       "userName": "Dhanush",
       "borrowedQuantity": "5",
       "id": 29
+    },
+    {
+      "bookTitle": "Flask Web Development: Developing Web Applications with Python",
+      "bookId": 31,
+      "rentDays": "2",
+      "rentDate": "2023-02-09T09:38:04.631Z",
+      "returnDate": "2023-02-11T09:38:04.631Z",
+      "userId": "6",
+      "rentExpired": false,
+      "userName": "merlins",
+      "borrowedQuantity": "1",
+      "id": 30
+    },
+    {
+      "bookTitle": "PHPEclipse: A User Guide: Take advantage of the leading open source integrated development environment to develop, organize, and debug your PHP web development projects.",
+      "bookId": 36,
+      "rentDays": "1",
+      "rentDate": "2023-02-09T09:38:35.361Z",
+      "returnDate": "2023-02-10T09:38:35.361Z",
+      "userId": "6",
+      "rentExpired": false,
+      "userName": "merlins",
+      "borrowedQuantity": "2",
+      "id": 31
+    },
+    {
+      "bookTitle": "PHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax: A practical guide to combining the power, performance, scalability, ... time, and high performance of PHP",
+      "bookId": 6,
+      "rentDays": "1",
+      "rentDate": "2023-02-09T09:56:36.213Z",
+      "returnDate": "2023-02-10T09:56:36.213Z",
+      "userId": "3",
+      "rentExpired": false,
+      "userName": "TKR",
+      "borrowedQuantity": "1",
+      "id": 32
+    },
+    {
+      "bookTitle": "Flask Web Development: Developing Web Applications with Python",
+      "bookId": 31,
+      "rentDays": "1",
+      "rentDate": "2023-02-09T09:56:55.227Z",
+      "returnDate": "2023-02-10T09:56:55.227Z",
+      "userId": "3",
+      "rentExpired": false,
+      "userName": "TKR",
+      "borrowedQuantity": "1",
+      "id": 33
     }
-  ],
-  "Addedcategories": [
-    [
-      {
-        "id": 0,
-        "categoryName": "dhanush"
-      }
-    ],
-    [
-      {
-        "id": 0,
-        "categoryName": "dhanush"
-      },
-      {
-        "id": 1,
-        "categoryName": "madhan"
-      }
-    ]
   ]
 }

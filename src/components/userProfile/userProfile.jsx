@@ -1,9 +1,11 @@
 import './userProfile.css'
-
+import { useNavigate } from 'react-router-dom'
 
 const UserProfile = () =>{
     var isAdmin = sessionStorage.getItem('isAdmin')
     var userName = sessionStorage.getItem('userName')
+    var userId = sessionStorage.getItem('id')
+    const navigate =useNavigate();
     
  return(
     <>
@@ -31,6 +33,9 @@ const UserProfile = () =>{
                 <h4 className="mb-0">{userName}</h4>
                 <span className="text-muted d-block mb-2">Admin:{isAdmin}</span>
   
+              </div>
+              <div>
+                <button className="btn btn-color px-5 mb-5 w-100" onClick={()=>{navigate('/edit-profile/'+userId)}} >Edit profile</button>
               </div>
                
              </div>

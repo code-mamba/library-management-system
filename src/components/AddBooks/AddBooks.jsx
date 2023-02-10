@@ -2,7 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AddBooks.css";
 import lmsUrl from "../../AxiosURL";
-
+import { ToastContainer, toast } from 'react-toastify';
+import { SuccessfullyBookAdded } from "../../Toastify";
+// import 'react-toastify/dist/ReactToastify.css';
 const AddBooks = () => {
   const [title, setTitle] = useState("");
   const [categories, setCategories] = useState("");
@@ -33,11 +35,13 @@ const AddBooks = () => {
       isAvailable: true,
       image: image,
     };
+
+  
+    
     lmsUrl
-      .post("books", book)
-      .then((res) => {
-        navigate("/home");
-      })
+      .post("books", book).then((res)=>{SuccessfullyBookAdded()})
+      .then((res)=>{setTitle('');setCategories('');setDesc('');setAuthor('');setbookYear('');setbookEdition('');setbookLanguage('');setQuantity(0);setbookPages('');setbookVolume('');setImage('')})
+      // .then((res) => {setTimeout(()=>{navigate('/home')},1000)})
       .catch((err) => {
         console.log(err);
       });
@@ -215,6 +219,7 @@ const AddBooks = () => {
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };

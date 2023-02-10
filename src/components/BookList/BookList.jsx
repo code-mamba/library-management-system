@@ -2,6 +2,9 @@ import { useState } from 'react'
 import{useNavigate} from 'react-router-dom'
 import './BookList.css'
 import lmsUrl from '../../AxiosURL'
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { DeleteBook } from '../../Toastify';
 
 const BookList = ({books,isAdmin,setBooks}) => {
 const navigate = useNavigate()
@@ -28,13 +31,17 @@ const deleteBook = (id)=>{
     lmsUrl.delete('books/'+id) .then(()=>{
         var newBooks=books.filter(book=>{return book.id!==id});
         setBooks(newBooks)
-    }).catch(err=>console.log(err))
+        DeleteBook()
+        // toast.success('Book Deleted Successfully',{position:toast.POSITION.TOP_RIGHT})
+    }).catch((err)=>{console.log(err)})
 
 }
 const rent =(id)=>{
     navigate('/rent-books/'+id)
     
 }
+
+
     return ( 
         <div className="book-list" style={{backgroundColor:'#c8dcff'}}>
             {
@@ -75,6 +82,7 @@ const rent =(id)=>{
             <span onClick={prevPageHandler}>Prev</span>
             <p>{pages.map(page=><span key={page} onClick={()=>setCurrentPage(page)} className={`${currentPage===page?"active":""}`}>{` ${page} |`}</span>)}</p>
             <span onClick={nextPageHandler}>Next</span>
+            <ToastContainer/>
         </div>
      );
     }

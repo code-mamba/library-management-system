@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 import BookList from "../BookList/BookList";
+import { useNavigate } from "react-router-dom";
 import './Home.css'
 import lmsUrl from "../../AxiosURL";
 
-
-
+const navigate = useNavigate
 const Home = ({isAdmin}) => {
         const[books,setBooks]=useState(null); 
         const[query,setQuery] = useState("")
         
-        
-        
- const Searching = (e) =>{
+const Searching = (e) =>{
       setQuery(e.target.value)
       console.log(query)
       var SearchBooks = books.filter((book)=>{
@@ -27,25 +25,20 @@ const Home = ({isAdmin}) => {
         
 const categoryChange = (e) =>{
   
-  lmsUrl.get('books') .then((res)=>{
+  lmsUrl.get('books').then((res)=>{
     var FilteredBooks = res.data.filter((book)=>{return book.categories == e.target.value})
     setBooks(FilteredBooks)
     
   })
- 
-  
-}        
-
-        useEffect(()=>{
+ }        
+          useEffect(()=>{
             lmsUrl.get('books') .then((res)=>{
                 setBooks(res.data);
-                console.log(isAdmin)
-     
-             
-                
-            }).catch((err)=>{console.log(err)});
+                 }).catch((err)=>{navigate('/fetch-err')});
       
         },[query==""]);
+
+        
     return ( 
         <div className="home"  style={{backgroundColor:'#c8dcff'}}>
           <div className="boxContainer">
@@ -68,7 +61,7 @@ const categoryChange = (e) =>{
         
           
 
-           {books&&<BookList books={books} isAdmin={isAdmin} setBooks={setBooks}/>}
+          {books&&<BookList books={books} isAdmin={isAdmin} setBooks={setBooks}/>}
          
            
         </div> 
