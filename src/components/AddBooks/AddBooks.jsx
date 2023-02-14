@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./AddBooks.css";
 import lmsUrl from "../../AxiosURL";
 import { ToastContainer, toast } from 'react-toastify';
-import { SuccessfullyBookAdded } from "../../Toastify";
+import { SuccessfullyBookAdded, UnableToAddBooK } from "../../Toastify";
 // import 'react-toastify/dist/ReactToastify.css';
 const AddBooks = () => {
   const [title, setTitle] = useState("");
@@ -17,7 +17,7 @@ const AddBooks = () => {
   const [pages, setbookPages] = useState("");
   const [volume, setbookVolume] = useState("");
   const [image, setImage] = useState("");
-  const navigate = useNavigate();
+  
 
   const addBooks = (e) => {
     e.preventDefault();
@@ -41,9 +41,9 @@ const AddBooks = () => {
     lmsUrl
       .post("books", book).then((res)=>{SuccessfullyBookAdded()})
       .then((res)=>{setTitle('');setCategories('');setDesc('');setAuthor('');setbookYear('');setbookEdition('');setbookLanguage('');setQuantity(0);setbookPages('');setbookVolume('');setImage('')})
-      // .then((res) => {setTimeout(()=>{navigate('/home')},1000)})
+    
       .catch((err) => {
-        console.log(err);
+        UnableToAddBooK()
       });
   };
 
@@ -51,7 +51,7 @@ const AddBooks = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3">
-          <h2 className="text-center text-dark mt-5">Add Books</h2>
+          <h2 className="text-center text-dark mt-5" data-testid = "add-books" >Add Books</h2>
           <div className="Logo">LMS</div>
           <div className="card my-5">
             <form
@@ -60,7 +60,7 @@ const AddBooks = () => {
             >
               <div className="mb-3">
                 <label>Add Book Name</label>
-                <input
+                <input data-testid = 'book-name'
                   type="text"
                   className="form-control"
                   id="bookName"
@@ -74,6 +74,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Book Volume</label>
                 <input
+                  data-testid ='book-volume'
                   type="text"
                   className="form-control"
                   id="addVolume"
@@ -88,6 +89,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Author Name</label>
                 <input
+                  data-testid = 'addAuthor'
                   type="text"
                   className="form-control"
                   id="addAuthor"
@@ -103,6 +105,7 @@ const AddBooks = () => {
                 <label>Add Book Type</label>
                 <input
                   type="text"
+                  data-testid = 'addCategory'
                   className="form-control"
                   id="addCategory"
                   placeholder="Add Book Category"
@@ -115,6 +118,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Year</label>
                 <input
+                  data-testid = 'addYear'
                   type="text"
                   className="form-control"
                   id="editYear"
@@ -129,6 +133,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Book Edition</label>
                 <input
+                  data-testid ='addBookEdition'
                   type="text"
                   className="form-control"
                   id="addEdition"
@@ -143,6 +148,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Book Language</label>
                 <input
+                  data-testid = "bookLang"
                   type="text"
                   className="form-control"
                   id="AddLanguage"
@@ -157,6 +163,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Description</label>
                 <textarea
+                  data-testid = 'addDesc'
                   className="form-control"
                   id="editDescription"
                   placeholder="Add Book Description"
@@ -170,6 +177,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Book Pages</label>
                 <input
+                  data-testid = 'addPages'
                   type="number"
                   className="form-control"
                   id="AddPages"
@@ -184,6 +192,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Quantity</label>
                 <input
+                  data-testid = 'addQuant'
                   className="form-control"
                   id="addQuantity"
                   type="number"
@@ -198,6 +207,7 @@ const AddBooks = () => {
               <div>
                 <label>Image Url</label>
                 <input
+                  data-testid = 'addImg'
                   className="form-control"
                   id="imageUrl"
                   type="text"
@@ -211,7 +221,7 @@ const AddBooks = () => {
               </div>
 
               <div className="text-center">
-                <button type="submit" className="btn btn-color px-5 mb-5 w-50">
+                <button data-testid = 'addBook-btn' type="submit" className="btn btn-color px-5 mb-5 w-50">
                   Add Book
                 </button>
               </div>

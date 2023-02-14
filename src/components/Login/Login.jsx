@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./Login.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import lmsUrl from "../../AxiosURL";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { LoginErrorMessage, LoginServerError, LoginSucessMessage } from "../../Toastify";
+import { LoginErrorMessage, LoginSucessMessage } from "../../Toastify";
 
 const Login = ({ setisAdmin, setisLoggedIn }) => {
   const [userEmail, setuserEmail] = useState("");
@@ -14,6 +14,7 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
   const [credErr, setCredErr] = useState(null);
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
+
   const validateForm = (email, password) => {
     if ((email === "") | (email === null)) {
       seterrMsgEmail("Please fill the Email field");
@@ -43,36 +44,36 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
         .get("users?userEmail=" + userEmail)
         .then((res) => {
           if (res.data[0].userPassword === userPassword) {
-            LoginSucessMessage()
+            
             seterrMsgEmail(null);
             res.data[0].isAdmin ? setisAdmin(true) : setisAdmin(false);
             setisLoggedIn(true);
             sessionStorage.setItem("id", res.data[0].id);
             sessionStorage.setItem("userName", res.data[0].userName);
             sessionStorage.setItem("isAdmin", res.data[0].isAdmin);
+            LoginSucessMessage()
             // toast.success("Successfully Logged in !", {
             //   position: toast.POSITION.TOP_RIGHT,
             // });
-            setTimeout(() => {
-              navigate("/home");
-            }, 2000);
+            navigate('/home')
+            // setTimeout(() => {
+            //   navigate("/home");
+            // }, 1000);
           } else {
             
             setisLoggedIn(false);
 
-            // toast.error("Invalid credentials!", {
-            //   position: toast.POSITION.TOP_RIGHT,
-            // });
+
           }
         })
         .catch((err) => {
           LoginErrorMessage()
-          // LoginServerError()
+          
         });
     }
   };
 
-  // Toastify Error message
+
 
 
   return (
@@ -93,6 +94,7 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
                   id="Username"
                   aria-describedby="emailHelp"
                   placeholder="User Email"
+                  data-testid="email-input"
                   value={userEmail}
                   onChange={(e) => setuserEmail(e.target.value)}
                   onClick={(e) => {
@@ -107,6 +109,7 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
                   className="form-control"
                   id="password"
                   placeholder="password"
+                  data-testid = "password-input"
                   value={userPassword}
                   onClick={(e) => {
                     e.target.focus(setCredErr(null), setErrMsgPassword(null));
@@ -128,7 +131,7 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
               )}
               {credErr && <p style={{ color: "red" }}>{credErr}</p>}
               <div className="text-center">
-                <button type="submit" className="btn btn-color px-5 mb-5 w-100">
+                <button data-testid = 'Login_btn' type="submit" className="btn btn-color px-5 mb-5 w-100">
                   Login
                 </button>
               </div>
@@ -142,7 +145,7 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
           </div>
         </div>
       </div>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </div>
   );
 };

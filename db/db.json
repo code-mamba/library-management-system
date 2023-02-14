@@ -15,9 +15,9 @@
       "id": 2
     },
     {
-      "userName": "TKR",
+      "userName": "TKR123",
       "userEmail": "tkr@gmail.com",
-      "userPassword": "Password@123",
+      "userPassword": "TKRPassword@123",
       "isAdmin": false,
       "id": 3
     },
@@ -188,6 +188,13 @@
       "userPassword": "WweKane@99",
       "isAdmin": false,
       "id": 27
+    },
+    {
+      "userName": "SakthiThangavelu",
+      "userEmail": "sakthithangavelu2001@gmail.com",
+      "userPassword": "Sakth2000@Lms",
+      "isAdmin": false,
+      "id": 28
     }
   ],
   "books": [

@@ -45,7 +45,7 @@ const AddUser = () => {
     } else {  
       const user = { userName, userEmail, userPassword, isAdmin: false };
         // SuccessfullySignedin()
-      lmsUrl.post('users',user).then(()=>{SuccessfullySignedin()}).then(setTimeout(()=>{navigate('/')},1000)).catch((err)=>{toast.error(err,{position:toast.POSITION.TOP_RIGHT})})
+      lmsUrl.post('users',user).then(()=>{SuccessfullySignedin()}).then(()=>navigate('/')).catch((err)=>{toast.error(err,{position:toast.POSITION.TOP_RIGHT})})
 
       // lmsUrl
       //   .post("users", user)

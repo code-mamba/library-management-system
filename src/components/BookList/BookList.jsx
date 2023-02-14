@@ -4,11 +4,11 @@ import './BookList.css'
 import lmsUrl from '../../AxiosURL'
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { DeleteBook } from '../../Toastify';
+import { DeleteBook, unableToDeleteBook } from '../../Toastify';
 
 const BookList = ({books,isAdmin,setBooks}) => {
 const navigate = useNavigate()
-const[booksPerPage,setBooksPerPage] = useState(5)
+const booksPerPage = 5
 const numOfTotalPages = Math.ceil(books.length/booksPerPage)
 const[currentPage, setCurrentPage] = useState(1)
 const pages = [...Array(numOfTotalPages+1).keys()].slice(1)
@@ -32,8 +32,8 @@ const deleteBook = (id)=>{
         var newBooks=books.filter(book=>{return book.id!==id});
         setBooks(newBooks)
         DeleteBook()
-        // toast.success('Book Deleted Successfully',{position:toast.POSITION.TOP_RIGHT})
-    }).catch((err)=>{console.log(err)})
+        
+    }).catch((err)=>{unableToDeleteBook()})
 
 }
 const rent =(id)=>{
@@ -49,7 +49,7 @@ const rent =(id)=>{
                 visibleBooks.map((book)=>{
                     return( 
                     
-                        <nav className='container mt-5'>
+                        <nav className='container mt-5' key={book.id} >
                              
                             <div className='card'  style={{backgroundColor:'#e6e6e6'}}>
                                     <div className='row'>

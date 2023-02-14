@@ -14,6 +14,7 @@ import RentList from './components/RentList/RentList';
 import UserProfile from './components/userProfile/userProfile';
 import EditProfile from './components/EditProfile/EditProfile';
 import UnableToFetch from './components/UnableToFetchData/unableToFetch';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -36,7 +37,9 @@ function App() {
   },[])
   return (
     <div className="App">
+
       <Navbar isAdmin={isAdmin} isloggedIn={isLoggedIn} logOut={logOut}/>
+      <ToastContainer/>
         <Routes>
               <Route path="/"element={<Login setisLoggedIn={setisLoggedIn} setisAdmin={setisAdmin}/>}></Route>
               <Route path='/add-user' element={<AddUser/>}></Route>
@@ -47,7 +50,7 @@ function App() {
               {isLoggedIn&&<Route path='/rent-books/:id' element={<RentBook/>}></Route>}
               {isLoggedIn&&<Route path='/rent-list' element={<RentList/>}></Route>}
               {isLoggedIn&&<Route path='/user-profile'element={<UserProfile/>} ></Route>}
-              {isLoggedIn&&<Route path='/edit-profile/:userId' element={<EditProfile title ={'Edit Profile'}></EditProfile>}></Route>}
+              {isLoggedIn&&<Route path='/edit-profile/:userId' element={<EditProfile title ='Edit Profile'></EditProfile>}></Route>}
               {isLoggedIn &&<Route path='/fetch-err' element={<UnableToFetch></UnableToFetch>}></Route>}
               <Route path='*' element={<PageNotFound/>}></Route>
               

@@ -26,18 +26,26 @@ export function SuccessfullyBookAdded(){
 		position:toast.POSITION.TOP_RIGHT
 	})
 }
+export function UnableToAddBooK(){
+	toast.error('Unable To Add Book')
+}
 export function DeleteBook(){
-	toast.success('Book Deleted Dhanush',{
+	toast.success('Book Deleted',{
+		position:toast.POSITION.TOP_RIGHT
+	})
+}
+export function unableToDeleteBook(){
+	toast.error('unable to delete the book',{
 		position:toast.POSITION.TOP_RIGHT
 	})
 }
 export function SuccessfullyEdited(){
-	toast.success('Book updated dhanush',{
+	toast.success('Book updated',{
 	  position:toast.POSITION.TOP_RIGHT
 	})
   }
 export function UnableToEdit(){
-	toast.error('unable to edit dhanush',{
+	toast.error('unable to edit',{
 	 position:toast.POSITION.TOP_RIGHT
 	})
  }
