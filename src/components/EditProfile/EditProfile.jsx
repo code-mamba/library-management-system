@@ -67,18 +67,6 @@ const EditProfile = ({ title }) => {
     }
   };
 
-  // const SuccessMessage = () => {
-  //   toast.success("Profile Updated", {
-  //     position: toast.POSITION.TOP_RIGHT,
-  //   });
-  // };
-
-  // const ErrorMessage = () =>{
-  //   toast.error(`cant't able to update the profile`,{
-  //     position:toast.POSITION.TOP_RIGHT
-  //   })
-  // }
-
   return (
     <div className="container">
       <div className="row">

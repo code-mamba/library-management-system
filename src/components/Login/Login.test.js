@@ -23,9 +23,8 @@ describe("<Login />",()=>{
 		render(<Login/>)
 		const inputEl = screen.getByTestId("email-input")
 		fireEvent.change(inputEl, {target: {value: "dhanush@gmail.com"}});
-		// userEvent.type(inputEl, "dhanush@gmail.com");
 		expect(screen.getByTestId("email-input")).toHaveValue("dhanush@gmail.com");
-		// expect(screen.getByTestId("email-input").toHaveValue("dhanush@gmail.com"))
+	
 
 	})
 	test('render password input',()=>{
@@ -35,7 +34,7 @@ describe("<Login />",()=>{
 		expect(inputEl2).toHaveAttribute("type","password")
 	})
 	test('valid input to test password',()=>{
-		render(<Login></Login>)
+		render(<Login></Login>)  
 		const  inputEl2 = screen.getByTestId("password-input")
 		fireEvent.change(inputEl2,{target:{value:"Password@123"}})
 		expect(screen.getByTestId("password-input")).toHaveValue("Password@123")
@@ -45,7 +44,7 @@ describe("<Login />",()=>{
 		const button = screen.getByTestId("Login_btn")
 		fireEvent.click(button)
 		
-	})
+	})   
 
 	
 

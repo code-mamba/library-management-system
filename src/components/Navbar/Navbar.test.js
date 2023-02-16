@@ -16,7 +16,7 @@ describe('render navbar component',()=>{
 	test('render navbar',()=>{
 		render(<Navbar isAdmin={true} isloggedIn={false}/>)
 	
-	})
+	})    
 	test('render navbar',()=>{
 		render(<Navbar isAdmin={false} isloggedIn={false}/>)
 	})

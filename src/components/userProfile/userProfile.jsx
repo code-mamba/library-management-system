@@ -6,7 +6,7 @@ const UserProfile = () => {
   var userName = sessionStorage.getItem("userName");
   var userId = sessionStorage.getItem("id");
   const navigate = useNavigate();
-
+  
   return (
     <>
       <div className="container d-flex justify-content-center align-items-center">
@@ -31,6 +31,7 @@ const UserProfile = () => {
           </div>
           <div>
             <button
+              data-testid = 'editProfile-btn'
               className="btn btn-color px-5 mb-5 w-100"
               onClick={() => {
                 navigate("/edit-profile/" + userId);
