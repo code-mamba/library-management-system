@@ -1,13 +1,13 @@
 .Logo {
-    text-align: center;
-    font-size: 40px;
-    color: brown;
+  text-align: center;
+  font-size: 40px;
+  color: brown;
 }
 
 .btn {
-    color: 'white';
+  color: "white";
 }
 
 .btn :hover {
-    color: 'white';
+  color: "white";
 }

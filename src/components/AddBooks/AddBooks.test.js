@@ -1,8 +1,7 @@
 import {render, screen, fireEvent} from '@testing-library/react'
 import '@testing-library/jest-dom'
 import AddBooks from './AddBooks'
-import MockAdapter from 'axios-mock-adapter/types'
-import axios from 'axios'
+import MockAdapter from 'axios-mock-adapter'
 import lmsUrl from '../../AxiosURL'
 
 describe('<AddBooks/>',()=>{
@@ -114,10 +113,60 @@ describe('<AddBooks/>',()=>{
 		
 	})
 	test('Mocking axios post',()=>{
-		render(<AddBooks/>)
+		
 		var mock = new MockAdapter(lmsUrl)
 		const data ={response:200}
-		const book = {}
-		mock.onPost(<AddBooks/>)
+		const book =      {
+			title: '',
+			author: '',
+			categories: '',
+			volume: '',
+			year: '',
+			edition: '',
+			language: '',
+			pages: '',
+			description: '',
+			quantity: 0,
+			isAvailable: true,
+			image: ''
+		  } 
+		mock.onPost("books",book).reply(200, data);
+		render(<AddBooks/>)
+		const button = screen.getByTestId('addBook-btn')
+		fireEvent.click(button)
+
+	})
+	test('Mocking axios post catch',()=>{
+		
+		var mock = new MockAdapter(lmsUrl)
+		const data ={response:200}
+		const book =      {
+			title: '',
+			author: '',
+			categories: '',
+			volume: '',
+			year: '',
+			edition: '',
+			language: '',
+			pages: '',
+			description: '',
+			quantity: 0,
+			isAvailable: true,
+			image: ''
+		  } 
+		mock.onPost("books",book).reply(404, data);
+		render(<AddBooks/>)
+		const button = screen.getByTestId('addBook-btn')
+		fireEvent.click(button)
+
 	}) 
+	// test("submit book",()=>{
+	// 	render(<AddBooks/>)
+		
+	// 		// it("Test form submit and validation",()=>{
+	// // 	render(<Login/>)
+	// // 	const button = screen.getByTestId("Login_btn")
+	// // 	fireEvent.click(button)		
+	// // })
+	// }) 
 }) 

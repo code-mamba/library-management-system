@@ -15,9 +15,9 @@
       "id": 2
     },
     {
-      "userName": "TKR123",
+      "userName": "TKR",
       "userEmail": "tkr@gmail.com",
-      "userPassword": "TKRPassword@123",
+      "userPassword": "Password@123",
       "isAdmin": false,
       "id": 3
     },
@@ -195,6 +195,13 @@
       "userPassword": "Sakth2000@Lms",
       "isAdmin": false,
       "id": 28
+    },
+    {
+      "userName": "doggy",
+      "userEmail": "doggy2000@gmail.com",
+      "userPassword": "Doggy@2000",
+      "isAdmin": false,
+      "id": 29
     }
   ],
   "books": [
@@ -240,7 +247,7 @@
       "description": "Flask Web Development: Developing Web Applications with Python, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
       "available": true,
       "image": "https://learning.oreilly.com/library/cover/9781491991725/250w/",
-      "quantity": 7,
+      "quantity": "8",
       "id": 31
     },
     {
@@ -273,7 +280,7 @@
       "url": "http://bookzz.org/dl/2284255/db588a",
       "description": "PHPEclipse: A User Guide: Take advantage of the leading open source integrated development environment to develop, organize, and debug your PHP web development projects., open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
       "cover": "http://libgen.org/covers/1115000/47dcc653aa3f73886699e93be3415d20-d.jpg",
-      "quantity": 6,
+      "quantity": 5,
       "available": true,
       "image": "https://m.media-amazon.com/images/I/41fe6dzDYiL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
     },
@@ -496,6 +503,111 @@
       "isAvailable": true,
       "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1470427482i/27362503.jpg",
       "id": 62
+    },
+    {
+      "title": "asdfghjk",
+      "author": "asdfghjk",
+      "categories": "asdfghjk",
+      "volume": "sdfghjk",
+      "year": "2000",
+      "edition": "paperback",
+      "language": "english",
+      "pages": "343",
+      "description": "dfghjkl",
+      "quantity": "7",
+      "isAvailable": true,
+      "image": "sdfghjk",
+      "id": 63
+    },
+    {
+      "title": "sdfghjkl;",
+      "author": "hj",
+      "categories": "xcvj",
+      "volume": "sdfghjk",
+      "year": "sdfghjk",
+      "edition": "sdfghj",
+      "language": "dfghjk",
+      "pages": "353",
+      "description": "sdfghjk",
+      "quantity": "23",
+      "isAvailable": true,
+      "image": "sdfghjkl",
+      "id": 64
+    },
+    {
+      "title": "sdfghjkl;",
+      "author": "hj",
+      "categories": "xcvj",
+      "volume": "sdfghjk",
+      "year": "sdfghjk",
+      "edition": "sdfghj",
+      "language": "dfghjk",
+      "pages": "353",
+      "description": "sdfghjk",
+      "quantity": "23",
+      "isAvailable": true,
+      "image": "sdfghjkl",
+      "id": 65
+    },
+    {
+      "title": "sdfghjkl;",
+      "author": "hj",
+      "categories": "xcvj",
+      "volume": "sdfghjk",
+      "year": "sdfghjk",
+      "edition": "sdfghj",
+      "language": "dfghjk",
+      "pages": "353",
+      "description": "sdfghjk",
+      "quantity": "23",
+      "isAvailable": true,
+      "image": "sdfghjkl",
+      "id": 66
+    },
+    {
+      "title": "sdfghjkl;",
+      "author": "hj",
+      "categories": "xcvj",
+      "volume": "sdfghjk",
+      "year": "sdfghjk",
+      "edition": "sdfghj",
+      "language": "dfghjk",
+      "pages": "353",
+      "description": "sdfghjk",
+      "quantity": "23",
+      "isAvailable": true,
+      "image": "sdfghjkl",
+      "id": 67
+    },
+    {
+      "title": "sdfghjkl;",
+      "author": "hj",
+      "categories": "xcvj",
+      "volume": "sdfghjk",
+      "year": "sdfghjk",
+      "edition": "sdfghj",
+      "language": "dfghjk",
+      "pages": "353",
+      "description": "sdfghjk",
+      "quantity": "23",
+      "isAvailable": true,
+      "image": "sdfghjkl",
+      "id": 68
+    },
+    {
+      "title": "The Power of charm",
+      "author": "Brian Tracy",
+      "categories": "self-help",
+      "volume": "1",
+      "year": "2006",
+      "edition": "hardcover",
+      "language": "french",
+      "pages": "142",
+      "description": "This book gives you proven ways to become more captivating and persuasive in any situation. As one of the world's premier business consultants and personal success experts, Brian Tracy shows readers what charm can do, and how they can use simple methods to immediately become more charming and dramatically improve their social lives and business relationships.\n\nIn The Power of Charm, you will learn how to:\n\n    capture people's trust and attention within the first few seconds of meeting\n    win the support of others who can help them achieve their goals\n    master body language and advanced listening techniques\n    sell more of their products or services\n    deliver powerful and engaging talks and presentations\n    improve their negotiation skills\n    get paid more and promoted faster\n\nThe Power of Charm helps readers develop greater confidence and self-esteem while learning how to naturally create rhythm and harmony with others. It's a unique and powerful guide filled with proven techniques for making dreams come true -- in business and in life!",
+      "quantity": "23",
+      "isAvailable": true,
+      "image": "https://m.media-amazon.com/images/I/5126KHAQhIS.jpg",
+      "id": 70
     }
   ],
   "rented-books": [

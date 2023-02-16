@@ -1,8 +1,9 @@
-import { renderHook } from "@testing-library/react";
+import { render, renderHook } from "@testing-library/react";
 import UserProfile from "./userProfile";
 
-const TEST_KEY_1 = "isAdmin";
-const TEST_KEY_2 = "userName";
-const TEST_KEY_3 = "id";
-
-const TEST_VALUE = {}
+describe('render component',()=>{
+	test('render component',()=>{
+		render(<UserProfile/>)
+	})
+	
+})

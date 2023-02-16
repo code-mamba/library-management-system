@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyBooks.css";
 import lmsUrl from "../../AxiosURL";
-import { ToastContainer } from "react-toastify";
-import { ReturnedSuccessfully } from "../../Toastify";
+import { ReturnedSuccessfully, ReturnError } from "../../Toastify";
 
 const MyBooks = () => {
   const navigate = useNavigate();
@@ -16,9 +15,17 @@ const MyBooks = () => {
     lmsUrl.delete("rented-books/" + id).then(() => {
       lmsUrl.get("books/" + bookId).then((res) => {
         res.data.quantity = res.data.quantity + 1;
-        lmsUrl.put("books/" + bookId, res.data).then((res) => {
-          ReturnedSuccessfully()
-        }).then((res)=>{setTimeout(()=>{navigate('/home')},1000)});
+        lmsUrl
+          .put("books/" + bookId, res.data)
+          .then((res) => {
+            ReturnedSuccessfully();
+          })
+          .then((res) => {
+            navigate("/home");
+          })
+          .catch((err) => {
+            ReturnError();
+          });
       });
     });
   };
@@ -39,7 +46,9 @@ const MyBooks = () => {
         });
         setRentedBooks(res.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        navigate("/fetch-err");
+      });
   }, []);
   return (
     <div className="mybooks">
@@ -72,7 +81,6 @@ const MyBooks = () => {
             </section>
           );
         })}
-        <ToastContainer/>
     </div>
   );
 };

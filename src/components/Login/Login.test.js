@@ -1,7 +1,5 @@
 import {render,screen, fireEvent} from '@testing-library/react'
 import '@testing-library/jest-dom'
-
-import userEvent from '@testing-library/user-event'
 import Login from './Login'
 
 
@@ -38,16 +36,16 @@ describe("<Login />",()=>{
 	})
 	test('valid input to test password',()=>{
 		render(<Login></Login>)
-		const inputEl2 = screen.getByTestId("password-input")
+		const  inputEl2 = screen.getByTestId("password-input")
 		fireEvent.change(inputEl2,{target:{value:"Password@123"}})
 		expect(screen.getByTestId("password-input")).toHaveValue("Password@123")
 	})
-	// it("Test form submit and validation",()=>{
-	// 	render(<Login/>)
-	// 	const button = screen.getByTestId("Login_btn")
-	// 	fireEvent.click(button)
+	it("Test form submit and validation",()=>{
+		render(<Login/>)
+		const button = screen.getByTestId("Login_btn")
+		fireEvent.click(button)
 		
-	// })
+	})
 
 	
 

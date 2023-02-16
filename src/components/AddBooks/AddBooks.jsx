@@ -1,10 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./AddBooks.css";
 import lmsUrl from "../../AxiosURL";
-import { ToastContainer, toast } from 'react-toastify';
 import { SuccessfullyBookAdded, UnableToAddBooK } from "../../Toastify";
-// import 'react-toastify/dist/ReactToastify.css';
 const AddBooks = () => {
   const [title, setTitle] = useState("");
   const [categories, setCategories] = useState("");
@@ -17,7 +14,6 @@ const AddBooks = () => {
   const [pages, setbookPages] = useState("");
   const [volume, setbookVolume] = useState("");
   const [image, setImage] = useState("");
-  
 
   const addBooks = (e) => {
     e.preventDefault();
@@ -33,17 +29,32 @@ const AddBooks = () => {
       description,
       quantity,
       isAvailable: true,
-      image: image,
+      image,
     };
 
-  
-    
+    console.log(book);
+
     lmsUrl
-      .post("books", book).then((res)=>{SuccessfullyBookAdded()})
-      .then((res)=>{setTitle('');setCategories('');setDesc('');setAuthor('');setbookYear('');setbookEdition('');setbookLanguage('');setQuantity(0);setbookPages('');setbookVolume('');setImage('')})
-    
+      .post("books", book)
+      .then((res) => {
+        SuccessfullyBookAdded();
+      })
+      .then((res) => {
+        setTitle("");
+        setCategories("");
+        setDesc("");
+        setAuthor("");
+        setbookYear("");
+        setbookEdition("");
+        setbookLanguage("");
+        setQuantity(0);
+        setbookPages("");
+        setbookVolume("");
+        setImage("");
+      })
+
       .catch((err) => {
-        UnableToAddBooK()
+        UnableToAddBooK();
       });
   };
 
@@ -51,7 +62,9 @@ const AddBooks = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3">
-          <h2 className="text-center text-dark mt-5" data-testid = "add-books" >Add Books</h2>
+          <h2 className="text-center text-dark mt-5" data-testid="add-books">
+            Add Books
+          </h2>
           <div className="Logo">LMS</div>
           <div className="card my-5">
             <form
@@ -60,7 +73,8 @@ const AddBooks = () => {
             >
               <div className="mb-3">
                 <label>Add Book Name</label>
-                <input data-testid = 'book-name'
+                <input
+                  data-testid="book-name"
                   type="text"
                   className="form-control"
                   id="bookName"
@@ -74,7 +88,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Book Volume</label>
                 <input
-                  data-testid ='book-volume'
+                  data-testid="book-volume"
                   type="text"
                   className="form-control"
                   id="addVolume"
@@ -89,7 +103,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Author Name</label>
                 <input
-                  data-testid = 'addAuthor'
+                  data-testid="addAuthor"
                   type="text"
                   className="form-control"
                   id="addAuthor"
@@ -105,7 +119,7 @@ const AddBooks = () => {
                 <label>Add Book Type</label>
                 <input
                   type="text"
-                  data-testid = 'addCategory'
+                  data-testid="addCategory"
                   className="form-control"
                   id="addCategory"
                   placeholder="Add Book Category"
@@ -118,7 +132,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Year</label>
                 <input
-                  data-testid = 'addYear'
+                  data-testid="addYear"
                   type="text"
                   className="form-control"
                   id="editYear"
@@ -133,7 +147,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Book Edition</label>
                 <input
-                  data-testid ='addBookEdition'
+                  data-testid="addBookEdition"
                   type="text"
                   className="form-control"
                   id="addEdition"
@@ -148,7 +162,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Book Language</label>
                 <input
-                  data-testid = "bookLang"
+                  data-testid="bookLang"
                   type="text"
                   className="form-control"
                   id="AddLanguage"
@@ -163,7 +177,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Description</label>
                 <textarea
-                  data-testid = 'addDesc'
+                  data-testid="addDesc"
                   className="form-control"
                   id="editDescription"
                   placeholder="Add Book Description"
@@ -177,7 +191,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Book Pages</label>
                 <input
-                  data-testid = 'addPages'
+                  data-testid="addPages"
                   type="number"
                   className="form-control"
                   id="AddPages"
@@ -192,7 +206,7 @@ const AddBooks = () => {
               <div className="mb-3">
                 <label>Add Quantity</label>
                 <input
-                  data-testid = 'addQuant'
+                  data-testid="addQuant"
                   className="form-control"
                   id="addQuantity"
                   type="number"
@@ -207,7 +221,7 @@ const AddBooks = () => {
               <div>
                 <label>Image Url</label>
                 <input
-                  data-testid = 'addImg'
+                  data-testid="addImg"
                   className="form-control"
                   id="imageUrl"
                   type="text"
@@ -221,7 +235,11 @@ const AddBooks = () => {
               </div>
 
               <div className="text-center">
-                <button data-testid = 'addBook-btn' type="submit" className="btn btn-color px-5 mb-5 w-50">
+                <button
+                  data-testid="addBook-btn"
+                  type="submit"
+                  className="btn btn-color px-5 mb-5 w-50"
+                >
                   Add Book
                 </button>
               </div>
@@ -229,7 +247,6 @@ const AddBooks = () => {
           </div>
         </div>
       </div>
-      <ToastContainer/>
     </div>
   );
 };

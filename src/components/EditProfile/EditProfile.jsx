@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ProfileUpdated, ProfileUpdateErr } from "../../Toastify";
 import lmsUrl from "../../AxiosURL";
 const EditProfile = ({ title }) => {
   const [userName, setUserName] = useState();
@@ -48,14 +46,14 @@ const EditProfile = ({ title }) => {
         lmsUrl
           .put("users/" + userId, users)
           .then(() => {
-            SuccessMessage();
+            ProfileUpdated();
           })
           .then(() => {
             setNewPassword("");
             setConfPassword("");
           })
           .catch((err) => {
-            ErrorMessage();
+            ProfileUpdateErr();
           });
       } else {
         e.preventDefault();
@@ -69,17 +67,17 @@ const EditProfile = ({ title }) => {
     }
   };
 
-  const SuccessMessage = () => {
-    toast.success("Profile Updated", {
-      position: toast.POSITION.TOP_RIGHT,
-    });
-  };
+  // const SuccessMessage = () => {
+  //   toast.success("Profile Updated", {
+  //     position: toast.POSITION.TOP_RIGHT,
+  //   });
+  // };
 
-  const ErrorMessage = () =>{
-    toast.error(`cant't able to update the profile`,{
-      position:toast.POSITION.TOP_RIGHT
-    })
-  }
+  // const ErrorMessage = () =>{
+  //   toast.error(`cant't able to update the profile`,{
+  //     position:toast.POSITION.TOP_RIGHT
+  //   })
+  // }
 
   return (
     <div className="container">
@@ -182,7 +180,6 @@ const EditProfile = ({ title }) => {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };

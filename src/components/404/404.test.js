@@ -6,7 +6,8 @@ describe('checks the pagenotfound component',()=>{
 		const{getByText}= render(<PageNotFound/>) 
 		const titleValue = getByText('Page Not Found')
 		// expect(titleValue).toBe('Page Not Found')
-		expect(titleValue).toHaveTextContent('Page Not Found')
+		expect(titleValue).toHaveTextContent('Page Not Found') 
+	
 
 	})
 	
