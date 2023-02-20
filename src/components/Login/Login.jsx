@@ -1,9 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import lmsUrl from "../../AxiosURL";
-import "react-toastify/dist/ReactToastify.css";
 import { LoginErrorMessage, LoginSucessMessage } from "../../Toastify";
+import { ValidateTheUSer } from "../../services/api";
 
 const Login = ({ setisAdmin, setisLoggedIn }) => {
   const [userEmail, setuserEmail] = useState("");
@@ -14,7 +14,7 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
-  const validateForm = (email, password) => {
+  function validateForm(email, password) {
     if ((email === "") | (email === null)) {
       seterrMsgEmail("Please fill the Email field");
     }
@@ -22,7 +22,7 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
       setErrMsgPassword("Please fill the  Password field");
     }
     if (
-      email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g) &&
+      email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g) &&
       password.match(
         /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
       )
@@ -31,7 +31,7 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
     } else {
       return true;
     }
-  };
+  }
   const login = (e) => {
     e.preventDefault();
 
@@ -39,8 +39,7 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
       setCredErr("Invalid User Name or Password");
       setisLoggedIn(false);
     } else {
-      lmsUrl
-        .get("users?userEmail=" + userEmail)
+      ValidateTheUSer(userEmail)
         .then((res) => {
           if (res.data[0].userPassword === userPassword) {
             seterrMsgEmail(null);
@@ -48,18 +47,17 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
             setisLoggedIn(true);
             sessionStorage.setItem("id", res.data[0].id);
             sessionStorage.setItem("userName", res.data[0].userName);
-            sessionStorage.setItem("isAdmin", res.data[0].isAdmin);
+            res.data[0].isAdmin &&
+              sessionStorage.setItem("isAdmin", res.data[0].isAdmin);
             LoginSucessMessage();
 
             navigate("/home");
-
           } else {
             setisLoggedIn(false);
-            LoginErrorMessage()
-
+            LoginErrorMessage();
           }
         })
-        .catch((err) => {
+        .catch(() => {
           LoginErrorMessage();
         });
     }

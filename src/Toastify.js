@@ -70,12 +70,12 @@ export function ReturnError() {
   });
 }
 export function successfullyRented() {
-  toast.success("Successfully Rented dhanush", {
+  toast.success("Successfully Rented", {
     position: toast.POSITION.TOP_RIGHT,
   });
 }
 export function unabletoRent() {
-  toast.error("unable to rent dhanush", {
+  toast.error("unable to rent", {
     position: toast.POSITION.TOP_RIGHT,
   });
 }

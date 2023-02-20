@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ProfileUpdated, ProfileUpdateErr } from "../../Toastify";
 import lmsUrl from "../../AxiosURL";
+import { getUserDetails } from "../../services/api";
 const EditProfile = ({ title }) => {
   const [userName, setUserName] = useState();
   const [userEmail, setUserEmail] = useState();
@@ -22,10 +24,12 @@ const EditProfile = ({ title }) => {
     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
   useEffect(() => {
-    lmsUrl.get("users/" + userId).then((res) => {
-      setUserName(res.data.userName);
-      setUserEmail(res.data.userEmail);
-    });
+    getUserDetails(userId)
+      // lmsUrl.get("users/" + userId)
+      .then((res) => {
+        setUserName(res.data.userName);
+        setUserEmail(res.data.userEmail);
+      });
   }, []);
 
   const submitChanges = (e) => {
@@ -52,7 +56,7 @@ const EditProfile = ({ title }) => {
             setNewPassword("");
             setConfPassword("");
           })
-          .catch((err) => {
+          .catch(() => {
             ProfileUpdateErr();
           });
       } else {
@@ -83,6 +87,7 @@ const EditProfile = ({ title }) => {
               <div className="mb-3">
                 <label htmlFor="Username">User Name:</label>
                 <input
+                  data-testid="userName"
                   type="text"
                   className="form-control"
                   id="Username"
@@ -96,6 +101,7 @@ const EditProfile = ({ title }) => {
               <div className="mb-3">
                 <label htmlFor="newPassword">New password:</label>
                 <input
+                  data-testid="newPassword"
                   type={show ? "text" : "password"}
                   className="form-control"
                   id="password"
@@ -127,6 +133,7 @@ const EditProfile = ({ title }) => {
                 <div className="mb-3">
                   <label htmlFor="confpassword">Confirm password</label>
                   <input
+                    data-testid="confPassword"
                     type={confShow ? "text" : "password"}
                     className="form-control"
                     id="Confpassword"
@@ -160,7 +167,11 @@ const EditProfile = ({ title }) => {
               <div className="text-center">
                 {passwordErr && <p style={{ color: "red" }}>{passwordErr}</p>}
                 {unMatch && <p style={{ color: "red" }}>{unMatch}</p>}
-                <button type="submit" className="btn btn-color px-5 mb-5 w-100">
+                <button
+                  data-testid="submitChanges"
+                  type="submit"
+                  className="btn btn-color px-5 mb-5 w-100"
+                >
                   Submit Changes
                 </button>
               </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./AddBooks.css";
-import lmsUrl from "../../AxiosURL";
 import { SuccessfullyBookAdded, UnableToAddBooK } from "../../Toastify";
+import { AddingBooks } from "../../services/api";
 const AddBooks = () => {
   const [title, setTitle] = useState("");
   const [categories, setCategories] = useState("");
@@ -32,14 +32,11 @@ const AddBooks = () => {
       image,
     };
 
-    console.log(book);
-
-    lmsUrl
-      .post("books", book)
-      .then((res) => {
+    AddingBooks(book)
+      .then(() => {
         SuccessfullyBookAdded();
       })
-      .then((res) => {
+      .then(() => {
         setTitle("");
         setCategories("");
         setDesc("");
@@ -53,7 +50,7 @@ const AddBooks = () => {
         setImage("");
       })
 
-      .catch((err) => {
+      .catch(() => {
         UnableToAddBooK();
       });
   };
@@ -225,7 +222,7 @@ const AddBooks = () => {
                   className="form-control"
                   id="imageUrl"
                   type="text"
-                  palceholder="url"
+                  placeholder="image url"
                   value={image}
                   onChange={(e) => {
                     setImage(e.target.value);

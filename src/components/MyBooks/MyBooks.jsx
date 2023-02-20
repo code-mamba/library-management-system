@@ -1,8 +1,14 @@
+/* eslint-disable react/jsx-key */
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyBooks.css";
-import lmsUrl from "../../AxiosURL";
 import { ReturnedSuccessfully, ReturnError } from "../../Toastify";
+import {
+  deleteRentedBookDetails,
+  getBookDetails,
+  myRentedBookDetails,
+  putBookDetail,
+} from "../../services/api";
 
 const MyBooks = () => {
   const navigate = useNavigate();
@@ -12,26 +18,32 @@ const MyBooks = () => {
   const today = new Date();
 
   const returnBook = (id, bookId) => {
-    lmsUrl.delete("rented-books/" + id).then(() => {
-      lmsUrl.get("books/" + bookId).then((res) => {
-        res.data.quantity = res.data.quantity + 1;
-        lmsUrl
-          .put("books/" + bookId, res.data)
+    deleteRentedBookDetails(id)
+      // lmsUrl.delete("rented-books/" + id)
+      .then(() => {
+        getBookDetails(bookId)
+          // lmsUrl.get("books/" + bookId)
           .then((res) => {
-            ReturnedSuccessfully();
-          })
-          .then((res) => {
-            navigate("/home");
-          })
-          .catch((err) => {
-            ReturnError();
+            res.data.quantity = res.data.quantity + 1;
+            putBookDetail(bookId, res.data)
+              // lmsUrl
+              //   .put("books/" + bookId, res.data)
+              .then(() => {
+                ReturnedSuccessfully();
+              })
+              .then(() => {
+                navigate("/home");
+              })
+              .catch(() => {
+                ReturnError();
+              });
           });
       });
-    });
   };
   useEffect(() => {
-    lmsUrl
-      .get("rented-books?userId=" + userId)
+    myRentedBookDetails(userId)
+      // lmsUrl
+      //   .get("rented-books?userId=" + userId)
       .then((res) => {
         res.data.forEach((book) => {
           var returnDay = new Date(book.returnDate);
@@ -46,7 +58,7 @@ const MyBooks = () => {
         });
         setRentedBooks(res.data);
       })
-      .catch((err) => {
+      .catch(() => {
         navigate("/fetch-err");
       });
   }, []);
@@ -56,7 +68,7 @@ const MyBooks = () => {
         rentedBooks.map((book) => {
           return (
             <section className="container">
-              <div className="myBooks-card">
+              <div className="myBooks-card" key={book.id}>
                 <h4>Booktitle:{book.bookTitle}</h4>
                 <p>Rented Date:{book.rentDate.slice(0, 10)}</p>
                 <p>Return Date: {book.returnDate.slice(0, 10)}</p>

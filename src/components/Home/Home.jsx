@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import BookList from "../BookList/BookList";
 import { useNavigate } from "react-router-dom";
@@ -36,7 +37,7 @@ const Home = ({ isAdmin }) => {
       .then((res) => {
         setBooks(res.data);
       })
-      .catch((err) => {
+      .catch(() => {
         navigate("/fetch-err");
       });
   }, [query == ""]);

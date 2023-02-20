@@ -1,10 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./RentBooks.css";
-import lmsUrl from "../../AxiosURL";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { successfullyRented, unabletoRent } from "../../Toastify";
+import { postRentBook, putRentBook, rentBookDetails } from "../../services/api";
 
 const RentBook = () => {
   const { id } = useParams();
@@ -14,12 +13,11 @@ const RentBook = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    lmsUrl
-      .get("books/" + id)
+    rentBookDetails(id)
       .then((res) => {
         setBook(res.data);
       })
-      .catch((err) => {
+      .catch(() => {
         navigate("/fetch-err");
       });
   }, []);
@@ -41,10 +39,11 @@ const RentBook = () => {
       userName: sessionStorage.getItem("userName"),
       borrowedQuantity: booksCount,
     };
-    lmsUrl
-      .post("rented-books", myRent)
-      .then((res) => {
-        lmsUrl.put("books/" + id, book);
+    postRentBook(myRent)
+      // lmsUrl
+      //   .post("rented-books", myRent)
+      .then(() => {
+        putRentBook(id, book);
       })
       .then(() => {
         successfullyRented();
@@ -52,7 +51,7 @@ const RentBook = () => {
       .then(() => {
         navigate("/home");
       })
-      .catch((err) => {
+      .catch(() => {
         unabletoRent();
       });
   };
@@ -105,7 +104,7 @@ const RentBook = () => {
         </form>
       </div>
 
-      <ToastContainer />
+      {/* <ToastContainer/> */}
     </div>
   );
 };

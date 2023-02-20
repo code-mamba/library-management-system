@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import "./Navbar.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ isAdmin, isloggedIn, logOut }) => {
   return (

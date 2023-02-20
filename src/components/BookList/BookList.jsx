@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./BookList.css";
-import lmsUrl from "../../AxiosURL";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { DeleteBook, unableToDeleteBook } from "../../Toastify";
+import { deleteBookDetails } from "../../services/api";
 
 const BookList = ({ books, isAdmin, setBooks }) => {
   const navigate = useNavigate();
@@ -14,6 +14,7 @@ const BookList = ({ books, isAdmin, setBooks }) => {
   const pages = [...Array(numOfTotalPages + 1).keys()].slice(1);
   const indexOfLastBook = currentPage * booksPerPage;
   const indexOfFirstBook = indexOfLastBook - booksPerPage;
+  console.log("booklist", typeof isAdmin);
 
   const visibleBooks = books.slice(indexOfFirstBook, indexOfLastBook);
 
@@ -28,8 +29,7 @@ const BookList = ({ books, isAdmin, setBooks }) => {
   };
 
   const deleteBook = (id) => {
-    lmsUrl
-      .delete("books/" + id)
+    deleteBookDetails(id)
       .then(() => {
         var newBooks = books.filter((book) => {
           return book.id !== id;
@@ -37,7 +37,7 @@ const BookList = ({ books, isAdmin, setBooks }) => {
         setBooks(newBooks);
         DeleteBook();
       })
-      .catch((err) => {
+      .catch(() => {
         unableToDeleteBook();
       });
   };
@@ -106,8 +106,8 @@ const BookList = ({ books, isAdmin, setBooks }) => {
           </nav>
         );
       })}
-      <span onClick={prevPageHandler}>Prev</span>
-      <p>
+      <span className="prev" onClick={prevPageHandler}>Prev</span>
+      <p className="paginationElement">
         {pages.map((page) => (
           <span
             key={page}
@@ -116,7 +116,7 @@ const BookList = ({ books, isAdmin, setBooks }) => {
           >{` ${page} |`}</span>
         ))}
       </p>
-      <span onClick={nextPageHandler}>Next</span>
+      <span className="next" onClick={nextPageHandler}>Next</span>
       <ToastContainer />
     </div>
   );

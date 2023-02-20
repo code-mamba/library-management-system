@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Login/Login.css";
-import lmsUrl from "../../AxiosURL";
-import "react-toastify/dist/ReactToastify.css";
 import { SuccessfullySignedin, UnableToSignup } from "../../Toastify";
+import { Signingin } from "../../services/api";
 
 const AddUser = () => {
   const [userName, setuserName] = useState("");
@@ -27,7 +26,7 @@ const AddUser = () => {
     }
 
     if (
-      email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g) &&
+      email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g) &&
       password.match(
         /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
       )
@@ -43,14 +42,12 @@ const AddUser = () => {
       setCredErr("Enter valid credentials");
     } else {
       const user = { userName, userEmail, userPassword, isAdmin: false };
-
-      lmsUrl
-        .post("users", user)
+      Signingin(user)
         .then(() => {
           SuccessfullySignedin();
         })
         .then(() => navigate("/"))
-        .catch((err) => {
+        .catch(() => {
           UnableToSignup();
         });
     }

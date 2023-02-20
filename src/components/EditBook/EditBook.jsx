@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./EditBook.css";
-import lmsUrl from "../../AxiosURL";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
   SuccessfullyEdited,
   UnableToEdit,
   UnableToEditError,
 } from "../../Toastify";
+import { getBookDetails, updateBookDetail } from "../../services/api";
 
 const EditBook = () => {
   const [title, setTitle] = useState();
@@ -23,11 +23,9 @@ const EditBook = () => {
   const [available, setAvailable] = useState();
   const [image, setImage] = useState();
   const [volume, setVolume] = useState();
-  const navigate = useNavigate();
   const { id } = useParams();
   useEffect(() => {
-    lmsUrl
-      .get("books/" + id)
+    getBookDetails(id)
       .then((res) => {
         setTitle(res.data.title);
         setAuthor(res.data.author);
@@ -42,7 +40,7 @@ const EditBook = () => {
         setImage(res.data.image);
         setAvailable(res.data.available);
       })
-      .catch((err) => {
+      .catch(() => {
         UnableToEditError();
       });
   }, []);
@@ -61,13 +59,12 @@ const EditBook = () => {
       quantity,
     };
     e.preventDefault();
-    console.log(book);
-    lmsUrl
-      .put("books/" + id, book)
+
+    updateBookDetail(id, book)
       .then(() => {
         SuccessfullyEdited();
       })
-      .catch((err) => {
+      .catch(() => {
         UnableToEdit();
       });
   };
@@ -237,8 +234,12 @@ const EditBook = () => {
                   }}
                 />
               </div>
-              <div  className="text-center">
-                <button  data-testid="editBook-btn" type="submit" className="btn btn-color px-5 mb-5 w-100">
+              <div className="text-center">
+                <button
+                  data-testid="editBook-btn"
+                  type="submit"
+                  className="btn btn-color px-5 mb-5 w-100"
+                >
                   Save Changes
                 </button>
               </div>
