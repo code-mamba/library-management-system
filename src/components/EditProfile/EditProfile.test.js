@@ -53,4 +53,16 @@ describe("<EditProfile>", () => {
     mock.onGet("users/undefined").reply(200, data);
     render(<EditProfile />);
   });
+ test("new password and confirm password validation",()=>{
+  render(<EditProfile/>)
+  
+  const button = screen.getByTestId("submitChanges")
+  fireEvent.click(button)
+  const newPassword = screen.getByTestId("newPassword")
+  fireEvent.change(newPassword,{target:{value:"Password@123"}})
+  fireEvent.click(button)
+  const confPassword = screen.getByTestId("confPassword")
+  fireEvent.change(confPassword,{target:{value:'Password@123'}})
+  fireEvent.click(button)
+ })
 });

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyBooks.css";
@@ -18,32 +17,24 @@ const MyBooks = () => {
   const today = new Date();
 
   const returnBook = (id, bookId) => {
-    deleteRentedBookDetails(id)
-      // lmsUrl.delete("rented-books/" + id)
-      .then(() => {
-        getBookDetails(bookId)
-          // lmsUrl.get("books/" + bookId)
-          .then((res) => {
-            res.data.quantity = res.data.quantity + 1;
-            putBookDetail(bookId, res.data)
-              // lmsUrl
-              //   .put("books/" + bookId, res.data)
-              .then(() => {
-                ReturnedSuccessfully();
-              })
-              .then(() => {
-                navigate("/home");
-              })
-              .catch(() => {
-                ReturnError();
-              });
+    deleteRentedBookDetails(id).then(() => {
+      getBookDetails(bookId).then((res) => {
+        res.data.quantity = res.data.quantity + 1;
+        putBookDetail(bookId, res.data)
+          .then(() => {
+            ReturnedSuccessfully();
+          })
+          .then(() => {
+            navigate("/home");
+          })
+          .catch(() => {
+            ReturnError();
           });
       });
+    });
   };
   useEffect(() => {
     myRentedBookDetails(userId)
-      // lmsUrl
-      //   .get("rented-books?userId=" + userId)
       .then((res) => {
         res.data.forEach((book) => {
           var returnDay = new Date(book.returnDate);
@@ -67,8 +58,8 @@ const MyBooks = () => {
       {rentedBooks &&
         rentedBooks.map((book) => {
           return (
-            <section className="container">
-              <div className="myBooks-card" key={book.id}>
+            <section className="container" key={book.id}>
+              <div className="myBooks-card">
                 <h4>Booktitle:{book.bookTitle}</h4>
                 <p>Rented Date:{book.rentDate.slice(0, 10)}</p>
                 <p>Return Date: {book.returnDate.slice(0, 10)}</p>

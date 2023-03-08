@@ -16,6 +16,8 @@ import EditProfile from "./components/EditProfile/EditProfile";
 import UnableToFetch from "./components/UnableToFetchData/unableToFetch";
 import { ToastContainer } from "react-toastify";
 import LoginProtector from "./components/LoginProtector/LoginProtector";
+import { Logout } from "./Toastify";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false);
@@ -27,8 +29,11 @@ function App() {
     sessionStorage.removeItem("isAdmin");
     setisAdmin(false);
     setisLoggedIn(false);
+    Logout();
     navigate("/");
   };
+
+  const sess = sessionStorage.getItem("userName");
   useEffect(() => {
     setisLoggedIn(!!sessionStorage.getItem("id"));
     setisAdmin(sessionStorage.getItem("isAdmin"));
@@ -79,6 +84,7 @@ function App() {
         )}
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
+      {sess ? <Footer /> : " "}
     </div>
   );
 }

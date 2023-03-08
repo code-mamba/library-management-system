@@ -24,12 +24,10 @@ const EditProfile = ({ title }) => {
     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
   useEffect(() => {
-    getUserDetails(userId)
-      // lmsUrl.get("users/" + userId)
-      .then((res) => {
-        setUserName(res.data.userName);
-        setUserEmail(res.data.userEmail);
-      });
+    getUserDetails(userId).then((res) => {
+      setUserName(res.data.userName);
+      setUserEmail(res.data.userEmail);
+    });
   }, []);
 
   const submitChanges = (e) => {
@@ -118,7 +116,10 @@ const EditProfile = ({ title }) => {
                     );
                   }}
                 />
-                <p onClick={() => setShow((prestate) => !prestate)}>
+                <p
+                  className="eye_icon"
+                  onClick={() => setShow((prestate) => !prestate)}
+                >
                   {" "}
                   <i
                     className="fa fa-eye fa-fw"
@@ -150,7 +151,10 @@ const EditProfile = ({ title }) => {
                       );
                     }}
                   />
-                  <p onClick={() => setConfShow((prestate) => !prestate)}>
+                  <p
+                    className="eye_icon"
+                    onClick={() => setConfShow((prestate) => !prestate)}
+                  >
                     {" "}
                     <i
                       className="fa fa-eye fa-fw"

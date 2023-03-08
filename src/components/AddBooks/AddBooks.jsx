@@ -1,58 +1,50 @@
 import { useState } from "react";
 import "./AddBooks.css";
-import { SuccessfullyBookAdded, UnableToAddBooK } from "../../Toastify";
-import { AddingBooks } from "../../services/api";
+import { useDispatch } from "react-redux";
+import { addBook } from "../../redux/actions";
+import { useNavigate } from "react-router-dom";
+
 const AddBooks = () => {
-  const [title, setTitle] = useState("");
-  const [categories, setCategories] = useState("");
-  const [description, setDesc] = useState("");
-  const [author, setAuthor] = useState("");
-  const [year, setbookYear] = useState("");
-  const [edition, setbookEdition] = useState("");
-  const [language, setbookLanguage] = useState("");
-  const [quantity, setQuantity] = useState(0);
-  const [pages, setbookPages] = useState("");
-  const [volume, setbookVolume] = useState("");
-  const [image, setImage] = useState("");
+  const [state, setState] = useState({
+    title: "",
+    categories: "",
+    description: "",
+    author: "",
+    year: "",
+    edition: "",
+    language: "",
+    quantity: "",
+    pages: "",
+    volume: "",
+    image: "",
+  });
 
-  const addBooks = (e) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const {
+    title,
+    categories,
+    description,
+    author,
+    year,
+    edition,
+    language,
+    quantity,
+    pages,
+    volume,
+    image,
+  } = state;
+
+  const handleInputChange = (e) => {
+    let { name, value } = e.target;
+    setState({ ...state, [name]: value });
+  };
+
+  const AddBook = (e) => {
     e.preventDefault();
-    const book = {
-      title,
-      author,
-      categories,
-      volume,
-      year,
-      edition,
-      language,
-      pages,
-      description,
-      quantity,
-      isAvailable: true,
-      image,
-    };
-
-    AddingBooks(book)
-      .then(() => {
-        SuccessfullyBookAdded();
-      })
-      .then(() => {
-        setTitle("");
-        setCategories("");
-        setDesc("");
-        setAuthor("");
-        setbookYear("");
-        setbookEdition("");
-        setbookLanguage("");
-        setQuantity(0);
-        setbookPages("");
-        setbookVolume("");
-        setImage("");
-      })
-
-      .catch(() => {
-        UnableToAddBooK();
-      });
+    dispatch(addBook(state));
+    navigate("/home");
   };
 
   return (
@@ -66,7 +58,7 @@ const AddBooks = () => {
           <div className="card my-5">
             <form
               className="card-body cardbody-color p-lg-5"
-              onSubmit={addBooks}
+              onSubmit={AddBook}
             >
               <div className="mb-3">
                 <label>Add Book Name</label>
@@ -76,10 +68,9 @@ const AddBooks = () => {
                   className="form-control"
                   id="bookName"
                   placeholder="Add Book Name"
+                  name="title"
                   value={title}
-                  onChange={(e) => {
-                    setTitle(e.target.value);
-                  }}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="mb-3">
@@ -90,10 +81,9 @@ const AddBooks = () => {
                   className="form-control"
                   id="addVolume"
                   placeholder="Book Volume"
+                  name="volume"
                   value={volume}
-                  onChange={(e) => {
-                    setbookVolume(e.target.value);
-                  }}
+                  onChange={handleInputChange}
                   required
                 ></input>
               </div>
@@ -105,10 +95,9 @@ const AddBooks = () => {
                   className="form-control"
                   id="addAuthor"
                   placeholder="Add Author"
+                  name="author"
                   value={author}
-                  onChange={(e) => {
-                    setAuthor(e.target.value);
-                  }}
+                  onChange={handleInputChange}
                   required
                 ></input>
               </div>
@@ -120,10 +109,9 @@ const AddBooks = () => {
                   className="form-control"
                   id="addCategory"
                   placeholder="Add Book Category"
+                  name="categories"
                   value={categories}
-                  onChange={(e) => {
-                    setCategories(e.target.value);
-                  }}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="mb-3">
@@ -134,10 +122,9 @@ const AddBooks = () => {
                   className="form-control"
                   id="editYear"
                   placeholder="Add Book Year"
+                  name="year"
                   value={year}
-                  onChange={(e) => {
-                    setbookYear(e.target.value);
-                  }}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -149,10 +136,9 @@ const AddBooks = () => {
                   className="form-control"
                   id="addEdition"
                   placeholder="Add Book Edition"
+                  name="edition"
                   value={edition}
-                  onChange={(e) => {
-                    setbookEdition(e.target.value);
-                  }}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -164,10 +150,9 @@ const AddBooks = () => {
                   className="form-control"
                   id="AddLanguage"
                   placeholder="Add Book Language"
+                  name="language"
                   value={language}
-                  onChange={(e) => {
-                    setbookLanguage(e.target.value);
-                  }}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -178,10 +163,9 @@ const AddBooks = () => {
                   className="form-control"
                   id="editDescription"
                   placeholder="Add Book Description"
+                  name="description"
                   value={description}
-                  onChange={(e) => {
-                    setDesc(e.target.value);
-                  }}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -193,10 +177,9 @@ const AddBooks = () => {
                   className="form-control"
                   id="AddPages"
                   placeholder="Add Book Pages"
+                  name="pages"
                   value={pages}
-                  onChange={(e) => {
-                    setbookPages(e.target.value);
-                  }}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -208,10 +191,9 @@ const AddBooks = () => {
                   id="addQuantity"
                   type="number"
                   placeholder="Add Book Quantity"
+                  name="quantity"
                   value={quantity}
-                  onChange={(e) => {
-                    setQuantity(e.target.value);
-                  }}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -223,10 +205,9 @@ const AddBooks = () => {
                   id="imageUrl"
                   type="text"
                   placeholder="image url"
+                  name="image"
                   value={image}
-                  onChange={(e) => {
-                    setImage(e.target.value);
-                  }}
+                  onChange={handleInputChange}
                   required
                 ></input>
               </div>

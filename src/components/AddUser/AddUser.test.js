@@ -50,7 +50,7 @@ describe("<AddUser />", () => {
     const passwordClick = screen.getByTestId("userPassword");
 
     act(() => {
-      passwordClick.click();
+      passwordClick.click();   
     });
   });
 });

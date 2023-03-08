@@ -13,8 +13,14 @@ const AddUser = () => {
   const [passwordErr, setPasswordErr] = useState("");
   const [credErr, setCredErr] = useState(null);
   const [show, setShow] = useState(false);
+  const [passNotValid, setPassNotValid] = useState(null);
+  const [userMobile, setUserMobile] = useState("");
+  const [mobileErr, setMobileErr] = useState(null);
+  const [mobileNotValid, setMobileNotValid] = useState(null);
+  const [userAddress, setUserAddress] = useState(null);
+
   const navigate = useNavigate();
-  const validateForm = (email, password, name) => {
+  const validateForm = (email, password, name, mobile) => {
     if ((name == null) | (name == "")) {
       setNameErr("Please fill the name field");
     }
@@ -23,6 +29,9 @@ const AddUser = () => {
     }
     if ((password == null) | (password == "")) {
       setPasswordErr("Please fill Password field");
+    }
+    if ((mobile == null) | (mobile == "")) {
+      setMobileErr("Please fill Mobile field");
     }
 
     if (
@@ -38,8 +47,26 @@ const AddUser = () => {
   };
   const addUser = (e) => {
     e.preventDefault();
-    if (validateForm(userEmail, userPassword, userName)) {
-      setCredErr("Enter valid credentials");
+    if (validateForm(userEmail, userPassword, userName, userMobile)) {
+      if (!userEmail.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
+        setEmailErr("Please enter valid email");
+      }
+      if (
+        userPassword &&
+        !userPassword.match(
+          /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
+        )
+      ) {
+        setPassNotValid(
+          "Password must  Minimum eight characters, at least one letter, one number and one special character "
+        );
+      }
+      if (
+        userMobile &&
+        !userMobile.match(/^(?:(?:\+|0{0,2})91(\s*[-]\s*)?|[0]?)?[789]\d{9}$/)
+      ) {
+        setMobileNotValid("Please Enter a Valid Mobile Number");
+      }
     } else {
       const user = { userName, userEmail, userPassword, isAdmin: false };
       Signingin(user)
@@ -100,6 +127,26 @@ const AddUser = () => {
                 {emailErr && <p style={{ color: "red" }}>{emailErr}</p>}
               </div>
               <div className="mb-3">
+                <label htmlFor="userContact"> Contact Number:</label>
+                <input
+                  type="tel"
+                  className="form-control"
+                  id="userContact"
+                  placeholder="Enter Mobile Number"
+                  value={userMobile}
+                  onChange={(e) => {
+                    setUserMobile(e.target.value);
+                  }}
+                  onClick={(e) =>
+                    e.target.focus(setMobileErr(null), setMobileNotValid(null))
+                  }
+                ></input>
+                {mobileErr && <p style={{ color: "red" }}>{mobileErr}</p>}
+                {mobileNotValid && (
+                  <p style={{ color: "red" }}>{mobileNotValid}</p>
+                )}
+              </div>
+              <div className="mb-3">
                 <label htmlFor="password">Create password:</label>
                 <input
                   data-testid="userPassword"
@@ -112,10 +159,17 @@ const AddUser = () => {
                     setuserPassword(e.target.value);
                   }}
                   onClick={(e) => {
-                    e.target.focus(setCredErr(null), setPasswordErr(null));
+                    e.target.focus(
+                      setCredErr(null),
+                      setPasswordErr(null),
+                      setPassNotValid(null)
+                    );
                   }}
                 />
-                <p onClick={() => setShow((prestate) => !prestate)}>
+                <p
+                  className="eye_icon"
+                  onClick={() => setShow((prestate) => !prestate)}
+                >
                   {" "}
                   <i
                     className="fa fa-eye fa-fw"
@@ -124,19 +178,25 @@ const AddUser = () => {
                   ></i>{" "}
                 </p>
                 {passwordErr && <p style={{ color: "red" }}>{passwordErr}</p>}
+                {passNotValid && <p style={{ color: "red" }}>{passNotValid}</p>}
               </div>
               {credErr && <p style={{ color: "red" }}>{credErr}</p>}
+              <div className="mb-3">
+                <label htmlFor="address">Residential Address:</label>
+                <textarea
+                  className="form-control"
+                  value={userAddress}
+                  onChange={(e) => {
+                    setUserAddress(e.target.value);
+                  }}
+                  required
+                ></textarea>
+              </div>
               <div className="text-center">
                 <button type="submit" className="btn btn-color px-5 mb-5 w-100">
                   Register
                 </button>
               </div>
-              <ul>
-                <li>
-                  Minimum eight characters, at least one letter, one number and
-                  one special character:
-                </li>
-              </ul>
             </form>
           </div>
         </div>

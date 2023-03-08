@@ -103,7 +103,10 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
                   }}
                   onChange={(e) => setuserPassword(e.target.value)}
                 />
-                <p onClick={() => setShow((prestate) => !prestate)}>
+                <p
+                  className="eye_icon"
+                  onClick={() => setShow((prestate) => !prestate)}
+                >
                   {" "}
                   <i
                     className="fa fa-eye fa-fw"
@@ -126,12 +129,6 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
                   Login
                 </button>
               </div>
-              <ul>
-                <li>
-                  Minimum eight characters, at least one letter, one number and
-                  one special character:
-                </li>
-              </ul>
             </form>
           </div>
         </div>

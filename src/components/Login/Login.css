@@ -1,5 +1,5 @@
 body{
-  background-color: #0e1c36;
+  background-color: #c8dcff;
 }
 .container{
   background-color:#c8dcff;}
@@ -19,4 +19,11 @@ body{
 .btn:hover{
   color:white;
   opacity: 0.6;
+}
+.eye_icon{
+  float: right;
+  margin-top: -32px;
+  position: relative;
+  z-index: 1;
+  cursor:pointer;
 }

@@ -89,3 +89,8 @@ export function ProfileUpdateErr() {
     position: toast.POSITION.TOP_RIGHT,
   });
 }
+export function Logout() {
+  toast.success("Logging out", {
+    position: toast.POSITION.TOP_RIGHT,
+  });
+}

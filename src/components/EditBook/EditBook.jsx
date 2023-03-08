@@ -1,244 +1,234 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./EditBook.css";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {
-  SuccessfullyEdited,
-  UnableToEdit,
-  UnableToEditError,
-} from "../../Toastify";
-import { getBookDetails, updateBookDetail } from "../../services/api";
 
-const EditBook = () => {
-  const [title, setTitle] = useState();
-  const [author, setAuthor] = useState();
-  const [categories, setCategory] = useState();
-  const [year, setYear] = useState();
-  const [edition, setEdition] = useState();
-  const [language, setLanguage] = useState();
-  const [pages, setPages] = useState();
-  const [description, setDesc] = useState();
-  const [quantity, setQuantity] = useState();
-  const [available, setAvailable] = useState();
-  const [image, setImage] = useState();
-  const [volume, setVolume] = useState();
-  const { id } = useParams();
+import { useDispatch, useSelector } from "react-redux";
+import { singleBookDetail, updateBook } from "../../redux/actions";
+
+const EditBooks = () => {
+  const [state, setState] = useState({
+    title: "",
+    categories: "",
+    description: "",
+    author: "",
+    year: "",
+    edition: "",
+    language: "",
+    quantity: "",
+    pages: "",
+    volume: "",
+    image: "",
+  });
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  let { id } = useParams();
+  const { book } = useSelector((state) => state.data);
+  const {
+    title,
+    categories,
+    description,
+    author,
+    year,
+    edition,
+    language,
+    quantity,
+    pages,
+    volume,
+    image,
+  } = state;
+
   useEffect(() => {
-    getBookDetails(id)
-      .then((res) => {
-        setTitle(res.data.title);
-        setAuthor(res.data.author);
-        setCategory(res.data.categories);
-        setYear(res.data.year);
-        setEdition(res.data.edition);
-        setDesc(res.data.description);
-        setLanguage(res.data.language);
-        setPages(res.data.pages);
-        setQuantity(res.data.quantity);
-        setVolume(res.data.volume);
-        setImage(res.data.image);
-        setAvailable(res.data.available);
-      })
-      .catch(() => {
-        UnableToEditError();
-      });
+    dispatch(singleBookDetail(id));
   }, []);
-  const editBook = (e) => {
-    const book = {
-      title,
-      author,
-      categories,
-      year,
-      edition,
-      language,
-      pages,
-      description,
-      available,
-      image,
-      quantity,
-    };
-    e.preventDefault();
 
-    updateBookDetail(id, book)
-      .then(() => {
-        SuccessfullyEdited();
-      })
-      .catch(() => {
-        UnableToEdit();
-      });
+  useEffect(() => {
+    if (book) {
+      setState({ ...book });
+    }
+  }, [book]);
+  const handleInputChange = (e) => {
+    let { name, value } = e.target;
+    setState({ ...state, [name]: value });
+  };
+
+  const EditBook = (e) => {
+    e.preventDefault();
+    dispatch(updateBook(state, id));
+    navigate("/home");
   };
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3">
-          <h2 className="text-center text-dark mt-5">Edit Books</h2>
-          <div className="text-center mb-5 text-dark">LMS</div>
+          <h2 className="text-center text-dark mt-5" data-testid="add-books">
+            EditBooks
+          </h2>
+          <div className="Logo">LMS</div>
           <div className="card my-5">
             <form
               className="card-body cardbody-color p-lg-5"
-              onSubmit={editBook}
+              onSubmit={EditBook}
             >
               <div className="mb-3">
-                <label>Edit Book Name</label>
+                <label>Add Book Name</label>
                 <input
-                  data-testid="bookTitle"
+                  data-testid="book-name"
                   type="text"
                   className="form-control"
                   id="bookName"
-                  placeholder="Edit Book Name"
-                  value={title}
-                  onChange={(e) => {
-                    setTitle(e.target.value);
-                  }}
+                  placeholder="Add Book Name"
+                  name="title"
+                  value={title || ""}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="mb-3">
-                <label>Edit Author Name</label>
+                <label>Add Book Volume</label>
                 <input
-                  data-testid="bookAuthor"
+                  data-testid="book-volume"
                   type="text"
                   className="form-control"
-                  id="editAuthor"
-                  placeholder="Edit Author"
-                  value={author}
-                  onChange={(e) => {
-                    setAuthor(e.target.value);
-                  }}
+                  id="addVolume"
+                  placeholder="Book Volume"
+                  name="volume"
+                  value={volume || ""}
+                  onChange={handleInputChange}
+                  required
                 ></input>
               </div>
               <div className="mb-3">
-                <label>Edit Book Type</label>
+                <label>Add Author Name</label>
                 <input
-                  data-testid="bookCategory"
+                  data-testid="addAuthor"
                   type="text"
                   className="form-control"
-                  id="editCategory"
-                  placeholder="Edit Book Category"
-                  value={categories}
-                  onChange={(e) => {
-                    setCategory(e.target.value);
-                  }}
+                  id="addAuthor"
+                  placeholder="Add Author"
+                  name="author"
+                  value={author || ""}
+                  onChange={handleInputChange}
+                  required
+                ></input>
+              </div>
+              <div className="mb-3">
+                <label>Add Book Type</label>
+                <input
+                  type="text"
+                  data-testid="addCategory"
+                  className="form-control"
+                  id="addCategory"
+                  placeholder="Add Book Category"
+                  name="categories"
+                  value={categories || ""}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="mb-3">
-                <label>Edit Year</label>
+                <label>Add Year</label>
                 <input
-                  data-testid="bookYear"
-                  type="number"
+                  data-testid="addYear"
+                  type="text"
                   className="form-control"
                   id="editYear"
-                  placeholder="Edit Book Year"
-                  value={year}
-                  onChange={(e) => {
-                    setYear(e.target.value);
-                  }}
-                  min="1"
+                  placeholder="Add Book Year"
+                  name="year"
+                  value={year || ""}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
               <div className="mb-3">
-                <label>Edit Book Edition</label>
+                <label>Add Book Edition</label>
                 <input
-                  data-testid="bookEdition"
+                  data-testid="addBookEdition"
                   type="text"
                   className="form-control"
-                  id="editEdition"
-                  placeholder="Edit Book Edition"
-                  value={edition}
-                  onChange={(e) => {
-                    setEdition(e.target.value);
-                  }}
+                  id="addEdition"
+                  placeholder="Add Book Edition"
+                  name="edition"
+                  value={edition || ""}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
               <div className="mb-3">
-                <label>Edit Book Language</label>
+                <label>Add Book Language</label>
                 <input
                   data-testid="bookLang"
                   type="text"
                   className="form-control"
-                  id="editEdition"
-                  placeholder="Edit Book Language"
-                  value={language}
-                  onChange={(e) => {
-                    setLanguage(e.target.value);
-                  }}
+                  id="AddLanguage"
+                  placeholder="Add Book Language"
+                  name="language"
+                  value={language || ""}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
               <div className="mb-3">
-                <label>Edit Book Volume</label>
-                <input
-                  data-testid="bookVolume"
-                  type="text"
-                  className="form-control"
-                  id="editVolume"
-                  placeholder="Edit Book Volume"
-                  value={volume}
-                  onChange={(e) => {
-                    setVolume(e.target.value);
-                  }}
-                />
-              </div>
-              <div className="mb-3">
-                <label>Edit Book Pages</label>
-                <input
-                  data-testid="bookpages"
-                  type="number"
-                  className="form-control"
-                  id="editEdition"
-                  placeholder="Edit Book Language"
-                  value={pages}
-                  onChange={(e) => {
-                    setPages(e.target.value);
-                  }}
-                  min="1"
-                />
-              </div>
-              <div className="mb-3">
-                <label>Edit Description</label>
+                <label>Add Description</label>
                 <textarea
-                  data-testid="bookDesc"
+                  data-testid="addDesc"
                   className="form-control"
                   id="editDescription"
-                  placeholder="Edit Book Description"
-                  value={description}
-                  onChange={(e) => {
-                    setDesc(e.target.value);
-                  }}
+                  placeholder="Add Book Description"
+                  name="description"
+                  value={description || ""}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
               <div className="mb-3">
-                <label>Book Quantity</label>
+                <label>Add Book Pages</label>
                 <input
-                  data-testid="bookQuant"
+                  data-testid="addPages"
                   type="number"
                   className="form-control"
-                  placeholder="Book Quantity"
-                  value={quantity}
-                  onChange={(e) => {
-                    setQuantity(e.target.value);
-                  }}
-                ></input>
-              </div>
-              <div className="mb-3">
-                <label>Edit Image</label>
-                <input
-                  data-testid="bookImg"
-                  type="text"
-                  className="form-control"
-                  id="editImage"
-                  placeholder="Edit Book Image"
-                  value={image}
-                  onChange={(e) => {
-                    setImage(e.target.value);
-                  }}
+                  id="AddPages"
+                  placeholder="Add Book Pages"
+                  name="pages"
+                  value={pages || ""}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
+              <div className="mb-3">
+                <label>Add Quantity</label>
+                <input
+                  data-testid="addQuant"
+                  className="form-control"
+                  id="addQuantity"
+                  type="number"
+                  placeholder="Add Book Quantity"
+                  name="quantity"
+                  value={quantity || ""}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div>
+                <label>Image Url</label>
+                <input
+                  data-testid="addImg"
+                  className="form-control"
+                  id="imageUrl"
+                  type="text"
+                  placeholder="image url"
+                  name="image"
+                  value={image || ""}
+                  onChange={handleInputChange}
+                  required
+                ></input>
+              </div>
+
               <div className="text-center">
                 <button
-                  data-testid="editBook-btn"
+                  data-testid="addBook-btn"
                   type="submit"
-                  className="btn btn-color px-5 mb-5 w-100"
+                  className="btn btn-color px-5 mb-5 w-50"
                 >
                   Save Changes
                 </button>
@@ -247,8 +237,8 @@ const EditBook = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };
-export default EditBook;
+
+export default EditBooks;

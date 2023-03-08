@@ -18,4 +18,4 @@ describe("render navbar component", () => {
   test("render navbar", () => {
     render(<Navbar isAdmin={false} isloggedIn={false} />);
   });
-});
+});    

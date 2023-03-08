@@ -146,13 +146,4 @@ describe("<AddBooks/>", () => {
     const button = screen.getByTestId("addBook-btn");
     fireEvent.click(button);
   });
-  // test("submit book",()=>{
-  // 	render(<AddBooks/>)
-
-  // 		// it("Test form submit and validation",()=>{
-  // // 	render(<Login/>)
-  // // 	const button = screen.getByTestId("Login_btn")
-  // // 	fireEvent.click(button)
-  // // })
-  // })
 });

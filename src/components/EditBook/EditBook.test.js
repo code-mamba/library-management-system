@@ -108,6 +108,6 @@ describe("<EditBooks/>", () => {
   test("Edit button", () => {
     render(<EditBook />);
     const button = screen.getByTestId("editBook-btn");
-    fireEvent.click(button);
+    fireEvent.click(button);   
   });
 });

@@ -1,6 +1,10 @@
 .myBooks-card{
-    background-color: #c8dcff;
+    background-color: #f0f2e4;
+    border-radius: 8px;
     margin-top: 5px;
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .button{
     background-color: #d4902a;

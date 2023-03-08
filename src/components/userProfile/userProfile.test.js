@@ -16,5 +16,5 @@ describe("render component", () => {
     render(<UserProfile />);
     const button = screen.getByTestId("editProfile-btn");
     fireEvent.click(button);
-  });
+  });   
 });

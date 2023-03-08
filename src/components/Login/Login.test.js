@@ -31,10 +31,10 @@ describe("<Login />", () => {
   test("valid input to test password", () => {
     render(<Login></Login>);
     const inputEl2 = screen.getByTestId("password-input");
-    fireEvent.change(inputEl2, { target: { value: "Password@123" } });
-    expect(screen.getByTestId("password-input")).toHaveValue("Password@123");
+    fireEvent.change(inputEl2, { target: { value: "P" } });
+    expect(screen.getByTestId("password-input")).toHaveValue("P");
   });
-  it("Test form submit and validation", () => {
+  test("Login button", () => {
     render(<Login />);
     const button = screen.getByTestId("Login_btn");
     fireEvent.click(button);

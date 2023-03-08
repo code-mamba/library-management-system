@@ -209,6 +209,13 @@
       "userPassword": "Vijaya50@Lms",
       "isAdmin": false,
       "id": 30
+    },
+    {
+      "userName": "Aravindh",
+      "userEmail": "aravindh2002@gmail.com",
+      "userPassword": "Aravindh2002@Lms",
+      "isAdmin": false,
+      "id": 31
     }
   ],
   "books": [
@@ -216,15 +223,16 @@
       "title": "PHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax: A practical guide to combining the power, performance, scalability, ... time, and high performance of PHP",
       "author": "Yuli Vasiliev",
       "categories": "technologies",
-      "year": "2006",
+      "year": "2007",
       "edition": "2nd Ed.",
       "language": "english",
       "pages": "374",
       "description": "Based on the title, the book has so many things to discuss but it actually has less than 400 pages that even include the glossary of terms. The reader might have a second thought about the book since it might not promise to discuss the things written in the chapter.\r\rBut if you go through the chapters, you will be surprised how each topic could be discussed thoroughly in this book. Using the traditional structures in most web and application development books, it slowly introduces each concept before they are brought together in the final chapters. \r\rPHP and Oracle are discussed separately at first with sample codes and situations to ensure that the reader understands each concept. It then goes to discuss who they could be efficiently integrated. The final chapter which is about Ajax is very impressive as it gives the developers a chance to develop an Ajax based application using popular practices in web development. The robustness of Oracle and efficiency of PHP is actually shown in an Ajax based application.\r\rPHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax is a good starting book for any web development professionals and enthusiasts. It covers the basics of web development using PHP and database management of Oracle including an installation guide for Oracle and PHP. If you are looking for a book to start with PHP and Oracle, this book offers a good start. \r\rFor developers who are experienced in this discipline, the book could be a good reference point for developing an application. The sample codes that helps the reader understands the underlying concept of the application with actual scenarios, this PHP and Oracle book is almost too good to pass on.",
       "available": true,
       "image": "https://rukminim1.flixcart.com/image/416/416/jpu324w0/book/6/3/6/php-oracle-web-development-data-processing-security-caching-xml-original-imafbzmjs8hxf9vw.jpeg?q=70",
-      "quantity": "12",
-      "id": 6
+      "quantity": 13,
+      "id": 6,
+      "volume": "1"
     },
     {
       "title": "Flask Web Development: Developing Web Applications with Python",
@@ -238,24 +246,8 @@
       "available": true,
       "image": "https://learning.oreilly.com/library/cover/9781491991725/250w/",
       "quantity": "8",
-      "id": 31
-    },
-    {
-      "id": 36,
-      "title": "PHPEclipse: A User Guide: Take advantage of the leading open source integrated development environment to develop, organize, and debug your PHP web development projects.",
-      "author": "Shu-Wai Chow",
-      "categories": "technologies",
-      "volume": "",
-      "year": "2006",
-      "edition": "",
-      "language": "en",
-      "pages": "228",
-      "url": "http://bookzz.org/dl/2284255/db588a",
-      "description": "PHPEclipse: A User Guide: Take advantage of the leading open source integrated development environment to develop, organize, and debug your PHP web development projects., open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
-      "cover": "http://libgen.org/covers/1115000/47dcc653aa3f73886699e93be3415d20-d.jpg",
-      "quantity": 5,
-      "available": true,
-      "image": "https://m.media-amazon.com/images/I/41fe6dzDYiL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
+      "id": 31,
+      "volume": "1"
     },
     {
       "id": 39,
@@ -296,7 +288,7 @@
       "title": "Developing Large Web Applications: Producing Code That Can Grow and Thrive",
       "author": "Kyle Loudon",
       "categories": "technologies",
-      "volume": "",
+      "volume": "1",
       "year": "2010",
       "edition": "1",
       "language": "en",
@@ -304,7 +296,7 @@
       "url": "http://bookzz.org/dl/682503/6824d8",
       "description": "The book essentially covers how to code up a large application without a framework. In reality if you are working with a large application (or not) you should use an existing framework to manage PHP, HTML templates, and JavaScript. For example CodeIgniter, (I haven't found a PHP HTML templating system I like yet), and Dojo. \r\rtl;dr - has some stuff you should know, but better to let a framework(s) do it for you.",
       "cover": "http://libgen.org/covers/254000/95819b5f3eb0e4bfeecd369e7400a9b2-d.jpg",
-      "quantity": 8,
+      "quantity": "12",
       "available": true,
       "image": "https://m.media-amazon.com/images/I/51V8FyNi5KL.jpg"
     },
@@ -352,111 +344,6 @@
       "isAvailable": true,
       "image": "https://m.media-amazon.com/images/I/51W7H0q4HPL._SX328_BO1,204,203,200_.jpg",
       "id": 55
-    },
-    {
-      "title": "King Solomon's Mine",
-      "author": "H. Rider Haggard",
-      "categories": "adventure",
-      "volume": "1",
-      "year": "1937",
-      "edition": "HardCover",
-      "language": "English",
-      "pages": "561",
-      "description": "In 1882, Irish dream chaser Patrick \"Patsy\" O'Brien and his daughter Kathy have failed to strike it rich in the diamond mines of Kimberley, South Africa (then the Cape Colony). They persuade a reluctant Allan Quartermain to drive them to the coast in his wagon.\n\nAlong the way, they encounter another wagon carrying two men in bad shape. Umbopa recovers, but Silvestra Getto dies after boasting to Quartermain that he has found the way to the fabled mines of Solomon. Patsy finds the dead man's map and sneaks off during the night, unwilling to risk his daughter's life. Kathy is unable to persuade Quartermain to follow him; instead, they rendezvous with Quartermain's new clients, Sir Henry Curtis and retired naval commander John Good, who are hunting for big game.",
-      "quantity": "6",
-      "isAvailable": true,
-      "image": "https://upload.wikimedia.org/wikipedia/en/e/ea/King-Solomon%27s-Mines_1937.jpg",
-      "id": 57
-    },
-    {
-      "title": "The Mysterious Island",
-      "author": "Jules Verne",
-      "categories": "adventure",
-      "volume": "2",
-      "year": "1875",
-      "edition": "PaperBack",
-      "language": "English",
-      "pages": "233",
-      "description": "The Mysterious Island follows the adventures of a group of castaways who use their survivalist savvy to build a functional community on an uncharted island. A hot-air balloon carrying five passengers and a dog escapes from Richmond, Va., during the American Civil War.\n",
-      "quantity": "11",
-      "isAvailable": true,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Ile_Mysterieuse_02.jpg/440px-Ile_Mysterieuse_02.jpg",
-      "id": 58
-    },
-    {
-      "title": "who will cry when You die",
-      "author": "Robin sharma",
-      "categories": "self help",
-      "volume": "1",
-      "year": "2000",
-      "edition": "paperback",
-      "language": "english",
-      "pages": "265",
-      "description": "Who Will Cry When You Die is a book written by the Canadian Indian writer Robin Sharma. The book was first published in 1999. This was the third book written by the author in the series The Monk Who Sold His Ferrari.",
-      "quantity": "13",
-      "isAvailable": true,
-      "image": "https://m.media-amazon.com/images/I/41wKll7ITyL.jpg",
-      "id": 59
-    },
-    {
-      "title": "The Call of the wild",
-      "author": "Jack london",
-      "categories": "adventure",
-      "volume": "1",
-      "year": "1903",
-      "edition": "PaperBack",
-      "language": "English",
-      "pages": "234",
-      "description": "The Call of the Wild is a short adventure novel by Jack London, published in 1903 and set in Yukon, Canada, during the 1890s Klondike Gold Rush, when strong sled dogs were in high demand. The central character of the novel is a dog named Buck.",
-      "quantity": "12",
-      "isAvailable": true,
-      "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRKrFfE3XjUHEZ9Yu2eZhYlCYq1zOrsGPoSOunZFyUYuhf-6dUA",
-      "id": 60
-    },
-    {
-      "title": "Around the World in Eighty Days",
-      "author": "Jules Verne",
-      "categories": "adventure",
-      "volume": "1",
-      "year": "1872",
-      "edition": "HardCover",
-      "language": "french",
-      "pages": "232",
-      "description": "Around the World in Eighty Days is an adventure novel by the French writer Jules Verne, first published in French in 1872. In the story, Phileas Fogg of London and his newly employed French valet Passepartout attempt to circumnavigate the world in 80 days on a wager of £20,000 set by his friends at the Reform Club.",
-      "quantity": "10",
-      "isAvailable": true,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxfai7SQjBuJIr7IdA17XncfUrFfINBF_bnWAasHhbdgS-0lYa",
-      "id": 61
-    },
-    {
-      "title": "It Ends with Us",
-      "author": "Colleen Hoover",
-      "categories": "Romance",
-      "volume": "1",
-      "year": "1972",
-      "edition": "paperback",
-      "language": "English",
-      "pages": "235",
-      "description": "Lily hasn’t always had it easy, but that’s never stopped her from working hard for the life she wants. She’s come a long way from the small town in Maine where she grew up — she graduated from college, moved to Boston, and started her own business. So when she feels a spark with a gorgeous neurosurgeon named Ryle Kincaid, everything in Lily’s life suddenly seems almost too good to be true.\n\nRyle is assertive, stubborn, maybe even a little arrogant. He’s also sensitive, brilliant, and has a total soft spot for Lily. And the way he looks in scrubs certainly doesn’t hurt. Lily can’t get him out of her head. But Ryle’s complete aversion to relationships is disturbing. Even as Lily finds herself becoming the exception to his “no dating” rule, she can’t help but wonder what made him that way in the first place.\n\nAs questions about her new relationship overwhelm her, so do thoughts of Atlas Corrigan — her first love and a link to the past she left behind. He was her kindred spirit, her protector. When Atlas suddenly reappears, everything Lily has built with Ryle is threatened.",
-      "quantity": "12",
-      "isAvailable": true,
-      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1470427482i/27362503.jpg",
-      "id": 62
-    },
-    {
-      "title": "The notebook",
-      "author": "Nicolas spark",
-      "categories": "Romance",
-      "volume": "1",
-      "year": "1996",
-      "edition": "paperback",
-      "language": "english",
-      "pages": "200",
-      "description": "The Notebook is a 1996 novel by Nicholas Sparks. The story centers on the relationship between Noah Calhoun and Allie Nelson. Spanning over five decades, their love endures an uncertain beginning, the onset and conclusion of World War II, the death of one child, and Allie’s eventual diagnosis of Alzheimer’s disease.\n\n\nThe novel is framed by the titular notebook. The story that the reader engages with is the same one that an elderly Noah reads to Allie in the Creekside Assistance Living Facility when they are in their eighties. Allie does not know who Noah is, only that he comes to her room every day and reads to her. Each night, she forgets who he is and what he has read to her. Noah loves her and enjoys his time with her but also holds out hope that the story will restore her memories and bring her back to him.",
-      "quantity": "10",
-      "isAvailable": true,
-      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1483183484i/33648131.jpg",
-      "id": 63
     }
   ],
   "rented-books": [
@@ -483,30 +370,6 @@
       "userName": "merlins",
       "borrowedQuantity": "1",
       "id": 30
-    },
-    {
-      "bookTitle": "PHPEclipse: A User Guide: Take advantage of the leading open source integrated development environment to develop, organize, and debug your PHP web development projects.",
-      "bookId": 36,
-      "rentDays": "1",
-      "rentDate": "2023-02-09T09:38:35.361Z",
-      "returnDate": "2023-02-10T09:38:35.361Z",
-      "userId": "6",
-      "rentExpired": false,
-      "userName": "merlins",
-      "borrowedQuantity": "2",
-      "id": 31
-    },
-    {
-      "bookTitle": "PHP Oracle Web Development: Data processing, Security, Caching, XML, Web Services, and Ajax: A practical guide to combining the power, performance, scalability, ... time, and high performance of PHP",
-      "bookId": 6,
-      "rentDays": "1",
-      "rentDate": "2023-02-09T09:56:36.213Z",
-      "returnDate": "2023-02-10T09:56:36.213Z",
-      "userId": "3",
-      "rentExpired": false,
-      "userName": "TKR",
-      "borrowedQuantity": "1",
-      "id": 32
     },
     {
       "bookTitle": "Flask Web Development: Developing Web Applications with Python",

@@ -40,8 +40,6 @@ const RentBook = () => {
       borrowedQuantity: booksCount,
     };
     postRentBook(myRent)
-      // lmsUrl
-      //   .post("rented-books", myRent)
       .then(() => {
         putRentBook(id, book);
       })
@@ -58,53 +56,57 @@ const RentBook = () => {
 
   return (
     <div className="card">
-      <div className="container">
-        {book && <h5>Book Title:{book.title}</h5>}
-        {book && <h5>Book Author:{book.author}</h5>}
-        {book && <h5>Book Category:{book.categories}</h5>}
-        {book && <h5>Book Year:{book.year}</h5>}
-        {book && (
-          <p>
-            <strong>Book Description: </strong>
-            {book.description}
-          </p>
-        )}
-        {book && <h5>Book Edition:{book.edition}</h5>}
-        {book && <h5>Book Language:{book.language}</h5>}
-        {book && <h5>Book pages:{book.pages}</h5>}
-        {book && <h5>No.of Available Books:{book.quantity}</h5>}
-        <form onSubmit={rentBook}>
-          <label>Number Of Days of Rent:</label>
-          <input
-            data-testid="NoOfDays"
-            type="number"
-            value={rentDays}
-            min="1"
-            max="10"
-            onChange={(e) => {
-              setRentDays(e.target.value);
-            }}
-          />
-          <br></br>
-          <label>No of Books to borrow</label>
-          <input
-            data-testid="borrowBook"
-            type="number"
-            value={booksCount}
-            min="1"
-            max={book && book.quantity}
-            onChange={(e) => {
-              setBookCount(e.target.value);
-            }}
-          />
-          <h5 style={{ color: "red" }}>You can get rent maximum 10 days</h5>
-          <button data-testid="rent-btn" className="rent-btn" type="submit">
-            Rent
-          </button>
-        </form>
-      </div>
+      <div className="container2">
+        <div className="con">
+          <div className="container1">
+            {book && <h5>Book Title:{book.title}</h5>}
+            {book && <h5>Book Author:{book.author}</h5>}
+            {book && <h5>Book Category:{book.categories}</h5>}
+            {book && <h5>Book Year:{book.year}</h5>}
+            {book && (
+              <p>
+                <strong>Book Description: </strong>
+                {book.description}
+              </p>
+            )}
+            {book && <h5>Book Edition:{book.edition}</h5>}
+            {book && <h5>Book Language:{book.language}</h5>}
+            {book && <h5>Book pages:{book.pages}</h5>}
+            {book && <h5>No.of Available Books:{book.quantity}</h5>}
+            <form onSubmit={rentBook}>
+              <label>Number Of Days of Rent:</label>
+              <input
+                data-testid="NoOfDays"
+                type="number"
+                value={rentDays}
+                min="1"
+                max="10"
+                onChange={(e) => {
+                  setRentDays(e.target.value);
+                }}
+              />
+              <br></br>
+              <label>No of Books to borrow</label>
+              <input
+                data-testid="borrowBook"
+                type="number"
+                value={booksCount}
+                min="1"
+                max={book && book.quantity}
+                onChange={(e) => {
+                  setBookCount(e.target.value);
+                }}
+              />
+              <h5 style={{ color: "red" }}>You can get rent maximum 10 days</h5>
+              <button data-testid="rent-btn" className="rent-btn" type="submit">
+                Rent
+              </button>
+            </form>
+          </div>
 
-      {/* <ToastContainer/> */}
+          {/* <ToastContainer/> */}
+        </div>
+      </div>
     </div>
   );
 };

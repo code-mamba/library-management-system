@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import "./BookList.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { DeleteBook, unableToDeleteBook } from "../../Toastify";
-import { deleteBookDetails } from "../../services/api";
+import { useDispatch } from "react-redux";
+import { deleteBook } from "../../redux/actions";
 
-const BookList = ({ books, isAdmin, setBooks }) => {
+const BookList = ({ books, isAdmin }) => {
   const navigate = useNavigate();
   const booksPerPage = 5;
   const numOfTotalPages = Math.ceil(books.length / booksPerPage);
@@ -14,9 +14,8 @@ const BookList = ({ books, isAdmin, setBooks }) => {
   const pages = [...Array(numOfTotalPages + 1).keys()].slice(1);
   const indexOfLastBook = currentPage * booksPerPage;
   const indexOfFirstBook = indexOfLastBook - booksPerPage;
-  console.log("booklist", typeof isAdmin);
-
   const visibleBooks = books.slice(indexOfFirstBook, indexOfLastBook);
+  const dispatch = useDispatch();
 
   const prevPageHandler = () => {
     if (currentPage != 1) setCurrentPage(currentPage - 1);
@@ -27,20 +26,12 @@ const BookList = ({ books, isAdmin, setBooks }) => {
   const edit = (id) => {
     navigate("/edit-books/" + id);
   };
-
-  const deleteBook = (id) => {
-    deleteBookDetails(id)
-      .then(() => {
-        var newBooks = books.filter((book) => {
-          return book.id !== id;
-        });
-        setBooks(newBooks);
-        DeleteBook();
-      })
-      .catch(() => {
-        unableToDeleteBook();
-      });
+  const handleDelete = (id) => {
+    if (window.confirm("Are you sure you wanted to delete book?")) {
+      dispatch(deleteBook(id));
+    }
   };
+
   const rent = (id) => {
     navigate("/rent-books/" + id);
   };
@@ -72,6 +63,7 @@ const BookList = ({ books, isAdmin, setBooks }) => {
                   <p>Quantity:{book.quantity}</p>
                   {isAdmin && (
                     <button
+                      data-testid="editBook-btn"
                       className="btn btn-primary"
                       onClick={() => {
                         edit(book.id);
@@ -82,9 +74,10 @@ const BookList = ({ books, isAdmin, setBooks }) => {
                   )}
                   {isAdmin && (
                     <button
+                      data-testid="deleteBook-btn"
                       className="btn btn-danger"
                       onClick={() => {
-                        deleteBook(book.id);
+                        handleDelete(book.id);
                       }}
                     >
                       Delete
@@ -106,17 +99,23 @@ const BookList = ({ books, isAdmin, setBooks }) => {
           </nav>
         );
       })}
-      <span className="prev" onClick={prevPageHandler}>Prev</span>
-      <p className="paginationElement">
-        {pages.map((page) => (
-          <span
-            key={page}
-            onClick={() => setCurrentPage(page)}
-            className={`${currentPage === page ? "active" : ""}`}
-          >{` ${page} |`}</span>
-        ))}
-      </p>
-      <span className="next" onClick={nextPageHandler}>Next</span>
+      <div className="paginationElement">
+        <span className="previous" onClick={prevPageHandler}>
+          Prev
+        </span>
+        <p>
+          {pages.map((page) => (
+            <span
+              key={page}
+              onClick={() => setCurrentPage(page)}
+              className={`${currentPage === page ? "active" : ""}`}
+            >{` ${page} |`}</span>
+          ))}
+        </p>
+        <span className="next" onClick={nextPageHandler}>
+          Next
+        </span>
+      </div>
       <ToastContainer />
     </div>
   );
