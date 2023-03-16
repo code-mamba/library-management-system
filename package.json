@@ -23,21 +23,7 @@
     "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\" --coverage",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "rules": {
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off",
-      "camelcase": "warn",
-      "key-spacing": "warn",
-      "curly": "warn",
-      "arrow-spacing": "warn",
-      "capitalized-comments": "warn"
-    }
-  },
+  
   "browserslist": {
     "production": [
       ">0.2%",

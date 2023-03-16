@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ProfileUpdated, ProfileUpdateErr } from "../../Toastify";
 import lmsUrl from "../../AxiosURL";
-import { getUserDetails } from "../../services/api";
+import myApi from "../../services/api";
 const EditProfile = ({ title }) => {
   const [userName, setUserName] = useState();
   const [userEmail, setUserEmail] = useState();
@@ -13,6 +12,8 @@ const EditProfile = ({ title }) => {
   const [passwordErr, setPasswordErr] = useState(null);
   const [confirmPassword, setConfPassword] = useState("");
   const [confEmpPassword, setConfEmpPassword] = useState(null);
+  const [userMobile, setUserMobile] = useState("");
+  const [userAddress, setUserAddress] = useState("");
   const [unMatch, setUnmatch] = useState(null);
   const [show, setShow] = useState(false);
   const [confShow, setConfShow] = useState(false);
@@ -24,9 +25,12 @@ const EditProfile = ({ title }) => {
     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
   useEffect(() => {
-    getUserDetails(userId).then((res) => {
+    // getUserDetails(userId)
+    myApi.getUserDetails(userId).then((res) => {
       setUserName(res.data.userName);
       setUserEmail(res.data.userEmail);
+      setUserMobile(res.data.userMobile);
+      setUserAddress(res.data.userAddress);
     });
   }, []);
 
@@ -44,7 +48,14 @@ const EditProfile = ({ title }) => {
       if (newpassword == confirmPassword) {
         e.preventDefault();
         let userPassword = confirmPassword;
-        const users = { userName, userEmail, userPassword, isAdmin };
+        const users = {
+          userName,
+          userEmail,
+          userMobile,
+          userAddress,
+          userPassword,
+          isAdmin,
+        };
         lmsUrl
           .put("users/" + userId, users)
           .then(() => {
@@ -74,7 +85,6 @@ const EditProfile = ({ title }) => {
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <h2 className="text-center text-dark mt-5">{title}</h2>
-          <div className="text-center mb-5 text-dark">LMS</div>
           <div className="card my-5">
             <form
               className="card-body cardbody-color p-lg-5"
@@ -95,6 +105,28 @@ const EditProfile = ({ title }) => {
                     setUserName(e.target.value);
                   }}
                 />
+              </div>
+              <div>
+                <label htmlFor="userContact">Contact Number:</label>
+                <input
+                  type="tel"
+                  className="form-control"
+                  id="UserContact"
+                  data-testid="userMobile"
+                  value={userMobile}
+                  onChange={(e) => setUserMobile(e.target.value)}
+                ></input>
+              </div>
+              <div>
+                <label htmlFor="userAddress">Residential Address:</label>
+                <textarea
+                  className="form-control"
+                  data-testid="userAddress"
+                  value={userAddress}
+                  onChange={(e) => {
+                    setUserAddress(e.target.value);
+                  }}
+                ></textarea>
               </div>
               <div className="mb-3">
                 <label htmlFor="newPassword">New password:</label>
@@ -176,7 +208,7 @@ const EditProfile = ({ title }) => {
                   type="submit"
                   className="btn btn-color px-5 mb-5 w-100"
                 >
-                  Submit Changes
+                  Submit
                 </button>
               </div>
             </form>

@@ -50,7 +50,17 @@ describe("<AddUser />", () => {
     const passwordClick = screen.getByTestId("userPassword");
 
     act(() => {
-      passwordClick.click();   
+      passwordClick.click();
     });
+  });
+  test("set userMobile, setUser Address", () => {
+    render(<AddUser />);
+    const userMobile = screen.getByTestId("userMobile");
+    fireEvent.change(userMobile, { target: { value: "h" } });
+    expect(userPasswordInp.value).toBe("h");
+    const userAddress = screen.getByTestId("userAddress");
+    fireEvent.change(userAddress, { target: { value: "d" } });
+    expect(userAddress.value).toBe("d");
+    console.log(userAddress);
   });
 });

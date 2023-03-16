@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 

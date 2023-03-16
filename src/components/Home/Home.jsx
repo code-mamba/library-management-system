@@ -1,65 +1,38 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import BookList from "../BookList/BookList";
-// import { useNavigate } from "react-router-dom";
 import "./Home.css";
-// import lmsUrl from "../../AxiosURL";
 import { useDispatch, useSelector } from "react-redux";
 import { loadBooks } from "../../redux/actions";
 
-// const navigate = useNavigate;
 const Home = ({ isAdmin }) => {
-  // const [books, setBooks] = useState(null);
-  const [query, setQuery] = useState("");
-  let dispatch = useDispatch();
   const { books } = useSelector((state) => state.data);
+  const [mapBook, setMapBook] = useState(books);
+  const [query, setQuery] = useState("");
+  const [flag, setFlag] = useState(true);
+  let dispatch = useDispatch();
   const Searching = (e) => {
     setQuery(e.target.value);
-    console.log(query);
-    // var SearchBooks = books.filter((book) => {
-    //   if (query == "") {
-    //     return books;
-    //   } else if (book.title.toLowerCase().includes(query.toLowerCase())) {
-    //     return book;
-    //   }
-    // });
-    // setBooks(SearchBooks);
+    if (query === "") {
+      setMapBook(books);
+    }
+    setFlag(false);
+    var searchBook = books.filter((book) => {
+      let title = book.title.toLowerCase();
+      let searchTitle = query.toLowerCase();
+
+      if (title.includes(searchTitle)) {
+        return title;
+      }
+    });
+    setMapBook(searchBook);
   };
 
-  // const categoryChange = (e) => {
-  //   lmsUrl.get("books").then((res) => {
-  //     var FilteredBooks = res.data.filter((book) => {
-  //       return book.categories == e.target.value;
-  //     });
-  //     setBooks(FilteredBooks);
-  //   });
-  // };
   useEffect(() => {
     dispatch(loadBooks());
   }, []);
-  // useEffect(() => {
-  //   lmsUrl
-  //     .get("books")
-  //     .then((res) => {
-  //       setBooks(res.data);
-  //     })
-  //     .catch(() => {
-  //       navigate("/fetch-err");
-  //     });
-  // }, [query == ""]);
 
   return (
     <div className="home" style={{ backgroundColor: "#c8dcff" }}>
-      {/* <div className="boxContainer">
-        <div className="elementsContainer">
-          <input
-            type="text"
-            className="search"
-            placeholder="Search Books..."
-            onChange={(e) => Searching(e)}
-          ></input>
-        </div>
-      </div> */}
       <div className="search-box">
         <button className="btn-search">
           <i className="fas fa-search"></i>
@@ -67,22 +40,17 @@ const Home = ({ isAdmin }) => {
         <input
           type="text"
           className="input-search"
+          data-testid="search"
           placeholder="Type to Search..."
-          onChange={(e) => Searching(e)}
+          onChange={(e) => {
+            Searching(e);
+          }}
         ></input>
       </div>
 
-      {/* <select className="Select-Button" onChange={categoryChange}>
-        <option value="technologies">Technologies</option>
-        <option value="self-help">Self help</option>
-        <option value="adventure">Adventure</option>
-        <option value="Romance">Romance</option>
-      </select> */}
-
-      {books && (
-        <BookList books={books} isAdmin={isAdmin}></BookList>
-        // <BookList books={books} isAdmin={isAdmin} setBooks={setBooks} />
-      )}
+      {/* {flag && <BookList books={books} isAdmin={isAdmin}></BookList>}
+      {!flag && <BookList books={mapBook} isAdmin={isAdmin}></BookList>} */}
+      <BookList books={flag ? books : mapBook} isAdmin={isAdmin}></BookList>
     </div>
   );
 };

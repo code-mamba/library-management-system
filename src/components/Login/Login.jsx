@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { LoginErrorMessage, LoginSucessMessage } from "../../Toastify";
-import { ValidateTheUSer } from "../../services/api";
+// import { ValidateTheUSer } from "../../services/api";
+import Appi from "../../services/api";
 
 const Login = ({ setisAdmin, setisLoggedIn }) => {
   const [userEmail, setuserEmail] = useState("");
@@ -39,7 +39,8 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
       setCredErr("Invalid User Name or Password");
       setisLoggedIn(false);
     } else {
-      ValidateTheUSer(userEmail)
+      Appi.ValidateTheUser(userEmail)
+        // ValidateTheUSer(userEmail)
         .then((res) => {
           if (res.data[0].userPassword === userPassword) {
             seterrMsgEmail(null);
@@ -68,7 +69,6 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <h2 className="text-center text-dark mt-5">Login</h2>
-          <div className="text-center mb-5 text-dark">LMS</div>
           <div className="card my-5">
             <form className="card-body cardbody-color p-lg-5" onSubmit={login}>
               <div className="text-center"></div>

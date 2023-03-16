@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyBooks.css";
 import { ReturnedSuccessfully, ReturnError } from "../../Toastify";
-import {
-  deleteRentedBookDetails,
-  getBookDetails,
-  myRentedBookDetails,
-  putBookDetail,
-} from "../../services/api";
+// import {
+//   // deleteRentedBookDetails,
+//   // getBookDetails,
+//   // myRentedBookDetails,
+//   // putBookDetail,
+// } from "../../services/api";
+import myApi from "../../services/api";
 
 const MyBooks = () => {
   const navigate = useNavigate();
@@ -17,10 +18,12 @@ const MyBooks = () => {
   const today = new Date();
 
   const returnBook = (id, bookId) => {
-    deleteRentedBookDetails(id).then(() => {
-      getBookDetails(bookId).then((res) => {
+    // deleteRentedBookDetails(id)
+    myApi.deleteRentedBook(id).then(() => {
+      myApi.getBookDetails(bookId).then((res) => {
         res.data.quantity = res.data.quantity + 1;
-        putBookDetail(bookId, res.data)
+        myApi
+          .putBookDetail(bookId, res.data)
           .then(() => {
             ReturnedSuccessfully();
           })
@@ -34,7 +37,8 @@ const MyBooks = () => {
     });
   };
   useEffect(() => {
-    myRentedBookDetails(userId)
+    myApi
+      .myRentedBookDetails(userId)
       .then((res) => {
         res.data.forEach((book) => {
           var returnDay = new Date(book.returnDate);
@@ -65,7 +69,12 @@ const MyBooks = () => {
                 <p>Return Date: {book.returnDate.slice(0, 10)}</p>
                 <p>Borrowed Books: {book.borrowedQuantity}</p>
                 {book.rentExpired && (
-                  <p className="text-danger">Rent Expired</p>
+                  <p
+                    className="text-danger"
+                    style={{ fontWeight: "bold", fontSize: "20px" }}
+                  >
+                    Rent Expired
+                  </p>
                 )}
                 {book.rentExpired && (
                   <p className="text-danger">
@@ -74,6 +83,7 @@ const MyBooks = () => {
                 )}
                 <button
                   className="button"
+                  data-testid="returnBook"
                   onClick={() => {
                     returnBook(book.id, book.bookId);
                   }}

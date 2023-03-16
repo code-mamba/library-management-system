@@ -1,11 +1,18 @@
-import { Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginProtector = ({ children }) => {
   const login = sessionStorage.getItem("userName");
-  if (login) {
-    return <Navigate to="/home"></Navigate>;
-  } else {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (login) {
+      return navigate("/home");
+    }
+  }, []);
+  if (!login) {
     return children;
+  } else {
+    return "Not allowed";
   }
 };
 

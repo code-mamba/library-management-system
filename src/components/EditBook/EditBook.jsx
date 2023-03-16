@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "./EditBook.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -66,7 +65,6 @@ const EditBooks = () => {
           <h2 className="text-center text-dark mt-5" data-testid="add-books">
             EditBooks
           </h2>
-          <div className="Logo">LMS</div>
           <div className="card my-5">
             <form
               className="card-body cardbody-color p-lg-5"
@@ -226,7 +224,7 @@ const EditBooks = () => {
 
               <div className="text-center">
                 <button
-                  data-testid="addBook-btn"
+                  data-testid="editBook-btn"
                   type="submit"
                   className="btn btn-color px-5 mb-5 w-50"
                 >

@@ -84,7 +84,7 @@ function App() {
         )}
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
-      {sess ? <Footer /> : " "}
+      {sess && <Footer />}
     </div>
   );
 }

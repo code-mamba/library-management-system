@@ -3,17 +3,16 @@
  
   padding-top: 40px;
   text-align: justify;
-  
   padding: 40px;
-  
+  font-size: 13px;
 }
 .container2{
   background-color:#c8dcff ;
 }
 
 .con{
-  width: 1400px;
-  margin-left: 13%;
+  width: 1700px;
+  margin-left: 3%;
   background-color:#f0f2e4;
   align-items: center;
   margin-top: 10px;
@@ -46,4 +45,15 @@
 }
 .rent-btn:hover{
   background-color: rgb(198, 152, 66);
+}
+.rentBookImg{
+  display: flex;
+}
+.para1{
+  font-size: 20px;
+  font-weight: bold;
+}
+.para2{
+  font-size: 15px;
+
 }

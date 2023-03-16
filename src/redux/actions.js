@@ -2,7 +2,13 @@ import * as types from "./actionType";
 import lmsUrl from "../AxiosURL";
 import { SuccessfullyBookAdded, SuccessfullyEdited } from "../Toastify";
 import { DeleteBook } from "../Toastify";
-
+import myApi from "../services/api";
+// import myApi, {
+//   // AddingBooks,
+//   // deleteBookDetails,
+//   // getBookDetails,
+//   // updateBookDetail,
+// } from "../services/api";
 const getBooks = (books) => ({
   type: types.GET_BOOKS,
   payload: books,
@@ -26,7 +32,6 @@ export const loadBooks = () => {
     lmsUrl
       .get("books")
       .then((res) => {
-        console.log("res", res);
         dispatch(getBooks(res.data));
       })
       .catch((error) => {
@@ -36,8 +41,8 @@ export const loadBooks = () => {
 };
 export const deleteBook = (id) => {
   return function (dispatch) {
-    lmsUrl.delete(`books/${id}`).then((res) => {
-      console.log("res", res);
+    // deleteBookDetails(id)
+    myApi.deleteBookDetails(id).then(() => {
       dispatch(bookDeleted());
       dispatch(loadBooks());
       DeleteBook();
@@ -46,20 +51,22 @@ export const deleteBook = (id) => {
 };
 export const addBook = (book) => {
   return function (dispatch) {
-    lmsUrl.post("books", book).then((res) => {
-      console.log("res", res);
-      dispatch(bookAdded());
-      dispatch(loadBooks());
-      SuccessfullyBookAdded();
-    });
+    myApi
+      .AddingBooks(book)
+      // AddingBooks(book)
+      .then(() => {
+        dispatch(bookAdded());
+        dispatch(loadBooks());
+        SuccessfullyBookAdded();
+      });
   };
 };
 export const singleBookDetail = (id) => {
   return function (dispatch) {
-    lmsUrl
-      .get(`books/${id}`)
+    // getBookDetails(id)
+    myApi
+      .getBookDetails(id)
       .then((res) => {
-        console.log("res", res);
         dispatch(getBook(res.data));
       })
       .catch((error) => {
@@ -69,11 +76,13 @@ export const singleBookDetail = (id) => {
 };
 export const updateBook = (book, id) => {
   return function (dispatch) {
-    lmsUrl.put(`books/${id}`, book).then((res) => {
-      console.log("res", res);
-      dispatch(bookUpdated());
-      dispatch(loadBooks());
-      SuccessfullyEdited();
-    });
+    myApi
+      .updateBookDetail(id, book)
+      // updateBookDetail(id, book)
+      .then(() => {
+        dispatch(bookUpdated());
+        dispatch(loadBooks());
+        SuccessfullyEdited();
+      });
   };
 };

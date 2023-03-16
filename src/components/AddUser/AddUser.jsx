@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Login/Login.css";
 import { SuccessfullySignedin, UnableToSignup } from "../../Toastify";
-import { Signingin } from "../../services/api";
+import myApi from "../../services/api";
 
 const AddUser = () => {
   const [userName, setuserName] = useState("");
@@ -18,9 +18,10 @@ const AddUser = () => {
   const [mobileErr, setMobileErr] = useState(null);
   const [mobileNotValid, setMobileNotValid] = useState(null);
   const [userAddress, setUserAddress] = useState(null);
+  const [addressErr, setAddressErr] = useState(null);
 
   const navigate = useNavigate();
-  const validateForm = (email, password, name, mobile) => {
+  const validateForm = (email, password, name, mobile, address) => {
     if ((name == null) | (name == "")) {
       setNameErr("Please fill the name field");
     }
@@ -33,12 +34,16 @@ const AddUser = () => {
     if ((mobile == null) | (mobile == "")) {
       setMobileErr("Please fill Mobile field");
     }
+    if ((address == null) | (address == "")) {
+      setAddressErr("Please fill address field");
+    }
 
     if (
       email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g) &&
       password.match(
         /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
-      )
+      ) &&
+      mobile.match(/^(?:(?:\+|0{0,2})91(\s*[-]\s*)?|[0]?)?[789]\d{9}$/)
     ) {
       return false;
     } else {
@@ -47,7 +52,9 @@ const AddUser = () => {
   };
   const addUser = (e) => {
     e.preventDefault();
-    if (validateForm(userEmail, userPassword, userName, userMobile)) {
+    if (
+      validateForm(userEmail, userPassword, userName, userMobile, userAddress)
+    ) {
       if (!userEmail.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
         setEmailErr("Please enter valid email");
       }
@@ -68,8 +75,17 @@ const AddUser = () => {
         setMobileNotValid("Please Enter a Valid Mobile Number");
       }
     } else {
-      const user = { userName, userEmail, userPassword, isAdmin: false };
-      Signingin(user)
+      const user = {
+        userName,
+        userEmail,
+        userPassword,
+        userMobile,
+        userAddress,
+        isAdmin: false,
+      };
+      myApi
+        .Signingin(user)
+        // Signingin(user)
         .then(() => {
           SuccessfullySignedin();
         })
@@ -84,7 +100,6 @@ const AddUser = () => {
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <h2 className="text-center text-dark mt-5">Register Form</h2>
-          <div className="text-center mb-5 text-dark">LMS</div>
           <div className="card my-5">
             <form
               className="card-body cardbody-color p-lg-5"
@@ -133,6 +148,7 @@ const AddUser = () => {
                   className="form-control"
                   id="userContact"
                   placeholder="Enter Mobile Number"
+                  data-testid="userMobile"
                   value={userMobile}
                   onChange={(e) => {
                     setUserMobile(e.target.value);
@@ -186,11 +202,13 @@ const AddUser = () => {
                 <textarea
                   className="form-control"
                   value={userAddress}
+                  data-testid="userAddress"
                   onChange={(e) => {
                     setUserAddress(e.target.value);
                   }}
-                  required
+                  onClick={(e) => e.target.focus(setAddressErr(null))}
                 ></textarea>
+                {addressErr && <p style={{ color: "red" }}>{addressErr}</p>}
               </div>
               <div className="text-center">
                 <button type="submit" className="btn btn-color px-5 mb-5 w-100">

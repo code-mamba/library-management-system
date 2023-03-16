@@ -1,25 +1,28 @@
-.navbar{
+.navbar {
     font-size: 20px;
     word-spacing: 2px;
 }
-.navbar-brand{
+
+.navbar-brand {
     font-size: 50px;
     font-style: italic;
-    
-    
-    
+
+
+
 }
 
-.nav-link:hover{
+.nav-link:hover {
     background-color: #c8dcff;
-    color:black;
+    color: black;
 
 }
-.btn{
+
+.btn {
     font-size: 20px;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #c8dcff;
 
-    
+
 }

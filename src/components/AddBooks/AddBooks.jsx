@@ -54,7 +54,6 @@ const AddBooks = () => {
           <h2 className="text-center text-dark mt-5" data-testid="add-books">
             Add Books
           </h2>
-          <div className="Logo">LMS</div>
           <div className="card my-5">
             <form
               className="card-body cardbody-color p-lg-5"

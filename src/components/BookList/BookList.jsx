@@ -18,10 +18,14 @@ const BookList = ({ books, isAdmin }) => {
   const dispatch = useDispatch();
 
   const prevPageHandler = () => {
-    if (currentPage != 1) setCurrentPage(currentPage - 1);
+    if (currentPage != 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
   const nextPageHandler = () => {
-    if (currentPage != numOfTotalPages) setCurrentPage(currentPage + 1);
+    if (currentPage != numOfTotalPages) {
+      setCurrentPage(currentPage + 1);
+    }
   };
   const edit = (id) => {
     navigate("/edit-books/" + id);
@@ -52,14 +56,13 @@ const BookList = ({ books, isAdmin }) => {
                     className="img-fluid"
                   ></img>
                 </div>
-                <div className="col-md-8 mb-3 " id={book.id}>
+                <div className="col-md-8 mb-3" id={book.id}>
                   <h5 className="card-title mt-3">Title:{book.title}</h5>
                   <p>Categories: {book.categories}</p>
                   <p>Author: {book.author}</p>
                   <p> Year:{book.year}</p>
                   <p>Language: {book.language}</p>
                   <p>Volume:{book.volume}</p>
-                  <p>Availability: {book.available}</p>
                   <p>Quantity:{book.quantity}</p>
                   {isAdmin && (
                     <button

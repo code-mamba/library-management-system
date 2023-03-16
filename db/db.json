@@ -4,12 +4,16 @@
       "userName": "Santhosh",
       "userEmail": "mangeogod0987@gmail.com",
       "userPassword": "Password@123",
+      "userMobile": "8423726530",
+      "userAddress": "naduvarpet",
       "isAdmin": true,
       "id": 1
     },
     {
       "userName": "Dhanush B",
       "userEmail": "dhanush@gmail.com",
+      "userMobile": "9840058940",
+      "userAddress": "No. 6, Duraisamy Street, visalatchi nagar, ekkattuthangal, chennai-32",
       "userPassword": "Password@123",
       "isAdmin": true,
       "id": 2
@@ -17,14 +21,18 @@
     {
       "userName": "TKR",
       "userEmail": "tkr@gmail.com",
+      "userMobile": "6756743212",
+      "userAddress": "naduverpet Tambaram",
       "userPassword": "Password@123",
-      "isAdmin": false,
+      "isAdmin": null,
       "id": 3
     },
     {
       "userName": "Prashanth",
       "userEmail": "prashanth@gmail.com",
       "userPassword": "Password@97",
+      "userMobile": "9940536415",
+      "userAddress": "Ekkattuthangal",
       "isAdmin": false,
       "id": 4
     },
@@ -32,6 +40,8 @@
       "userName": "Arthi",
       "userEmail": "arthi2000@gmail.com",
       "userPassword": "Arthi2000@Lms",
+      "userMobile": "8789097812",
+      "userAddress": "cuddalore",
       "isAdmin": false,
       "id": 5
     },
@@ -39,6 +49,8 @@
       "userName": "merlins",
       "userEmail": "merlins@gmail.com",
       "userPassword": "Merlins2001@Lms",
+      "userMobile": "7878767567",
+      "userAddress": "vayalore",
       "isAdmin": false,
       "id": 6
     },
@@ -46,6 +58,8 @@
       "userName": "Dhanush2",
       "userEmail": "dhanush2@gmail.com",
       "userPassword": "Dhanush2002@Lms",
+      "userMobile": "9089786756",
+      "userAddress": "Ekkattuthangal",
       "isAdmin": false,
       "id": 7
     },
@@ -88,6 +102,8 @@
       "userName": "Mukesh",
       "userEmail": "mukesh2001@gmail.com",
       "userPassword": "Mukesh2001@Lms",
+      "userMobile": "7895432123",
+      "userAddress": "velachery",
       "isAdmin": false,
       "id": 13
     },
@@ -172,6 +188,8 @@
       "userName": "Johncena",
       "userEmail": "johncena97@gmail.com",
       "userPassword": "JohnCena@97",
+      "userMobile": "998787709",
+      "userAddress": "chromepet",
       "isAdmin": false,
       "id": 25
     },
@@ -179,6 +197,8 @@
       "userName": "Undertaker",
       "userEmail": "undertaker78@gmail.com",
       "userPassword": "UnderTaker@78",
+      "userMobile": "8098786789",
+      "userAddress": "tambaram",
       "isAdmin": false,
       "id": 26
     },
@@ -186,6 +206,8 @@
       "userName": "Kane",
       "userEmail": "kane99@gmail.com",
       "userPassword": "WweKane@99",
+      "userMobile": "8978675645",
+      "userAddress": "chicago",
       "isAdmin": false,
       "id": 27
     },
@@ -193,6 +215,8 @@
       "userName": "SakthiThangavelu",
       "userEmail": "sakthithangavelu2001@gmail.com",
       "userPassword": "Sakth2000@Lms",
+      "userMobile": "7654323456",
+      "userAddress": "trichy",
       "isAdmin": false,
       "id": 28
     },
@@ -200,6 +224,8 @@
       "userName": "doggy",
       "userEmail": "doggy2000@gmail.com",
       "userPassword": "Doggy@2000",
+      "userMobile": "9878976567",
+      "userAddress": "valasaravakkam",
       "isAdmin": false,
       "id": 29
     },
@@ -207,6 +233,8 @@
       "userName": "Vijayalakshmi",
       "userEmail": "vijaya50@gmail.com",
       "userPassword": "Vijaya50@Lms",
+      "userMobile": "7656789067",
+      "userAddress": "valasaravakkam",
       "isAdmin": false,
       "id": 30
     },
@@ -216,6 +244,24 @@
       "userPassword": "Aravindh2002@Lms",
       "isAdmin": false,
       "id": 31
+    },
+    {
+      "userName": "sabarinath",
+      "userEmail": "sabari2001@gmail.com",
+      "userPassword": "Sabari2001@Lms",
+      "userMobile": "8765432123",
+      "userAddress": "chromepet",
+      "isAdmin": false,
+      "id": 32
+    },
+    {
+      "userName": "Sabarinath",
+      "userEmail": "sabarinath2001@gmail.com",
+      "userPassword": "Sabari2000@Lms",
+      "userMobile": "7689078907",
+      "userAddress": "India",
+      "isAdmin": false,
+      "id": 33
     }
   ],
   "books": [
@@ -245,7 +291,7 @@
       "description": "Flask Web Development: Developing Web Applications with Python, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
       "available": true,
       "image": "https://learning.oreilly.com/library/cover/9781491991725/250w/",
-      "quantity": "8",
+      "quantity": 8,
       "id": 31,
       "volume": "1"
     },
@@ -254,15 +300,15 @@
       "title": "Spring Web Flow 2 Web Development",
       "author": "Sven Lüppken, Markus Stäuble",
       "categories": "technologies",
-      "volume": "",
+      "volume": "1",
       "year": "2009",
-      "edition": "",
+      "edition": "paperback",
       "language": "en",
       "pages": "272",
       "url": "http://bookzz.org/dl/608485/939377",
       "description": "Spring Web Flow 2 Web Development, open source web framework that enables you to create full-featured, sophisticated web-based applications, but with a twist... A full Rails application probably has less total code than the XML you'd need to configure the same application in other frameworks. With this book you'll learn how to use 'ActiveRecord' to connect business objects and database tables. No more painful object-relational mapping. Just create your business objects and let Rails do the rest. You'll learn how to use the 'Action Pack' framework to route incoming requests and render pages using easy-to-write templates and components. See how to exploit the Rails service frameworks to send emails, implement web services, and create dynamic, user-centric web-pages using built-in Javascript and Ajax support. There are extensive chapters on testing, deployment, and scaling. You'll see how easy it is to install Rails using your web server of choice (such as Apache or lighttpd) or using its own included web server. You'll be writing applications that work with your favorite database (MySQL, Oracle, Postgres, and more) in no time at all. You'll create a complete online store application in the extended tutorial section, so you'll see how a full Rails application is developed---iteratively and rapidly. Rails strives to honor the Pragmatic Programmer's 'DRY Principle' by avoiding the extra work of configuration files and code annotations. You can develop in real-time: make a change, and watch it work immediately. Forget XML. Everything in Rails, from templates to control flow to business logic, is written in Ruby, the language of choice for programmers who like to get the job done well (and leave work ontime for a change). Rails is the framework of choice for the new generation of Web 2.0 developers. Agile Web Development with Rails is the book for that generation, written by Dave Thomas (Pragmatic Programmer and author of Programming Ruby) and David Heinemeier Hansson, who created Rails.",
       "cover": "http://libgen.org/covers/180000/afbf1346c4b006c9397e140431e6d7f6-d.jpg",
-      "quantity": "8",
+      "quantity": "10",
       "available": true,
       "image": "https://static.packt-cdn.com/products/9781847195425/cover/smaller"
     },
@@ -296,7 +342,7 @@
       "url": "http://bookzz.org/dl/682503/6824d8",
       "description": "The book essentially covers how to code up a large application without a framework. In reality if you are working with a large application (or not) you should use an existing framework to manage PHP, HTML templates, and JavaScript. For example CodeIgniter, (I haven't found a PHP HTML templating system I like yet), and Dojo. \r\rtl;dr - has some stuff you should know, but better to let a framework(s) do it for you.",
       "cover": "http://libgen.org/covers/254000/95819b5f3eb0e4bfeecd369e7400a9b2-d.jpg",
-      "quantity": "12",
+      "quantity": 15,
       "available": true,
       "image": "https://m.media-amazon.com/images/I/51V8FyNi5KL.jpg"
     },
@@ -340,10 +386,24 @@
       "language": "french",
       "pages": "400",
       "description": "Treasure Island (originally titled The Sea Cook: A Story for Boys[1]) is an adventure novel by Scottish author Robert Louis Stevenson, telling a story of \"buccaneers and buried gold\". It is considered a coming-of-age story and is noted for its atmosphere, characters, and action.\n\nThe novel was originally serialised from 1881 to 1882 in the children's magazine Young Folks, under the title Treasure Island or the Mutiny of the Hispaniola, credited to the pseudonym \"Captain George North\". It was first published as a book on 14 November 1883 by Cassell & Co. It has since become one of the most often dramatized and adapted of all novels, in numerous media.",
-      "quantity": "12",
+      "quantity": 12,
       "isAvailable": true,
       "image": "https://m.media-amazon.com/images/I/51W7H0q4HPL._SX328_BO1,204,203,200_.jpg",
       "id": 55
+    },
+    {
+      "title": "Into the Wild",
+      "categories": "Adventure",
+      "description": "Into the Wild is a 1996 non-fiction book written by Jon Krakauer. It is an expansion of a 9,000-word article by Krakauer on Chris McCandless titled \"Death of an Innocent\", which appeared in the January 1993 issue of Outside.[2] The book was adapted to a film of the same name in 2007, directed by Sean Penn with Emile Hirsch starring as McCandless. Into the Wild is an international bestseller which has been printed in 30 languages and 173 editions and formats.[3] The book is widely used as high school and college reading curriculum.[3] Into the Wild has been lauded by many reviewers, and in 2019 was listed by Slate as one of the 50 best nonfiction works of the past quarter-centur",
+      "author": "Jon Krakauer",
+      "year": "1972",
+      "edition": "paperback",
+      "language": "English",
+      "quantity": "1111",
+      "pages": "212",
+      "volume": "1",
+      "image": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/811k9HNhaiL.jpg",
+      "id": 57
     }
   ],
   "rented-books": [
