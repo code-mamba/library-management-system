@@ -94,6 +94,15 @@ const Navbar = ({ isAdmin, isloggedIn, logOut }) => {
                   My Profile
                 </Link>
               )}
+              {isloggedIn && !isAdmin && (
+                <Link
+                  to="/inbox"
+                  className="nav-link"
+                  style={{ color: "white" }}
+                >
+                  Inbox
+                </Link>
+              )}
               {isloggedIn && (
                 <button
                   className="btn"

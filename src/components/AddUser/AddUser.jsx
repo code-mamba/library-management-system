@@ -184,6 +184,7 @@ const AddUser = () => {
                 />
                 <p
                   className="eye_icon"
+                  data-testid="eye_icon"
                   onClick={() => setShow((prestate) => !prestate)}
                 >
                   {" "}
@@ -211,7 +212,11 @@ const AddUser = () => {
                 {addressErr && <p style={{ color: "red" }}>{addressErr}</p>}
               </div>
               <div className="text-center">
-                <button type="submit" className="btn btn-color px-5 mb-5 w-100">
+                <button
+                  type="submit"
+                  className="btn btn-color px-5 mb-5 w-100"
+                  data-testid="signin-btn"
+                >
                   Register
                 </button>
               </div>

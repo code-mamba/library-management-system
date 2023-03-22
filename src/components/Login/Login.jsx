@@ -3,7 +3,7 @@ import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { LoginErrorMessage, LoginSucessMessage } from "../../Toastify";
 // import { ValidateTheUSer } from "../../services/api";
-import Appi from "../../services/api";
+import myApi from "../../services/api";
 
 const Login = ({ setisAdmin, setisLoggedIn }) => {
   const [userEmail, setuserEmail] = useState("");
@@ -39,7 +39,8 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
       setCredErr("Invalid User Name or Password");
       setisLoggedIn(false);
     } else {
-      Appi.ValidateTheUser(userEmail)
+      myApi
+        .ValidateTheUser(userEmail)
         // ValidateTheUSer(userEmail)
         .then((res) => {
           if (res.data[0].userPassword === userPassword) {
@@ -105,6 +106,7 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
                 />
                 <p
                   className="eye_icon"
+                  data-testid="eye-icon"
                   onClick={() => setShow((prestate) => !prestate)}
                 >
                   {" "}
@@ -122,7 +124,7 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
               {credErr && <p style={{ color: "red" }}>{credErr}</p>}
               <div className="text-center">
                 <button
-                  data-testid="Login_btn"
+                  data-testid="Login-btn"
                   type="submit"
                   className="btn btn-color px-5 mb-5 w-100"
                 >

@@ -53,14 +53,42 @@ describe("<AddUser />", () => {
       passwordClick.click();
     });
   });
-  test("set userMobile, setUser Address", () => {
+  test("set userMobile, setUser Address setUserPassword", () => {
     render(<AddUser />);
     const userMobile = screen.getByTestId("userMobile");
     fireEvent.change(userMobile, { target: { value: "h" } });
-    expect(userPasswordInp.value).toBe("h");
+    const userPasswordInp = screen.getByTestId("userPassword");
+    fireEvent.change(userPasswordInp, { target: { value: "p" } });
+    expect(userPasswordInp.value).toBe("p");
     const userAddress = screen.getByTestId("userAddress");
     fireEvent.change(userAddress, { target: { value: "d" } });
     expect(userAddress.value).toBe("d");
     console.log(userAddress);
+  });
+  test("Mobile clicking input type", () => {
+    render(<AddUser />);
+    const mobileClick = screen.getByTestId("userMobile");
+    act(() => {
+      mobileClick.click();
+    });
+  });
+  test("Address clicking input type", () => {
+    render(<AddUser />);
+    const addressClick = screen.getByTestId("userAddress");
+    act(() => {
+      addressClick.click();
+    });
+  });
+  test("eye icon click", () => {
+    render(<AddUser />);
+    const eyeClick = screen.getByTestId("eye_icon");
+    act(() => {
+      eyeClick.click();
+    });
+  });
+  test("signup button", () => {
+    render(<AddUser />);
+    const button = screen.getByTestId("signin-btn");
+    fireEvent.click(button);
   });
 });

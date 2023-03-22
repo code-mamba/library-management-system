@@ -2,6 +2,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Login from "./Login";
+import { act } from "react-dom/test-utils";
 
 const mockedUsedNavigate = jest.fn();
 jest.mock("react-router-dom", () => ({
@@ -31,12 +32,35 @@ describe("<Login />", () => {
   test("valid input to test password", () => {
     render(<Login></Login>);
     const inputEl2 = screen.getByTestId("password-input");
-    fireEvent.change(inputEl2, { target: { value: "P" } });
-    expect(screen.getByTestId("password-input")).toHaveValue("P");
+    fireEvent.change(inputEl2, { target: { value: "Password@123" } });
+    expect(screen.getByTestId("password-input")).toHaveValue("Password@123");
+  });
+  test("Email clicking input type", () => {
+    render(<Login />);
+
+    const EmailClick = screen.getByTestId("email-input");
+
+    act(() => {
+      EmailClick.click();
+    });
+  });
+  test("Password clicking input type", () => {
+    render(<Login />);
+    const PasswordClick = screen.getByTestId("password-input");
+    act(() => {
+      PasswordClick.click();
+    });
+  });
+  test("eye icon click", () => {
+    render(<Login />);
+    const eyeClick = screen.getByTestId("eye-icon");
+    act(() => {
+      eyeClick.click();
+    });
   });
   test("Login button", () => {
     render(<Login />);
-    const button = screen.getByTestId("Login_btn");
+    const button = screen.getByTestId("Login-btn");
     fireEvent.click(button);
   });
 });

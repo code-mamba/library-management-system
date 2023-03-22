@@ -2,12 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyBooks.css";
 import { ReturnedSuccessfully, ReturnError } from "../../Toastify";
-// import {
-//   // deleteRentedBookDetails,
-//   // getBookDetails,
-//   // myRentedBookDetails,
-//   // putBookDetail,
-// } from "../../services/api";
 import myApi from "../../services/api";
 
 const MyBooks = () => {

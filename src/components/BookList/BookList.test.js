@@ -20,7 +20,7 @@ describe("BookList component", () => {
   });
   test("edit button", () => {
     render(<BookList />);
-    const button = screen.getByTestId("editBook_btn");
+    const button = screen.getByTestId("editBook-btn");
     act(() => {
       button.click();
     });

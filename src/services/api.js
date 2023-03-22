@@ -9,9 +9,9 @@ class Api {
   AddingBooks = (book) => {
     return lmsUrl.post("books", book);
   };
-  getBookDetails(id) {
+  getBookDetails = (id) => {
     return lmsUrl.get("books/" + id);
-  }
+  };
   updateBookDetail = (id, book) => {
     return lmsUrl.put("books/" + id, book);
   };
@@ -43,6 +43,8 @@ class Api {
     return lmsUrl.get("users/" + userId);
   };
 }
+const myApi = new Api();
+export default myApi;
 
 // import lmsUrl from "../AxiosURL";
 
@@ -90,6 +92,3 @@ class Api {
 // export function getUserDetails(userId) {
 //   return lmsUrl.get("users/" + userId);
 // }
-
-const myApi = new Api();
-export default myApi;

@@ -9,4 +9,4 @@ describe("checks the pagenotfound component", () => {
     const titleValue = getByText("Page Not Found");
     expect(titleValue).toHaveTextContent("Page Not Found");
   });
-});
+}); 

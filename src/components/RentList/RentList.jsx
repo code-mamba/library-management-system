@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import lmsUrl from "../../AxiosURL";
 import "./RentList.css";
 
@@ -6,6 +7,7 @@ const RentList = () => {
   const [rentList, setRentList] = useState([]);
   const [profileId, setProfileId] = useState("");
   const [res, setRes] = useState([]);
+  const navigate = useNavigate();
   const today = new Date();
   useEffect(() => {
     lmsUrl
@@ -41,9 +43,19 @@ const RentList = () => {
     <div className="rentedList">
       {rentList &&
         rentList.map((book) => {
+          rentList.sort((a, b) => {
+            console.log(new Date(a.returnDate), new Date(b.returnDate));
+            return new Date(a.returnDate) - new Date(b.returnDate);
+          });
+
+          console.log("new", rentList);
+          console.log("userid", rentList.userId);
+
           return (
             <div className="card1" key={book.id}>
               {console.log(
+                "userId",
+                book.userId,
                 book.id,
                 book.bookTitle,
                 book.userName,
@@ -95,6 +107,11 @@ const RentList = () => {
                     </p>
                   )}
                 </p>
+                <button
+                  onClick={() => navigate("/notify-customer/" + book.userId)}
+                >
+                  Notify
+                </button>
               </div>
             </div>
           );

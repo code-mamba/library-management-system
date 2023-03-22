@@ -24,3 +24,4 @@ describe("HomeComponent", () => {
     expect(search.value).toBe("q");
   });
 });
+ 

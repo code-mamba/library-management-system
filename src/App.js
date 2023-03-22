@@ -18,6 +18,8 @@ import { ToastContainer } from "react-toastify";
 import LoginProtector from "./components/LoginProtector/LoginProtector";
 import { Logout } from "./Toastify";
 import Footer from "./components/Footer/Footer";
+import NotifyCustomer from "./components/NotifyCustomer/NotifyCustomer";
+import Inbox from "./components/Mail/Inbox";
 
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false);
@@ -67,6 +69,13 @@ function App() {
           <Route path="/rent-books/:id" element={<RentBook />}></Route>
         )}
         {isLoggedIn && <Route path="/rent-list" element={<RentList />}></Route>}
+        {isLoggedIn && (
+          <Route
+            path="/notify-customer/:id"
+            element={<NotifyCustomer />}
+          ></Route>
+        )}
+        {isLoggedIn && <Route path="/inbox" element={<Inbox />}></Route>}
         {isLoggedIn && (
           <Route path="/user-profile" element={<UserProfile />}></Route>
         )}
