@@ -71,7 +71,7 @@ const EditBooks = () => {
               onSubmit={EditBook}
             >
               <div className="mb-3">
-                <label>Add Book Name</label>
+                <label>Edit Book Name</label>
                 <input
                   data-testid="book-name"
                   type="text"
@@ -84,7 +84,7 @@ const EditBooks = () => {
                 />
               </div>
               <div className="mb-3">
-                <label>Add Book Volume</label>
+                <label>Edit Book Volume</label>
                 <input
                   data-testid="book-volume"
                   type="text"
@@ -98,7 +98,7 @@ const EditBooks = () => {
                 ></input>
               </div>
               <div className="mb-3">
-                <label>Add Author Name</label>
+                <label>Edit Author Name</label>
                 <input
                   data-testid="addAuthor"
                   type="text"
@@ -112,7 +112,7 @@ const EditBooks = () => {
                 ></input>
               </div>
               <div className="mb-3">
-                <label>Add Book Type</label>
+                <label>Edit Book Type</label>
                 <input
                   type="text"
                   data-testid="addCategory"
@@ -125,7 +125,7 @@ const EditBooks = () => {
                 />
               </div>
               <div className="mb-3">
-                <label>Add Year</label>
+                <label>Edit Year</label>
                 <input
                   data-testid="addYear"
                   type="text"
@@ -139,7 +139,7 @@ const EditBooks = () => {
                 />
               </div>
               <div className="mb-3">
-                <label>Add Book Edition</label>
+                <label>Edit Book Edition</label>
                 <input
                   data-testid="addBookEdition"
                   type="text"
@@ -153,7 +153,7 @@ const EditBooks = () => {
                 />
               </div>
               <div className="mb-3">
-                <label>Add Book Language</label>
+                <label>Edit Book Language</label>
                 <input
                   data-testid="bookLang"
                   type="text"
@@ -167,7 +167,7 @@ const EditBooks = () => {
                 />
               </div>
               <div className="mb-3">
-                <label>Add Description</label>
+                <label>Edit Description</label>
                 <textarea
                   data-testid="addDesc"
                   className="form-control"
@@ -180,7 +180,7 @@ const EditBooks = () => {
                 />
               </div>
               <div className="mb-3">
-                <label>Add Book Pages</label>
+                <label>Edit Book Pages</label>
                 <input
                   data-testid="addPages"
                   type="number"
@@ -194,7 +194,7 @@ const EditBooks = () => {
                 />
               </div>
               <div className="mb-3">
-                <label>Add Quantity</label>
+                <label>Edit Quantity</label>
                 <input
                   data-testid="addQuant"
                   className="form-control"
@@ -208,7 +208,7 @@ const EditBooks = () => {
                 />
               </div>
               <div>
-                <label>Image Url</label>
+                <label>Edit Image</label>
                 <input
                   data-testid="addImg"
                   className="form-control"

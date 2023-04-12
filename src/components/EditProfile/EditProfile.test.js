@@ -64,7 +64,7 @@ describe("<EditProfile>", () => {
     const confPassword = screen.getByTestId("confPassword");
     fireEvent.change(confPassword, { target: { value: "Password@123" } });
     fireEvent.click(button);
-  });
+  });   
 });
 test("setUserPassword setUserAddress", async () => {
   render(<EditProfile />);

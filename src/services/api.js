@@ -1,19 +1,20 @@
 import lmsUrl from "../AxiosURL";
 class Api {
-  ValidateTheUser = (userEmail) => {
-    return lmsUrl.get("users?userEmail=" + userEmail);
+  ValidateTheUser = (userEmail, userPassword) => {
+    console.log("inside validate user");
+    return lmsUrl.post("/auth/login", { userEmail, userPassword });
   };
   Signingin = (user) => {
-    return lmsUrl.post("users", user);
+    return lmsUrl.post("/auth/register", user);
   };
   AddingBooks = (book) => {
-    return lmsUrl.post("books", book);
+    return lmsUrl.post("books/", book);
   };
   getBookDetails = (id) => {
-    return lmsUrl.get("books/" + id);
+    return lmsUrl.get(`books/${id}`);
   };
   updateBookDetail = (id, book) => {
-    return lmsUrl.put("books/" + id, book);
+    return lmsUrl.put(`books/${id}`, book);
   };
   deleteBookDetails = (id) => {
     return lmsUrl.delete("books/" + id);

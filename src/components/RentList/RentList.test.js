@@ -23,4 +23,4 @@ describe("RentList", () => {
     mock.onGet("rented-list").reply(undefined, data);
     render(<RentList />);
   });
-});
+});   

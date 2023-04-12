@@ -25,7 +25,7 @@ describe("testcases for LoginProtected", () => {
 
     render(
       <MemoryRouter>
-        <LoginProtector>
+        <LoginProtector> 
           <Login />
         </LoginProtector>
       </MemoryRouter>

@@ -47,4 +47,4 @@ describe("render component", () => {
     mock.onGet("users/NaN").reply(404, data);
     render(<UserProfile />);
   });
-});
+});    

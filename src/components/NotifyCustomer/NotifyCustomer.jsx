@@ -40,7 +40,7 @@ const NotifyCustomer = () => {
               <textarea
                 className="form-control"
                 value={message}
-                data-testid="userAddress"
+                data-testid="message"
                 placeholder="Type message"
                 onChange={(e) => {
                   setMessage(e.target.value);
@@ -61,15 +61,6 @@ const NotifyCustomer = () => {
         </div>
       </div>
     </div>
-    // <div>
-    //   <h1>NotifyCustomer</h1>
-    //   <form onSubmit={handleSubmit}>
-    //     <label>from:</label>
-    //     <input type="text" value={from}></input>
-    //     <textarea onChange={(e) => setMessage(e.target.value)}></textarea>
-    //     <button type="submit">submit</button>
-    //   </form>
-    // </div>
   );
 };
 export default NotifyCustomer;

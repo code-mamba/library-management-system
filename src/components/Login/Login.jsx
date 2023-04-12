@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { LoginErrorMessage, LoginSucessMessage } from "../../Toastify";
 // import { ValidateTheUSer } from "../../services/api";
 import myApi from "../../services/api";
+import jwtDecode from "jwt-decode";
+import lmsUrl from "../../AxiosURL";
 
 const Login = ({ setisAdmin, setisLoggedIn }) => {
   const [userEmail, setuserEmail] = useState("");
@@ -39,21 +41,42 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
       setCredErr("Invalid User Name or Password");
       setisLoggedIn(false);
     } else {
+      console.log("test1");
       myApi
-        .ValidateTheUser(userEmail)
+        .ValidateTheUser(userEmail, userPassword)
         // ValidateTheUSer(userEmail)
         .then((res) => {
-          if (res.data[0].userPassword === userPassword) {
+          console.log("first", res);
+          // sessionStorage.setItem("token", res.data.token);
+          if (res.data.success === true) {
+            const token = res.data.token;
             seterrMsgEmail(null);
-            res.data[0].isAdmin ? setisAdmin(true) : setisAdmin(false);
+            const decoded = jwtDecode(token);
+            const userId = decoded.id;
             setisLoggedIn(true);
-            sessionStorage.setItem("id", res.data[0].id);
-            sessionStorage.setItem("userName", res.data[0].userName);
-            res.data[0].isAdmin &&
-              sessionStorage.setItem("isAdmin", res.data[0].isAdmin);
-            LoginSucessMessage();
+            sessionStorage.setItem("userId", userId);
+            sessionStorage.setItem("token", `Bearer ${token}`);
+            console.log("auth me 1");
+            lmsUrl.get("/auth/me").then((res) => {
+              console.log("responsee", res);
+              console.log("auth test2", res.data.data.isAdmin);
+              res.data.data.isAdmin === true
+                ? setisAdmin(true)
+                : setisAdmin(false);
+              console.log("session", res.data.isAdmin);
+              sessionStorage.setItem("isAdmin", res.data.data.isAdmin);
+              LoginSucessMessage();
+              navigate("/home");
+            });
 
-            navigate("/home");
+            // seterrMsgEmail(null);
+            // res.data[0].isAdmin ? setisAdmin(true) : setisAdmin(false);
+            // setisLoggedIn(true);
+            // sessionStorage.setItem("id", res.data[0].id);
+            // sessionStorage.setItem("userName", res.data[0].userName);
+            // res.data[0].isAdmin &&
+            //   sessionStorage.setItem("isAdmin", res.data[0].isAdmin);
+            // LoginSucessMessage();
           } else {
             setisLoggedIn(false);
             LoginErrorMessage();

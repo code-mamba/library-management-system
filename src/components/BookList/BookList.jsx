@@ -11,6 +11,8 @@ const BookList = ({ books, isAdmin }) => {
   const booksPerPage = 5;
   const numOfTotalPages = Math.ceil(books.length / booksPerPage);
   const [currentPage, setCurrentPage] = useState(1);
+  console.log(books);
+  console.log("Nof total page", numOfTotalPages);
   const pages = [...Array(numOfTotalPages + 1).keys()].slice(1);
   const indexOfLastBook = currentPage * booksPerPage;
   const indexOfFirstBook = indexOfLastBook - booksPerPage;
@@ -28,10 +30,12 @@ const BookList = ({ books, isAdmin }) => {
     }
   };
   const edit = (id) => {
+    console.log("bookId", id);
     navigate("/edit-books/" + id);
   };
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you wanted to delete book?")) {
+      console.log("handledelete", id);
       dispatch(deleteBook(id));
     }
   };
@@ -44,7 +48,7 @@ const BookList = ({ books, isAdmin }) => {
     <div className="book-list" style={{ backgroundColor: "#c8dcff" }}>
       {visibleBooks.map((book) => {
         return (
-          <nav className="container mt-5" key={book.id}>
+          <nav className="container mt-5" key={book._id}>
             <div className="card" style={{ backgroundColor: "#e6e6e6" }}>
               <div className="row">
                 <div className="col-md-4">
@@ -56,7 +60,7 @@ const BookList = ({ books, isAdmin }) => {
                     className="img-fluid"
                   ></img>
                 </div>
-                <div className="col-md-8 mb-3" id={book.id}>
+                <div className="col-md-8 mb-3" id={book._id}>
                   <h5 className="card-title mt-3">Title:{book.title}</h5>
                   <p>Categories: {book.categories}</p>
                   <p>Author: {book.author}</p>
@@ -69,7 +73,7 @@ const BookList = ({ books, isAdmin }) => {
                       data-testid="editBook-btn"
                       className="btn btn-primary"
                       onClick={() => {
-                        edit(book.id);
+                        edit(book._id);
                       }}
                     >
                       Edit
@@ -80,7 +84,7 @@ const BookList = ({ books, isAdmin }) => {
                       data-testid="deleteBook-btn"
                       className="btn btn-danger"
                       onClick={() => {
-                        handleDelete(book.id);
+                        handleDelete(book._id);
                       }}
                     >
                       Delete

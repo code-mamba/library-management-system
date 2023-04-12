@@ -30,9 +30,10 @@ const getBook = (book) => ({
 export const loadBooks = () => {
   return function (dispatch) {
     lmsUrl
-      .get("books")
+      .get("/books")
       .then((res) => {
-        dispatch(getBooks(res.data));
+        console.log("bokkkkks", res);
+        dispatch(getBooks(res.data.data));
       })
       .catch((error) => {
         console.log(error);
@@ -67,7 +68,8 @@ export const singleBookDetail = (id) => {
     myApi
       .getBookDetails(id)
       .then((res) => {
-        dispatch(getBook(res.data));
+        console.log(res);
+        dispatch(getBook(res.data.data));
       })
       .catch((error) => {
         console.log(error);
@@ -75,6 +77,7 @@ export const singleBookDetail = (id) => {
   };
 };
 export const updateBook = (book, id) => {
+  console.log("updateBookId", id);
   return function (dispatch) {
     myApi
       .updateBookDetail(id, book)

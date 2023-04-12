@@ -54,7 +54,7 @@ describe("<RentBook/>", () => {
       rentExpired: false,
       userName: "dha",
       borrowedQuantity: "2",
-    };
+    };   
     mock.onPost("rented-books", myRent).reply(200, data);
   });
 });

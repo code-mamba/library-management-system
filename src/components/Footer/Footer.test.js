@@ -7,4 +7,3 @@ describe("render footer", () => {
     render(<Footer />);
   });
 });
-  

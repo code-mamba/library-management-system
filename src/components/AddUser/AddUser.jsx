@@ -81,7 +81,6 @@ const AddUser = () => {
         userPassword,
         userMobile,
         userAddress,
-        isAdmin: false,
       };
       myApi
         .Signingin(user)

@@ -9,6 +9,7 @@ const Home = ({ isAdmin }) => {
   const [mapBook, setMapBook] = useState(books);
   const [query, setQuery] = useState("");
   const [flag, setFlag] = useState(true);
+  console.log("books", books, "type of", typeof books);
   let dispatch = useDispatch();
   const Searching = (e) => {
     setQuery(e.target.value);

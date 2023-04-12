@@ -40,6 +40,7 @@ function App() {
     setisLoggedIn(!!sessionStorage.getItem("id"));
     setisAdmin(sessionStorage.getItem("isAdmin"));
     console.log(typeof isAdmin);
+    console.log("isAdmin", isAdmin);
   }, []);
   return (
     <div className="App">

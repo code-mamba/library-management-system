@@ -84,7 +84,7 @@ describe("<AddUser />", () => {
     const eyeClick = screen.getByTestId("eye_icon");
     act(() => {
       eyeClick.click();
-    });
+    });   
   });
   test("signup button", () => {
     render(<AddUser />);

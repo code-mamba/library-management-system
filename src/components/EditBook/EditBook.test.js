@@ -41,4 +41,3 @@ describe("Edit component", () => {
     expect(categoryInp.value).toBe("q");
   });
 });
- 
