@@ -15,9 +15,10 @@ const RentBook = () => {
   useEffect(() => {
     // rentBookDetails(id)
     myApi
-      .rentBookDetails(id)
+      .getBookDetails(id)
+      // .rentBookDetails(id)
       .then((res) => {
-        setBook(res.data);
+        setBook(res.data.data);
       })
       .catch(() => {
         navigate("/fetch-err");
@@ -29,23 +30,25 @@ const RentBook = () => {
     var returnDate = new Date();
     returnDate.setDate(today.getDate() + parseInt(rentDays));
     e.preventDefault();
-    book.quantity = book.quantity - booksCount;
+    book.quantity = book.quantity - parseInt(booksCount);
     var myRent = {
       bookTitle: book.title,
-      bookId: book.id,
+      bookId: book._id,
       rentDays: rentDays,
       rentDate: today.toISOString(),
       returnDate: returnDate.toISOString(),
       userId: sessionStorage.getItem("id"),
       rentExpired: false,
       userName: sessionStorage.getItem("userName"),
-      borrowedQuantity: booksCount,
+      borrowedQuantity: parseInt(booksCount),
     };
     // postRentBook(myRent)
     myApi
       .postRentBook(myRent)
       .then(() => {
-        myApi.putRentBook(id, book);
+        myApi.putRentBook(id, { quantity: 1000 }).then((res) => {
+          console.log(res);
+        });
         // putRentBook(id, book);
       })
       .then(() => {

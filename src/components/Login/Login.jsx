@@ -57,7 +57,7 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
             sessionStorage.setItem("userId", userId);
             sessionStorage.setItem("token", `Bearer ${token}`);
             console.log("auth me 1");
-            lmsUrl.get("/auth/me").then((res) => {
+            lmsUrl.get("/auth/me", { withCredentials: true }).then((res) => {
               console.log("responsee", res);
               console.log("auth test2", res.data.data.isAdmin);
               res.data.data.isAdmin === true
@@ -65,6 +65,7 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
                 : setisAdmin(false);
               console.log("session", res.data.isAdmin);
               sessionStorage.setItem("isAdmin", res.data.data.isAdmin);
+              sessionStorage.setItem("userName", res.data.data.userName);
               LoginSucessMessage();
               navigate("/home");
             });

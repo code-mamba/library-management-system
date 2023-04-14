@@ -2,13 +2,20 @@ import lmsUrl from "../AxiosURL";
 class Api {
   ValidateTheUser = (userEmail, userPassword) => {
     console.log("inside validate user");
-    return lmsUrl.post("/auth/login", { userEmail, userPassword });
+    return lmsUrl.post(
+      "/auth/login",
+      { userEmail, userPassword },
+      { withCredentials: true }
+    );
   };
   Signingin = (user) => {
     return lmsUrl.post("/auth/register", user);
   };
   AddingBooks = (book) => {
     return lmsUrl.post("books/", book);
+  };
+  GetMe = () => {
+    return lmsUrl.get("auth/me", { withCredentials: true });
   };
   getBookDetails = (id) => {
     return lmsUrl.get(`books/${id}`);
@@ -26,10 +33,12 @@ class Api {
     return lmsUrl.get("books/" + id);
   };
   postRentBook = (myRent) => {
-    return lmsUrl.post("rented-books", myRent);
+    console.log(myRent);
+    return lmsUrl.post("/rentedBooks", myRent, { withCredentials: true });
   };
-  putRentBook = (id, book) => {
-    return lmsUrl.put("book/" + id, book);
+  putRentBook = (id, quant) => {
+    console.log("book", quant);
+    return lmsUrl.put(`books/${id}`, quant, { withCredentials: true });
   };
   deleteRentedBookDetails = (id) => {
     return lmsUrl.put("rented-books/" + id);

@@ -41,6 +41,7 @@ const BookList = ({ books, isAdmin }) => {
   };
 
   const rent = (id) => {
+    console.log(id);
     navigate("/rent-books/" + id);
   };
 
@@ -54,7 +55,7 @@ const BookList = ({ books, isAdmin }) => {
                 <div className="col-md-4">
                   <img
                     title="the value"
-                    src={book.image}
+                    src={`http://localhost:7000/uploads/photo_${book._id}.jpg`}
                     height="1200px"
                     width="1100px"
                     className="img-fluid"
@@ -94,7 +95,7 @@ const BookList = ({ books, isAdmin }) => {
                     <button
                       className="btn btn-success"
                       onClick={() => {
-                        rent(book.id);
+                        rent(book._id);
                       }}
                     >
                       Rent Book
