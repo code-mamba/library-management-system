@@ -3,13 +3,13 @@ import BookList from "../BookList/BookList";
 import "./Home.css";
 import { useDispatch, useSelector } from "react-redux";
 import { loadBooks } from "../../redux/actions";
+import myApi from "../../services/api";
 
 const Home = ({ isAdmin }) => {
   const { books } = useSelector((state) => state.data);
   const [mapBook, setMapBook] = useState(books);
   const [query, setQuery] = useState("");
   const [flag, setFlag] = useState(true);
-  console.log("books", books, "type of", typeof books);
   let dispatch = useDispatch();
   const Searching = (e) => {
     setQuery(e.target.value);
@@ -27,7 +27,28 @@ const Home = ({ isAdmin }) => {
     });
     setMapBook(searchBook);
   };
-
+  const handleFilterInput = (e) => {
+    let value = e.target.value;
+    value == null || value == ""
+      ? myApi.getAllBooks().then((res) => {
+          setMapBook(res.data.data);
+        })
+      : myApi.bookCategories(value).then((res) => {
+          console.log(res);
+          setMapBook(res.data.data);
+        });
+  };
+  const handleFilterYear = (e) => {
+    let year = e.target.value;
+    let yearPlusten = parseInt(year) + 10;
+    year == null || year == ""
+      ? myApi.getAllBooks().then((res) => {
+          setMapBook(res.data.data);
+        })
+      : myApi.bookYear(year, yearPlusten).then((res) => {
+          setMapBook(res.data.data);
+        });
+  };
   useEffect(() => {
     dispatch(loadBooks());
   }, []);
@@ -48,9 +69,27 @@ const Home = ({ isAdmin }) => {
           }}
         ></input>
       </div>
-
-      {/* {flag && <BookList books={books} isAdmin={isAdmin}></BookList>}
-      {!flag && <BookList books={mapBook} isAdmin={isAdmin}></BookList>} */}
+      <div>
+        <select
+          className="categories"
+          id="category-select"
+          onChange={handleFilterInput}
+        >
+          <option value="">All Books</option>
+          <option value="Romance">Romance</option>
+          <option value="adventure">Adventure</option>
+          <option value="self-help">SelfHelp</option>
+          <option value="Computer">Computer</option>
+        </select>
+      </div>
+      <div>
+        <select className="year" id="year-select" onChange={handleFilterYear}>
+          <option value="">Year</option>
+          <option value="1990">1990-2000</option>
+          <option value="2000">2000-2010</option>
+          <option value="2010">2010-2020</option>
+        </select>
+      </div>
       <BookList books={flag ? books : mapBook} isAdmin={isAdmin}></BookList>
     </div>
   );

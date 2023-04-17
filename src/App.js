@@ -11,36 +11,35 @@ import AddUser from "./components/AddUser/AddUser";
 import EditBook from "./components/EditBook/EditBook";
 import RentBook from "./components/RentBooks/RentBooks";
 import RentList from "./components/RentList/RentList";
-import UserProfile from "./components/userProfile/userProfile";
-import EditProfile from "./components/EditProfile/EditProfile";
 import UnableToFetch from "./components/UnableToFetchData/unableToFetch";
 import { ToastContainer } from "react-toastify";
 import LoginProtector from "./components/LoginProtector/LoginProtector";
 import { Logout } from "./Toastify";
 import Footer from "./components/Footer/Footer";
 import NotifyCustomer from "./components/NotifyCustomer/NotifyCustomer";
-import Inbox from "./components/Mail/Inbox";
+import myApi from "./services/api";
+// import UserProfile from "./components/userProfile/userProfile";
+// import EditProfile from "./components/EditProfile/EditProfile";
 
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false);
   const [isAdmin, setisAdmin] = useState(null);
   const navigate = useNavigate();
-  const logOut = () => {
-    sessionStorage.removeItem("id");
-    sessionStorage.removeItem("userName");
-    sessionStorage.removeItem("isAdmin");
-    setisAdmin(false);
-    setisLoggedIn(false);
-    Logout();
-    navigate("/");
+  const logOut = async () => {
+    try {
+      await myApi.userLogout();
+      sessionStorage.clear();
+      Logout();
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const sess = sessionStorage.getItem("userName");
   useEffect(() => {
     setisLoggedIn(!!sessionStorage.getItem("id"));
     setisAdmin(sessionStorage.getItem("isAdmin"));
-    console.log(typeof isAdmin);
-    console.log("isAdmin", isAdmin);
   }, []);
   return (
     <div className="App">
@@ -74,16 +73,6 @@ function App() {
           <Route
             path="/notify-customer/:id"
             element={<NotifyCustomer />}
-          ></Route>
-        )}
-        {isLoggedIn && <Route path="/inbox" element={<Inbox />}></Route>}
-        {isLoggedIn && (
-          <Route path="/user-profile" element={<UserProfile />}></Route>
-        )}
-        {isLoggedIn && (
-          <Route
-            path="/edit-profile/:userId"
-            element={<EditProfile title="Edit Profile"></EditProfile>}
           ></Route>
         )}
         {isLoggedIn && (

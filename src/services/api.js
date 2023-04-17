@@ -8,11 +8,14 @@ class Api {
       { withCredentials: true }
     );
   };
+  getAllBooks = () => {
+    return lmsUrl.get("/books");
+  };
   Signingin = (user) => {
     return lmsUrl.post("/auth/register", user);
   };
   AddingBooks = (book) => {
-    return lmsUrl.post("books/", book);
+    return lmsUrl.post("books/", book, { withCredentials: true });
   };
   GetMe = () => {
     return lmsUrl.get("auth/me", { withCredentials: true });
@@ -21,19 +24,18 @@ class Api {
     return lmsUrl.get(`books/${id}`);
   };
   updateBookDetail = (id, book) => {
-    return lmsUrl.put(`books/${id}`, book);
+    return lmsUrl.put(`books/${id}`, book, { withCredentials: true });
   };
   deleteBookDetails = (id) => {
-    return lmsUrl.delete("books/" + id);
+    return lmsUrl.delete("books/" + id, { withCredentials: true });
   };
   deleteRentedBook = (id) => {
-    return lmsUrl.delete("rented-books/" + id);
+    return lmsUrl.delete("rentedBooks/" + id, { withCredentials: true });
   };
   rentBookDetails = (id) => {
     return lmsUrl.get("books/" + id);
   };
   postRentBook = (myRent) => {
-    console.log(myRent);
     return lmsUrl.post("/rentedBooks", myRent, { withCredentials: true });
   };
   putRentBook = (id, quant) => {
@@ -44,61 +46,30 @@ class Api {
     return lmsUrl.put("rented-books/" + id);
   };
   putBookDetail = (bookId, data) => {
-    return lmsUrl.put("books/" + bookId, data);
+    console.log(bookId);
+    console.log("data", data);
+    return lmsUrl.put("books/" + bookId, { data }, { withCredentials: true });
   };
   myRentedBookDetails = (userId) => {
-    return lmsUrl.get("rented-books?userId=" + userId);
+    console.log(userId);
+    return lmsUrl.get(`rentedBooks?userId=${userId}`, {
+      withCredentials: true,
+    });
   };
   getUserDetails = (userId) => {
     return lmsUrl.get("users/" + userId);
   };
+  userLogout = () => {
+    return lmsUrl.get("auth/logout", {
+      withCredentials: true,
+    });
+  };
+  bookCategories = (value) => {
+    return lmsUrl.get(`books?categories=${value}`);
+  };
+  bookYear = (year, yearPlusten) => {
+    return lmsUrl.get(`books?year[gt]=${year}&&year[lte]=${yearPlusten}`);
+  };
 }
 const myApi = new Api();
 export default myApi;
-
-// import lmsUrl from "../AxiosURL";
-
-// export function ValidateTheUSer(userEmail) {
-//   return lmsUrl.get("users?userEmail=" + userEmail);
-// }
-// export function Signingin(user) {
-//   return lmsUrl.post("users", user);
-// }
-
-// export function AddingBooks(book) {
-//   return lmsUrl.post("books", book);
-// }
-// export function getBookDetails(id) {
-//   return lmsUrl.get("books/" + id);
-// }
-// export function updateBookDetail(id, book) {
-//   return lmsUrl.put("books/" + id, book);
-// }
-// export function deleteBookDetails(id) {
-//   return lmsUrl.delete("books/" + id);
-// }
-// export function deleteRentedBookDetails(id) {
-//   return lmsUrl.delete("rented-books/" + id);
-// }
-// export function rentBookDetails(id) {
-//   return lmsUrl.get("books/" + id);
-// }
-// export function postRentBook(myRent) {
-//   return lmsUrl.post("rented-books", myRent);
-// }
-// export function putRentBook(id, book) {
-//   return lmsUrl.put("books/" + id, book);
-// }
-
-// export function deleteRentedBook(id) {
-//   return lmsUrl.delete("rented-books/" + id);
-// }
-// export function putBookDetail(bookId, data) {
-//   return lmsUrl.put("books/" + bookId, data);
-// }
-// export function myRentedBookDetails(userId) {
-//   return lmsUrl.get("rented-books?userId=" + userId);
-// }
-// export function getUserDetails(userId) {
-//   return lmsUrl.get("users/" + userId);
-// }

@@ -32,7 +32,6 @@ export const loadBooks = () => {
     lmsUrl
       .get("/books")
       .then((res) => {
-        console.log("bokkkkks", res);
         dispatch(getBooks(res.data.data));
       })
       .catch((error) => {

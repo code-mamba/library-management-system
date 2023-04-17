@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import lmsUrl from "../../AxiosURL";
 import "./RentList.css";
 
@@ -7,13 +6,13 @@ const RentList = () => {
   const [rentList, setRentList] = useState([]);
   const [profileId, setProfileId] = useState("");
   const [res, setRes] = useState([]);
-  const navigate = useNavigate();
   const today = new Date();
   useEffect(() => {
     lmsUrl
-      .get("rented-books")
+      .get("rentedBooks", { withCredentials: true })
       .then((res) => {
-        res.data.forEach((book) => {
+        console.log("Rentlist", res);
+        res.data.data.forEach((book) => {
           setProfileId(book.userId);
           console.log(profileId);
           var returnDay = new Date(book.returnDate);
@@ -26,7 +25,7 @@ const RentList = () => {
             book.penalty = differenceInDays * 50;
           }
         });
-        setRentList(res.data);
+        setRentList(res.data.data);
       })
       .catch((err) => {
         console.log(err);
@@ -35,8 +34,9 @@ const RentList = () => {
   }, []);
 
   const profileData = async () => {
-    const response = await lmsUrl.get(`users`);
-    setRes(response.data);
+    const response = await lmsUrl.get(`auth/users`, { withCredentials: true });
+    console.log("response", response.data.data);
+    setRes(response.data.data);
   };
 
   return (
@@ -62,12 +62,12 @@ const RentList = () => {
                 book.rentDate
               )}
               <div className="card-body1">
-                <h3 className="card-title">{book.bookTitle}</h3>
+                <h3 className="card-title">{book.title}</h3>
                 <h4 className="customerName">CustomerName: {book.userName}</h4>
 
                 {res
                   .filter((e) => {
-                    if (e.id == book.userId) {
+                    if (e._id == book.userId) {
                       return e;
                     }
                   })
@@ -79,7 +79,7 @@ const RentList = () => {
 
                 {res
                   .filter((e) => {
-                    if (e.id == book.userId) {
+                    if (e._id == book.userId) {
                       return e;
                     }
                   })
@@ -89,7 +89,7 @@ const RentList = () => {
                     </p>
                   ))}
                 <p className="card-text">
-                  RentDate: {book.rentDate.slice(0, 10)}
+                  RentDate: {book.rentedDate.slice(0, 10)}
                 </p>
                 <p className="card-text">
                   ReturnDate: {book.returnDate.slice(0, 10)}
@@ -107,11 +107,6 @@ const RentList = () => {
                     </p>
                   )}
                 </p>
-                <button
-                  onClick={() => navigate("/notify-customer/" + book.userId)}
-                >
-                  Notify
-                </button>
               </div>
             </div>
           );

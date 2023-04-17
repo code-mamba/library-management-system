@@ -55,7 +55,6 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
             const userId = decoded.id;
             setisLoggedIn(true);
             sessionStorage.setItem("userId", userId);
-            sessionStorage.setItem("token", `Bearer ${token}`);
             console.log("auth me 1");
             lmsUrl.get("/auth/me", { withCredentials: true }).then((res) => {
               console.log("responsee", res);

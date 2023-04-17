@@ -11,8 +11,6 @@ const BookList = ({ books, isAdmin }) => {
   const booksPerPage = 5;
   const numOfTotalPages = Math.ceil(books.length / booksPerPage);
   const [currentPage, setCurrentPage] = useState(1);
-  console.log(books);
-  console.log("Nof total page", numOfTotalPages);
   const pages = [...Array(numOfTotalPages + 1).keys()].slice(1);
   const indexOfLastBook = currentPage * booksPerPage;
   const indexOfFirstBook = indexOfLastBook - booksPerPage;
@@ -55,7 +53,7 @@ const BookList = ({ books, isAdmin }) => {
                 <div className="col-md-4">
                   <img
                     title="the value"
-                    src={`http://localhost:7000/uploads/photo_${book._id}.jpg`}
+                    src={book.image}
                     height="1200px"
                     width="1100px"
                     className="img-fluid"

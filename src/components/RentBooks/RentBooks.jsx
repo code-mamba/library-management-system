@@ -4,6 +4,7 @@ import "./RentBooks.css";
 import "react-toastify/dist/ReactToastify.css";
 import { successfullyRented, unabletoRent } from "../../Toastify";
 import myApi from "../../services/api";
+import { loadBooks } from "../../redux/actions";
 
 const RentBook = () => {
   const { id } = useParams();
@@ -32,26 +33,26 @@ const RentBook = () => {
     e.preventDefault();
     book.quantity = book.quantity - parseInt(booksCount);
     var myRent = {
-      bookTitle: book.title,
+      title: book.title,
       bookId: book._id,
       rentDays: rentDays,
       rentDate: today.toISOString(),
       returnDate: returnDate.toISOString(),
-      userId: sessionStorage.getItem("id"),
+      userId: sessionStorage.getItem("userId"),
       rentExpired: false,
       userName: sessionStorage.getItem("userName"),
       borrowedQuantity: parseInt(booksCount),
     };
+    console.log("Book.quantity", book.quantity);
     // postRentBook(myRent)
     myApi
       .postRentBook(myRent)
       .then(() => {
-        myApi.putRentBook(id, { quantity: 1000 }).then((res) => {
-          console.log(res);
-        });
+        myApi.putRentBook(id, { quantity: book.quantity });
         // putRentBook(id, book);
       })
       .then(() => {
+        loadBooks();
         successfullyRented();
       })
       .then(() => {

@@ -76,33 +76,7 @@ const Navbar = ({ isAdmin, isloggedIn, logOut }) => {
                   Rent List
                 </Link>
               )}
-              {isloggedIn && isAdmin && (
-                <Link
-                  to="/user-profile"
-                  className="nav-link"
-                  style={{ color: "white" }}
-                >
-                  My Profile
-                </Link>
-              )}
-              {isloggedIn && !isAdmin && (
-                <Link
-                  to="/user-profile"
-                  className="nav-link"
-                  style={{ color: "white" }}
-                >
-                  My Profile
-                </Link>
-              )}
-              {isloggedIn && !isAdmin && (
-                <Link
-                  to="/inbox"
-                  className="nav-link"
-                  style={{ color: "white" }}
-                >
-                  Inbox
-                </Link>
-              )}
+
               {isloggedIn && (
                 <button
                   className="btn"

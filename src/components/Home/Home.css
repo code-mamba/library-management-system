@@ -7,6 +7,20 @@
 
 
 }
+.categories{
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  left: 70%;
+  top: 4%;
+}
+.year{
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  left: 60%;
+  top: 4%;
+}
 
 .input-search {
   height: 50px;
