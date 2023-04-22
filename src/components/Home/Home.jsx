@@ -27,28 +27,23 @@ const Home = ({ isAdmin }) => {
     });
     setMapBook(searchBook);
   };
+
   const handleFilterInput = (e) => {
-    let value = e.target.value;
-    value == null || value == ""
-      ? myApi.getAllBooks().then((res) => {
-          setMapBook(res.data.data);
-        })
-      : myApi.bookCategories(value).then((res) => {
-          console.log(res);
-          setMapBook(res.data.data);
-        });
+    const selected = e.target.value;
+    const categories = ["Romance", "adventure", "self-help", "Computer"];
+    const year = ["1990", "2000", "2010", "2020"];
+
+    const action = categories.includes(selected)
+      ? myApi.bookCategories(selected)
+      : year.includes(selected)
+      ? myApi.bookYear(selected, parseInt(selected) + 10)
+      : myApi.getAllBooks();
+
+    action.then((res) => {
+      setMapBook(res.data.data);
+    });
   };
-  const handleFilterYear = (e) => {
-    let year = e.target.value;
-    let yearPlusten = parseInt(year) + 10;
-    year == null || year == ""
-      ? myApi.getAllBooks().then((res) => {
-          setMapBook(res.data.data);
-        })
-      : myApi.bookYear(year, yearPlusten).then((res) => {
-          setMapBook(res.data.data);
-        });
-  };
+
   useEffect(() => {
     dispatch(loadBooks());
   }, []);
@@ -83,7 +78,7 @@ const Home = ({ isAdmin }) => {
         </select>
       </div>
       <div>
-        <select className="year" id="year-select" onChange={handleFilterYear}>
+        <select className="year" id="year-select" onChange={handleFilterInput}>
           <option value="">Year</option>
           <option value="1990">1990-2000</option>
           <option value="2000">2000-2010</option>

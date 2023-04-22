@@ -44,39 +44,24 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
       console.log("test1");
       myApi
         .ValidateTheUser(userEmail, userPassword)
-        // ValidateTheUSer(userEmail)
         .then((res) => {
-          console.log("first", res);
-          // sessionStorage.setItem("token", res.data.token);
           if (res.data.success === true) {
             const token = res.data.token;
             seterrMsgEmail(null);
             const decoded = jwtDecode(token);
+            console.log("decoded", decoded);
             const userId = decoded.id;
             setisLoggedIn(true);
             sessionStorage.setItem("userId", userId);
-            console.log("auth me 1");
             lmsUrl.get("/auth/me", { withCredentials: true }).then((res) => {
-              console.log("responsee", res);
-              console.log("auth test2", res.data.data.isAdmin);
               res.data.data.isAdmin === true
                 ? setisAdmin(true)
                 : setisAdmin(false);
-              console.log("session", res.data.isAdmin);
               sessionStorage.setItem("isAdmin", res.data.data.isAdmin);
               sessionStorage.setItem("userName", res.data.data.userName);
               LoginSucessMessage();
               navigate("/home");
             });
-
-            // seterrMsgEmail(null);
-            // res.data[0].isAdmin ? setisAdmin(true) : setisAdmin(false);
-            // setisLoggedIn(true);
-            // sessionStorage.setItem("id", res.data[0].id);
-            // sessionStorage.setItem("userName", res.data[0].userName);
-            // res.data[0].isAdmin &&
-            //   sessionStorage.setItem("isAdmin", res.data[0].isAdmin);
-            // LoginSucessMessage();
           } else {
             setisLoggedIn(false);
             LoginErrorMessage();

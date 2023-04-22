@@ -1,6 +1,10 @@
 import * as types from "./actionType";
 import lmsUrl from "../AxiosURL";
-import { SuccessfullyBookAdded, SuccessfullyEdited } from "../Toastify";
+import {
+  SuccessfullyBookAdded,
+  SuccessfullyEdited,
+  UnableToAddBooK,
+} from "../Toastify";
 import { DeleteBook } from "../Toastify";
 import myApi from "../services/api";
 // import myApi, {
@@ -58,6 +62,11 @@ export const addBook = (book) => {
         dispatch(bookAdded());
         dispatch(loadBooks());
         SuccessfullyBookAdded();
+      })
+      .catch((err) => {
+        console.log(err.response.data.error);
+        let errMessage = err.response.data.error;
+        UnableToAddBooK(errMessage);
       });
   };
 };

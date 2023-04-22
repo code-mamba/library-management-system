@@ -31,8 +31,8 @@ export function SuccessfullyBookAdded() {
     position: toast.POSITION.TOP_RIGHT,
   });
 }
-export function UnableToAddBooK() {
-  toast.error("Unable To Add Book");
+export function UnableToAddBooK(err) {
+  toast.error(`Unable To Add Book ${err}`);
 }
 export function DeleteBook() {
   toast.success("Book Deleted", {

@@ -18,8 +18,6 @@ import { Logout } from "./Toastify";
 import Footer from "./components/Footer/Footer";
 import NotifyCustomer from "./components/NotifyCustomer/NotifyCustomer";
 import myApi from "./services/api";
-// import UserProfile from "./components/userProfile/userProfile";
-// import EditProfile from "./components/EditProfile/EditProfile";
 
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false);
@@ -31,6 +29,7 @@ function App() {
       sessionStorage.clear();
       Logout();
       navigate("/");
+      setisLoggedIn(false);
     } catch (err) {
       console.log(err);
     }
