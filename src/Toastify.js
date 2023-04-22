@@ -1,8 +1,8 @@
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export function LoginSucessMessage() {
-  return toast.success("Successfully Logged in ", {
+export function SucessMessage(message) {
+  return toast.success(`${message}`, {
     position: toast.POSITION.TOP_RIGHT,
   });
 }
@@ -31,8 +31,8 @@ export function SuccessfullyBookAdded() {
     position: toast.POSITION.TOP_RIGHT,
   });
 }
-export function UnableToAddBooK(err) {
-  toast.error(`Unable To Add Book ${err}`);
+export function RejectMessage(err) {
+  toast.error(`${err}`);
 }
 export function DeleteBook() {
   toast.success("Book Deleted", {
@@ -89,8 +89,8 @@ export function ProfileUpdateErr() {
     position: toast.POSITION.TOP_RIGHT,
   });
 }
-export function Logout() {
-  toast.success("Logging out", {
-    position: toast.POSITION.TOP_RIGHT,
-  });
-}
+// export function Logout() {
+//   toast.success("Logging out", {
+//     position: toast.POSITION.TOP_RIGHT,
+//   });
+// }

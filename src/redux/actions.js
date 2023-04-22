@@ -1,18 +1,8 @@
 import * as types from "./actionType";
 import lmsUrl from "../AxiosURL";
-import {
-  SuccessfullyBookAdded,
-  SuccessfullyEdited,
-  UnableToAddBooK,
-} from "../Toastify";
-import { DeleteBook } from "../Toastify";
+import { SucessMessage, SuccessfullyEdited, RejectMessage } from "../Toastify";
+// import { DeleteBook } from "../Toastify";
 import myApi from "../services/api";
-// import myApi, {
-//   // AddingBooks,
-//   // deleteBookDetails,
-//   // getBookDetails,
-//   // updateBookDetail,
-// } from "../services/api";
 const getBooks = (books) => ({
   type: types.GET_BOOKS,
   payload: books,
@@ -46,11 +36,16 @@ export const loadBooks = () => {
 export const deleteBook = (id) => {
   return function (dispatch) {
     // deleteBookDetails(id)
-    myApi.deleteBookDetails(id).then(() => {
-      dispatch(bookDeleted());
-      dispatch(loadBooks());
-      DeleteBook();
-    });
+    myApi
+      .deleteBookDetails(id)
+      .then((res) => {
+        dispatch(bookDeleted());
+        dispatch(loadBooks());
+        SucessMessage(res.data.message);
+      })
+      .catch((err) => {
+        RejectMessage(err);
+      });
   };
 };
 export const addBook = (book) => {
@@ -58,15 +53,16 @@ export const addBook = (book) => {
     myApi
       .AddingBooks(book)
       // AddingBooks(book)
-      .then(() => {
+      .then((res) => {
         dispatch(bookAdded());
         dispatch(loadBooks());
-        SuccessfullyBookAdded();
+        SucessMessage(res.data.message);
+        // SuccessfullyBookAdded();
       })
       .catch((err) => {
         console.log(err.response.data.error);
         let errMessage = err.response.data.error;
-        UnableToAddBooK(errMessage);
+        RejectMessage(errMessage);
       });
   };
 };

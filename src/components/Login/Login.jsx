@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import { LoginErrorMessage, LoginSucessMessage } from "../../Toastify";
+import { LoginErrorMessage, SucessMessage } from "../../Toastify";
 // import { ValidateTheUSer } from "../../services/api";
 import myApi from "../../services/api";
 import jwtDecode from "jwt-decode";
@@ -45,21 +45,23 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
       myApi
         .ValidateTheUser(userEmail, userPassword)
         .then((res) => {
+          console.log("login", res);
+          console.log("logmsg", res.data.message);
           if (res.data.success === true) {
             const token = res.data.token;
             seterrMsgEmail(null);
             const decoded = jwtDecode(token);
-            console.log("decoded", decoded);
             const userId = decoded.id;
             setisLoggedIn(true);
             sessionStorage.setItem("userId", userId);
+            SucessMessage(res.data.message);
             lmsUrl.get("/auth/me", { withCredentials: true }).then((res) => {
               res.data.data.isAdmin === true
                 ? setisAdmin(true)
                 : setisAdmin(false);
               sessionStorage.setItem("isAdmin", res.data.data.isAdmin);
               sessionStorage.setItem("userName", res.data.data.userName);
-              LoginSucessMessage();
+              console.log(res);
               navigate("/home");
             });
           } else {

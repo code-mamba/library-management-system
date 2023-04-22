@@ -13,17 +13,10 @@ const MyBooks = () => {
   const today = new Date();
 
   const returnBook = (id, bookId, index) => {
-    console.log("new id", id, "bookId", bookId);
     myApi.deleteRentedBook(id).then(() => {
       myApi.getBookDetails(bookId).then((res) => {
         let totalBooks = res.data.data.quantity;
-        console.log("totalBook before", totalBooks);
-        console.log(
-          "borrowedQuantity before",
-          typeof rentedBooks.borrowedQuantity
-        );
-        totalBooks = totalBooks + rentedBooks[index].borrowedQuantity;
-        console.log("totalbook after", totalBooks);
+        // totalBooks = totalBooks + rentedBooks[index].borrowedQuantity;
 
         myApi
           .putBookDetail(bookId, {

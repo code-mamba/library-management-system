@@ -2,7 +2,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./RentBooks.css";
 import "react-toastify/dist/ReactToastify.css";
-import { successfullyRented, unabletoRent } from "../../Toastify";
+// import { unabletoRent, SuccessMessage } from "../../Toastify";
+import { SucessMessage, unabletoRent } from "../../Toastify";
 import myApi from "../../services/api";
 import { loadBooks } from "../../redux/actions";
 
@@ -47,13 +48,13 @@ const RentBook = () => {
     // postRentBook(myRent)
     myApi
       .postRentBook(myRent)
-      .then(() => {
+      .then((res) => {
         myApi.putRentBook(id, { quantity: book.quantity });
+        SucessMessage(res.data.message);
         // putRentBook(id, book);
       })
       .then(() => {
         loadBooks();
-        successfullyRented();
       })
       .then(() => {
         navigate("/home");

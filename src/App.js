@@ -14,7 +14,7 @@ import RentList from "./components/RentList/RentList";
 import UnableToFetch from "./components/UnableToFetchData/unableToFetch";
 import { ToastContainer } from "react-toastify";
 import LoginProtector from "./components/LoginProtector/LoginProtector";
-import { Logout } from "./Toastify";
+import { SucessMessage } from "./Toastify";
 import Footer from "./components/Footer/Footer";
 import NotifyCustomer from "./components/NotifyCustomer/NotifyCustomer";
 import myApi from "./services/api";
@@ -25,11 +25,12 @@ function App() {
   const navigate = useNavigate();
   const logOut = async () => {
     try {
-      await myApi.userLogout();
-      sessionStorage.clear();
-      Logout();
-      navigate("/");
-      setisLoggedIn(false);
+      await myApi.userLogout().then((res) => {
+        sessionStorage.clear();
+        SucessMessage(res.data.message);
+        navigate("/");
+        setisLoggedIn(false);
+      });
     } catch (err) {
       console.log(err);
     }
@@ -37,8 +38,8 @@ function App() {
 
   const sess = sessionStorage.getItem("userName");
   useEffect(() => {
-    setisLoggedIn(!!sessionStorage.getItem("id"));
-    setisAdmin(sessionStorage.getItem("isAdmin"));
+    setisLoggedIn(!!sessionStorage.getItem("userId"));
+    setisAdmin(sessionStorage.getItem("isAdmin") !== "false");
   }, []);
   return (
     <div className="App">
@@ -80,6 +81,7 @@ function App() {
             element={<UnableToFetch></UnableToFetch>}
           ></Route>
         )}
+        {console.log("this is the stuff", isLoggedIn)}
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
       {sess && <Footer />}

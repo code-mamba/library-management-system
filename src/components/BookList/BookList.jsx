@@ -67,6 +67,7 @@ const BookList = ({ books, isAdmin }) => {
                   <p>Language: {book.language}</p>
                   <p>Volume:{book.volume}</p>
                   <p>Quantity:{book.quantity}</p>
+                  <p>Pages:{book.pages}</p>
                   {isAdmin && (
                     <button
                       data-testid="editBook-btn"
