@@ -45,8 +45,6 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
       myApi
         .ValidateTheUser(userEmail, userPassword)
         .then((res) => {
-          console.log("login", res);
-          console.log("logmsg", res.data.message);
           if (res.data.success === true) {
             const token = res.data.token;
             seterrMsgEmail(null);
@@ -55,15 +53,18 @@ const Login = ({ setisAdmin, setisLoggedIn }) => {
             setisLoggedIn(true);
             sessionStorage.setItem("userId", userId);
             SucessMessage(res.data.message);
-            lmsUrl.get("/auth/me", { withCredentials: true }).then((res) => {
-              res.data.data.isAdmin === true
-                ? setisAdmin(true)
-                : setisAdmin(false);
-              sessionStorage.setItem("isAdmin", res.data.data.isAdmin);
-              sessionStorage.setItem("userName", res.data.data.userName);
-              console.log(res);
-              navigate("/home");
-            });
+            lmsUrl
+              .get(`/auth/me/${userId}`, { withCredentials: true })
+              .then((res) => {
+                console.log("new res", res);
+                res.data.data.isAdmin === true
+                  ? setisAdmin(true)
+                  : setisAdmin(false);
+                sessionStorage.setItem("isAdmin", res.data.data.isAdmin);
+                sessionStorage.setItem("userName", res.data.data.userName);
+                console.log(res);
+                navigate("/home");
+              });
           } else {
             setisLoggedIn(false);
             LoginErrorMessage();

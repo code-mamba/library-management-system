@@ -16,7 +16,6 @@ const MyBooks = () => {
     myApi.deleteRentedBook(id).then(() => {
       myApi.getBookDetails(bookId).then((res) => {
         let totalBooks = res.data.data.quantity;
-        // totalBooks = totalBooks + rentedBooks[index].borrowedQuantity;
 
         myApi
           .putBookDetail(bookId, {
@@ -66,8 +65,8 @@ const MyBooks = () => {
             <section className="container" key={book.id}>
               <div className="myBooks-card">
                 <h4>Booktitle:{book.title}</h4>
-                <p>Rented Date:{book.rentedDate.slice(0, 10)}</p>
-                <p>Return Date: {book.returnDate.slice(0, 10)}</p>
+                <p>Rented Date:{book.rentDate}</p>
+                <p>Return Date: {book.returnDate}</p>
                 <p>Borrowed Books: {book.borrowedQuantity}</p>
                 {book.rentExpired && (
                   <p

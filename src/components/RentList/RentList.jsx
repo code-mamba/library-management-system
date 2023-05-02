@@ -11,10 +11,8 @@ const RentList = () => {
     lmsUrl
       .get("rentedBooks", { withCredentials: true })
       .then((res) => {
-        console.log("Rentlist", res);
         res.data.data.forEach((book) => {
           setProfileId(book.userId);
-          console.log(profileId);
           var returnDay = new Date(book.returnDate);
           if (returnDay < today) {
             book.rentExpired = true;
@@ -35,36 +33,22 @@ const RentList = () => {
 
   const profileData = async () => {
     const response = await lmsUrl.get(`auth/users`, { withCredentials: true });
-    console.log("response", response.data.data);
     setRes(response.data.data);
   };
-
+  console.log(profileId);
+  console.log(rentList);
   return (
     <div className="rentedList">
       {rentList &&
         rentList.map((book) => {
           rentList.sort((a, b) => {
-            console.log(new Date(a.returnDate), new Date(b.returnDate));
             return new Date(a.returnDate) - new Date(b.returnDate);
           });
-
-          console.log("new", rentList);
-          console.log("userid", rentList.userId);
-
           return (
             <div className="card1" key={book.id}>
-              {console.log(
-                "userId",
-                book.userId,
-                book.id,
-                book.bookTitle,
-                book.userName,
-                book.rentDate
-              )}
               <div className="card-body1">
                 <h3 className="card-title">{book.title}</h3>
                 <h4 className="customerName">CustomerName: {book.userName}</h4>
-
                 {res
                   .filter((e) => {
                     if (e._id == book.userId) {
@@ -72,7 +56,7 @@ const RentList = () => {
                     }
                   })
                   .map((e) => (
-                    <p key={""} className="card-text">
+                    <p key={e._id} className="card-text">
                       Customer Contact: {e.userMobile}
                     </p>
                   ))}
@@ -84,16 +68,15 @@ const RentList = () => {
                     }
                   })
                   .map((e) => (
-                    <p key={""} className="card-text">
+                    <p key={e._id} className="card-text">
                       CustomerAddress: {e.userAddress}
                     </p>
                   ))}
+                {console.log(book.rentedDate)}
                 <p className="card-text">
-                  RentDate: {book.rentedDate.slice(0, 10)}
+                  RentDate: {book.rentedDate || book.rentDate}
                 </p>
-                <p className="card-text">
-                  ReturnDate: {book.returnDate.slice(0, 10)}
-                </p>
+                <p className="card-text">ReturnDate: {book.returnDate}</p>
                 <p className="card-text">
                   Borrowed Quantity:{book.borrowedQuantity}
                 </p>

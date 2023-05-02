@@ -26,6 +26,7 @@ export const loadBooks = () => {
     lmsUrl
       .get("/books")
       .then((res) => {
+        console.log(res);
         dispatch(getBooks(res.data.data));
       })
       .catch((error) => {

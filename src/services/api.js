@@ -46,8 +46,6 @@ class Api {
     return lmsUrl.put("rented-books/" + id);
   };
   putBookDetail = (bookId, data) => {
-    console.log(bookId);
-    console.log("data", "books/" + bookId, data);
     return lmsUrl.put("books/" + bookId, data, { withCredentials: true });
   };
   myRentedBookDetails = (userId) => {
