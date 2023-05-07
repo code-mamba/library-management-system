@@ -29,6 +29,7 @@ const Home = ({ isAdmin }) => {
   };
 
   const handleFilterInput = (e) => {
+    setFlag(false);
     const selected = e.target.value;
     const categories = ["Romance", "adventure", "self-help", "Computer"];
     const year = ["1990", "2000", "2010", "2020"];
@@ -58,7 +59,7 @@ const Home = ({ isAdmin }) => {
           type="text"
           className="input-search"
           data-testid="search"
-          placeholder="Type to Search..."
+          placeholder="Search by book title..."
           onChange={(e) => {
             Searching(e);
           }}

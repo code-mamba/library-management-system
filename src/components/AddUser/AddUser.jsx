@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Login/Login.css";
 import { SuccessfullySignedin, UnableToSignup } from "../../Toastify";
@@ -21,6 +21,12 @@ const AddUser = () => {
   const [addressErr, setAddressErr] = useState(null);
 
   const navigate = useNavigate();
+  const data = sessionStorage.getItem("userName");
+  useEffect(() => {
+    if (data) {
+      navigate("/home");
+    }
+  });
   const validateForm = (email, password, name, mobile, address) => {
     if ((name == null) | (name == "")) {
       setNameErr("Please fill the name field");

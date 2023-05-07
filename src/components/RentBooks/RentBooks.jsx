@@ -2,7 +2,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./RentBooks.css";
 import "react-toastify/dist/ReactToastify.css";
-// import { unabletoRent, SuccessMessage } from "../../Toastify";
 import { SucessMessage, unabletoRent } from "../../Toastify";
 import myApi from "../../services/api";
 import { loadBooks } from "../../redux/actions";
@@ -10,8 +9,9 @@ import { loadBooks } from "../../redux/actions";
 const RentBook = () => {
   const { id } = useParams();
   const [book, setBook] = useState(null);
-  const [rentDays, setRentDays] = useState();
+  const [rentDays, setRentDays] = useState(0);
   const [booksCount, setBookCount] = useState(0);
+  const [errMsg, setErrMsg] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -45,25 +45,34 @@ const RentBook = () => {
       borrowedQuantity: parseInt(booksCount),
     };
     console.log("Book.quantity", book.quantity);
-    // postRentBook(myRent)
-    myApi
-      .postRentBook(myRent)
-      .then((res) => {
-        myApi.putRentBook(id, { quantity: book.quantity });
-        SucessMessage(res.data.message);
-        // putRentBook(id, book);
-      })
-      .then(() => {
-        loadBooks();
-      })
-      .then(() => {
-        navigate("/home");
-      })
-      .catch(() => {
-        unabletoRent();
-      });
+    if (rentDays > 0 && rentDays < 10) {
+      myApi
+        .postRentBook(myRent)
+        .then((res) => {
+          myApi.putRentBook(id, { quantity: book.quantity });
+          SucessMessage(res.data.message);
+        })
+        .then(() => {
+          loadBooks();
+        })
+        .then(() => {
+          navigate("/home");
+        })
+        .catch(() => {
+          unabletoRent();
+        });
+    } else {
+      setErrMsg("rentDays should not be more than 10 days");
+    }
   };
-
+  const increament = () => {
+    setErrMsg(null);
+    setRentDays(rentDays + 1);
+  };
+  const decrement = () => {
+    setErrMsg(null);
+    setRentDays(rentDays - 1);
+  };
   return (
     <div className="card">
       <div className="container2">
@@ -98,8 +107,25 @@ const RentBook = () => {
               {book && <h5>Book pages:{book.pages}</h5>}
               {book && <h5>No.of Available Books:{book.quantity}</h5>}
               <form onSubmit={rentBook}>
-                <label>Number Of Days of Rent:</label>
-                <input
+                <button
+                  className="decrease"
+                  onClick={() => {
+                    decrement();
+                  }}
+                >
+                  -
+                </button>
+                <label>Number Of Days of Rent:{rentDays}</label>
+                <button
+                  className="increase"
+                  onClick={() => {
+                    increament();
+                  }}
+                >
+                  +
+                </button>
+                {errMsg && <p style={{ color: "red" }}>{errMsg}</p>}
+                {/* <input
                   data-testid="NoOfDays"
                   type="number"
                   value={rentDays}
@@ -108,7 +134,7 @@ const RentBook = () => {
                   onChange={(e) => {
                     setRentDays(e.target.value);
                   }}
-                />
+                /> */}
                 <br></br>
                 <label>No of Books to borrow</label>
                 <input
