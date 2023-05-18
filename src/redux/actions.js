@@ -44,8 +44,8 @@ export const deleteBook = (id) => {
         dispatch(loadBooks());
         SucessMessage(res.data.message);
       })
-      .catch((err) => {
-        RejectMessage(err);
+      .catch((res) => {
+        RejectMessage(res.response.data.error);
       });
   };
 };

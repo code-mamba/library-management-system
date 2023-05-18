@@ -53,10 +53,10 @@ const RentBook = () => {
           SucessMessage(res.data.message);
         })
         .then(() => {
-          loadBooks();
+          navigate("/home");
         })
         .then(() => {
-          navigate("/home");
+          loadBooks();
         })
         .catch(() => {
           unabletoRent();

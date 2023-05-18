@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { LoginErrorMessage, SucessMessage } from "../../Toastify";
-// import { ValidateTheUSer } from "../../services/api";
 import myApi from "../../services/api";
 import jwtDecode from "jwt-decode";
 import lmsUrl from "../../AxiosURL";
